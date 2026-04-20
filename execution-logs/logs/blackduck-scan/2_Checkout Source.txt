@@ -1,81 +1,81 @@
-﻿2026-04-20T14:46:29.5308520Z ##[group]Run actions/checkout@v4
-2026-04-20T14:46:29.5308770Z with:
-2026-04-20T14:46:29.5308890Z   repository: giithub-workflow-samples/build-scan
-2026-04-20T14:46:29.5309100Z   token: ***
-2026-04-20T14:46:29.5309190Z   ssh-strict: true
-2026-04-20T14:46:29.5309280Z   ssh-user: git
-2026-04-20T14:46:29.5309380Z   persist-credentials: true
-2026-04-20T14:46:29.5309480Z   clean: true
-2026-04-20T14:46:29.5309580Z   sparse-checkout-cone-mode: true
-2026-04-20T14:46:29.5309700Z   fetch-depth: 1
-2026-04-20T14:46:29.5309790Z   fetch-tags: false
-2026-04-20T14:46:29.5309890Z   show-progress: true
-2026-04-20T14:46:29.5309990Z   lfs: false
-2026-04-20T14:46:29.5310080Z   submodules: false
-2026-04-20T14:46:29.5310180Z   set-safe-directory: true
-2026-04-20T14:46:29.5310350Z ##[endgroup]
-2026-04-20T14:46:29.6999890Z Syncing repository: giithub-workflow-samples/build-scan
-2026-04-20T14:46:29.7000590Z ##[group]Getting Git version info
-2026-04-20T14:46:29.7000820Z Working directory is '/Users/madhusud/actions-runner/_work/build-scan/build-scan'
-2026-04-20T14:46:29.7001140Z [command]/usr/bin/git version
-2026-04-20T14:46:29.7150720Z git version 2.39.5 (Apple Git-154)
-2026-04-20T14:46:29.7167510Z ##[endgroup]
-2026-04-20T14:46:29.7175220Z Temporarily overriding HOME='/Users/madhusud/actions-runner/_work/_temp/8575f8c6-69bd-4ba8-9a3f-5cda74c36818' before making global git config changes
-2026-04-20T14:46:29.7175700Z Adding repository directory to the temporary git global config as a safe directory
-2026-04-20T14:46:29.7180490Z [command]/usr/bin/git config --global --add safe.directory /Users/madhusud/actions-runner/_work/build-scan/build-scan
-2026-04-20T14:46:29.7328000Z [command]/usr/bin/git config --local --get remote.origin.url
-2026-04-20T14:46:29.7446240Z https://github.com/giithub-workflow-samples/build-scan
-2026-04-20T14:46:29.7457250Z ##[group]Removing previously created refs, to avoid conflicts
-2026-04-20T14:46:29.7458970Z [command]/usr/bin/git rev-parse --symbolic-full-name --verify --quiet HEAD
-2026-04-20T14:46:29.7579230Z refs/heads/main
-2026-04-20T14:46:29.7584250Z [command]/usr/bin/git checkout --detach
-2026-04-20T14:46:29.7796010Z HEAD is now at 63b8044 Create main.yml
-2026-04-20T14:46:29.7947450Z [command]/usr/bin/git branch --delete --force main
-2026-04-20T14:46:29.8098960Z Deleted branch main (was 63b8044).
-2026-04-20T14:46:29.8234190Z ##[endgroup]
-2026-04-20T14:46:29.8236620Z [command]/usr/bin/git submodule status
-2026-04-20T14:46:29.9471320Z ##[group]Cleaning the repository
-2026-04-20T14:46:29.9471600Z [command]/usr/bin/git clean -ffdx
-2026-04-20T14:46:32.9433940Z Removing .bridge/
-2026-04-20T14:46:32.9434250Z Removing node_modules/
-2026-04-20T14:46:32.9442360Z [command]/usr/bin/git reset --hard HEAD
-2026-04-20T14:46:32.9579600Z HEAD is now at 63b8044 Create main.yml
-2026-04-20T14:46:32.9583290Z ##[endgroup]
-2026-04-20T14:46:32.9585710Z ##[group]Disabling automatic garbage collection
-2026-04-20T14:46:32.9592420Z [command]/usr/bin/git config --local gc.auto 0
-2026-04-20T14:46:32.9691360Z ##[endgroup]
-2026-04-20T14:46:32.9691650Z ##[group]Setting up auth
-2026-04-20T14:46:32.9696420Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
-2026-04-20T14:46:32.9789520Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
-2026-04-20T14:46:33.0442650Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
-2026-04-20T14:46:33.0554750Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
-2026-04-20T14:46:33.1222950Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
-2026-04-20T14:46:33.1325320Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
-2026-04-20T14:46:33.2021610Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
-2026-04-20T14:46:33.2145750Z ##[endgroup]
-2026-04-20T14:46:33.2146120Z ##[group]Fetching the repository
-2026-04-20T14:46:33.2151860Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +edb3631074aa404c0ac49a7cc7cf21004ac2c6f0:refs/remotes/origin/main
-2026-04-20T14:46:34.0818200Z From https://github.com/giithub-workflow-samples/build-scan
-2026-04-20T14:46:34.0819950Z  + 63b8044...edb3631 edb3631074aa404c0ac49a7cc7cf21004ac2c6f0 -> origin/main  (forced update)
-2026-04-20T14:46:34.0926940Z ##[endgroup]
-2026-04-20T14:46:34.0927640Z ##[group]Determining the checkout info
-2026-04-20T14:46:34.0928730Z ##[endgroup]
-2026-04-20T14:46:34.0933030Z [command]/usr/bin/git sparse-checkout disable
-2026-04-20T14:46:34.1138250Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
-2026-04-20T14:46:34.1304860Z ##[group]Checking out the ref
-2026-04-20T14:46:34.1307380Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
-2026-04-20T14:46:34.1487320Z Warning: you are leaving 1 commit behind, not connected to
-2026-04-20T14:46:34.1487640Z any of your branches:
-2026-04-20T14:46:34.1487980Z 
-2026-04-20T14:46:34.1488170Z   63b8044 Create main.yml
-2026-04-20T14:46:34.1489510Z 
-2026-04-20T14:46:34.1489640Z If you want to keep it by creating a new branch, this may be a good time
-2026-04-20T14:46:34.1489930Z to do so with:
-2026-04-20T14:46:34.1490000Z 
-2026-04-20T14:46:34.1490110Z  git branch <new-branch-name> 63b8044
-2026-04-20T14:46:34.1490260Z 
-2026-04-20T14:46:34.1532040Z Switched to a new branch 'main'
-2026-04-20T14:46:34.1533980Z branch 'main' set up to track 'origin/main'.
-2026-04-20T14:46:34.1537290Z ##[endgroup]
-2026-04-20T14:46:34.1702750Z [command]/usr/bin/git log -1 --format=%H
-2026-04-20T14:46:34.1842960Z edb3631074aa404c0ac49a7cc7cf21004ac2c6f0
+﻿2026-04-20T14:47:14.1203480Z ##[group]Run actions/checkout@v4
+2026-04-20T14:47:14.1203690Z with:
+2026-04-20T14:47:14.1203790Z   repository: giithub-workflow-samples/build-scan
+2026-04-20T14:47:14.1203970Z   token: ***
+2026-04-20T14:47:14.1204050Z   ssh-strict: true
+2026-04-20T14:47:14.1204130Z   ssh-user: git
+2026-04-20T14:47:14.1204210Z   persist-credentials: true
+2026-04-20T14:47:14.1204300Z   clean: true
+2026-04-20T14:47:14.1204380Z   sparse-checkout-cone-mode: true
+2026-04-20T14:47:14.1204490Z   fetch-depth: 1
+2026-04-20T14:47:14.1204560Z   fetch-tags: false
+2026-04-20T14:47:14.1204650Z   show-progress: true
+2026-04-20T14:47:14.1204730Z   lfs: false
+2026-04-20T14:47:14.1204800Z   submodules: false
+2026-04-20T14:47:14.1204890Z   set-safe-directory: true
+2026-04-20T14:47:14.1205030Z ##[endgroup]
+2026-04-20T14:47:14.1912920Z Syncing repository: giithub-workflow-samples/build-scan
+2026-04-20T14:47:14.1913540Z ##[group]Getting Git version info
+2026-04-20T14:47:14.1913740Z Working directory is '/Users/madhusud/actions-runner/_work/build-scan/build-scan'
+2026-04-20T14:47:14.1914090Z [command]/usr/bin/git version
+2026-04-20T14:47:14.2049920Z git version 2.39.5 (Apple Git-154)
+2026-04-20T14:47:14.2060700Z ##[endgroup]
+2026-04-20T14:47:14.2067710Z Temporarily overriding HOME='/Users/madhusud/actions-runner/_work/_temp/b8d1c0ab-520b-4499-a832-0394fa66b213' before making global git config changes
+2026-04-20T14:47:14.2068190Z Adding repository directory to the temporary git global config as a safe directory
+2026-04-20T14:47:14.2073110Z [command]/usr/bin/git config --global --add safe.directory /Users/madhusud/actions-runner/_work/build-scan/build-scan
+2026-04-20T14:47:14.2229470Z [command]/usr/bin/git config --local --get remote.origin.url
+2026-04-20T14:47:14.2350250Z https://github.com/giithub-workflow-samples/build-scan
+2026-04-20T14:47:14.2358770Z ##[group]Removing previously created refs, to avoid conflicts
+2026-04-20T14:47:14.2360930Z [command]/usr/bin/git rev-parse --symbolic-full-name --verify --quiet HEAD
+2026-04-20T14:47:14.2482310Z refs/heads/main
+2026-04-20T14:47:14.2488310Z [command]/usr/bin/git checkout --detach
+2026-04-20T14:47:14.2673210Z HEAD is now at edb3631 Add publish-results workflow to capture scan logs
+2026-04-20T14:47:14.2817350Z [command]/usr/bin/git branch --delete --force main
+2026-04-20T14:47:14.2961440Z Deleted branch main (was edb3631).
+2026-04-20T14:47:14.3100550Z ##[endgroup]
+2026-04-20T14:47:14.3102730Z [command]/usr/bin/git submodule status
+2026-04-20T14:47:14.4003690Z ##[group]Cleaning the repository
+2026-04-20T14:47:14.4003980Z [command]/usr/bin/git clean -ffdx
+2026-04-20T14:47:17.5315950Z Removing .bridge/
+2026-04-20T14:47:17.5316220Z Removing node_modules/
+2026-04-20T14:47:17.5324550Z [command]/usr/bin/git reset --hard HEAD
+2026-04-20T14:47:17.5457040Z HEAD is now at edb3631 Add publish-results workflow to capture scan logs
+2026-04-20T14:47:17.5461270Z ##[endgroup]
+2026-04-20T14:47:17.5463110Z ##[group]Disabling automatic garbage collection
+2026-04-20T14:47:17.5469390Z [command]/usr/bin/git config --local gc.auto 0
+2026-04-20T14:47:17.5584240Z ##[endgroup]
+2026-04-20T14:47:17.5584520Z ##[group]Setting up auth
+2026-04-20T14:47:17.5588000Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-04-20T14:47:17.5709190Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-04-20T14:47:17.6452020Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-04-20T14:47:17.6554730Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-04-20T14:47:17.7229360Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-04-20T14:47:17.7330830Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-04-20T14:47:17.8097930Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-04-20T14:47:17.8251080Z ##[endgroup]
+2026-04-20T14:47:17.8251410Z ##[group]Fetching the repository
+2026-04-20T14:47:17.8255410Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +e07579d9cb09f2c5fbd6ef171d06def440ec0603:refs/remotes/origin/main
+2026-04-20T14:47:18.8608420Z From https://github.com/giithub-workflow-samples/build-scan
+2026-04-20T14:47:18.8610160Z  + edb3631...e07579d e07579d9cb09f2c5fbd6ef171d06def440ec0603 -> origin/main  (forced update)
+2026-04-20T14:47:18.8734430Z ##[endgroup]
+2026-04-20T14:47:18.8735010Z ##[group]Determining the checkout info
+2026-04-20T14:47:18.8737110Z ##[endgroup]
+2026-04-20T14:47:18.8740910Z [command]/usr/bin/git sparse-checkout disable
+2026-04-20T14:47:18.8948130Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-04-20T14:47:18.9118230Z ##[group]Checking out the ref
+2026-04-20T14:47:18.9120580Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2026-04-20T14:47:18.9309960Z Warning: you are leaving 1 commit behind, not connected to
+2026-04-20T14:47:18.9310270Z any of your branches:
+2026-04-20T14:47:18.9310420Z 
+2026-04-20T14:47:18.9310520Z   edb3631 Add publish-results workflow to capture scan logs
+2026-04-20T14:47:18.9310700Z 
+2026-04-20T14:47:18.9310840Z If you want to keep it by creating a new branch, this may be a good time
+2026-04-20T14:47:18.9312300Z to do so with:
+2026-04-20T14:47:18.9312410Z 
+2026-04-20T14:47:18.9312470Z  git branch <new-branch-name> edb3631
+2026-04-20T14:47:18.9312620Z 
+2026-04-20T14:47:18.9356800Z Switched to a new branch 'main'
+2026-04-20T14:47:18.9358070Z branch 'main' set up to track 'origin/main'.
+2026-04-20T14:47:18.9362100Z ##[endgroup]
+2026-04-20T14:47:18.9541250Z [command]/usr/bin/git log -1 --format=%H
+2026-04-20T14:47:18.9709100Z e07579d9cb09f2c5fbd6ef171d06def440ec0603
