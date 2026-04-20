@@ -1,69 +1,69 @@
-﻿2026-04-20T14:56:27.9588880Z ##[group]Run npm install
-2026-04-20T14:56:27.9589210Z [36;1mnpm install[0m
-2026-04-20T14:56:27.9610320Z shell: /bin/bash -e {0}
-2026-04-20T14:56:27.9610530Z ##[endgroup]
-2026-04-20T14:56:28.5443880Z npm warn deprecated fsevents@1.2.9: fsevents 1 will break on node v14+ and could be using insecure binaries. Upgrade to fsevents 2.
-2026-04-20T14:56:29.7973810Z npm warn deprecated set-value@2.0.0: Critical bug fixed in v3.0.1, please upgrade to the latest version.
-2026-04-20T14:56:29.7996460Z npm warn deprecated mixin-deep@1.3.1: Critical bug fixed in v2.0.1, please upgrade to the latest version.
-2026-04-20T14:56:29.8015040Z npm warn deprecated ini@1.3.5: Please update to ini >=1.3.6 to avoid a prototype pollution issue
-2026-04-20T14:56:29.8072850Z npm warn deprecated set-value@0.4.3: Critical bug fixed in v3.0.1, please upgrade to the latest version.
-2026-04-20T14:56:29.8115080Z npm warn deprecated path-is-absolute@2.0.0: This package is no longer relevant as Node.js 0.12 is unmaintained.
-2026-04-20T14:56:29.8359020Z npm warn deprecated urix@0.1.0: Please see https://github.com/lydell/urix#deprecated
-2026-04-20T14:56:29.8446560Z npm warn deprecated har-validator@5.1.3: this library is no longer supported
-2026-04-20T14:56:29.8696080Z npm warn deprecated to-iso-string@0.0.2: to-iso-string has been deprecated, use @segment/to-iso-string instead.
-2026-04-20T14:56:29.8751500Z npm warn deprecated cryptiles@2.0.5: This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial).
-2026-04-20T14:56:29.8798850Z npm warn deprecated resolve-url@0.2.1: https://github.com/lydell/resolve-url#deprecated
-2026-04-20T14:56:29.8839680Z npm warn deprecated bcrypt-nodejs@0.0.3: bcrypt-nodejs is no longer actively maintained. Please use bcrypt or bcryptjs. See https://github.com/kelektiv/node.bcrypt.js/wiki/bcrypt-vs-brypt.js to learn more about these two options
-2026-04-20T14:56:29.8915460Z npm warn deprecated cryptiles@0.2.2: This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial).
-2026-04-20T14:56:29.9000780Z npm warn deprecated source-map-url@0.4.0: See https://github.com/lydell/source-map-url#deprecated
-2026-04-20T14:56:29.9185390Z npm warn deprecated boom@0.4.2: This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial).
-2026-04-20T14:56:29.9186660Z npm warn deprecated debug@3.2.6: Debug versions >=3.2.0 <3.2.7 || >=4 <4.3.1 have a low-severity ReDos regression when used in a Node.js environment. It is recommended you upgrade to 3.2.7 or 4.3.1. (https://github.com/visionmedia/debug/issues/797)
-2026-04-20T14:56:29.9189150Z npm warn deprecated debug@3.2.6: Debug versions >=3.2.0 <3.2.7 || >=4 <4.3.1 have a low-severity ReDos regression when used in a Node.js environment. It is recommended you upgrade to 3.2.7 or 4.3.1. (https://github.com/visionmedia/debug/issues/797)
-2026-04-20T14:56:29.9193890Z npm warn deprecated debug@3.2.6: Debug versions >=3.2.0 <3.2.7 || >=4 <4.3.1 have a low-severity ReDos regression when used in a Node.js environment. It is recommended you upgrade to 3.2.7 or 4.3.1. (https://github.com/visionmedia/debug/issues/797)
-2026-04-20T14:56:29.9196270Z npm warn deprecated debug@3.2.6: Debug versions >=3.2.0 <3.2.7 || >=4 <4.3.1 have a low-severity ReDos regression when used in a Node.js environment. It is recommended you upgrade to 3.2.7 or 4.3.1. (https://github.com/visionmedia/debug/issues/797)
-2026-04-20T14:56:29.9222990Z npm warn deprecated chokidar@2.1.6: Chokidar 2 does not receive security updates since 2019. Upgrade to chokidar 3 with 15x fewer dependencies
-2026-04-20T14:56:29.9226680Z npm warn deprecated boom@2.10.1: This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial).
-2026-04-20T14:56:29.9227740Z npm warn deprecated sntp@0.2.4: This module moved to @hapi/sntp. Please make sure to switch over as this distribution is no longer supported and may contain bugs and critical security issues.
-2026-04-20T14:56:29.9228810Z npm warn deprecated minimatch@0.3.0: Please update to minimatch 3.0.2 or higher to avoid a RegExp DoS issue
-2026-04-20T14:56:29.9232540Z npm warn deprecated chokidar@2.1.8: Chokidar 2 does not receive security updates since 2019. Upgrade to chokidar 3 with 15x fewer dependencies
-2026-04-20T14:56:29.9239900Z npm warn deprecated sntp@1.0.9: This module moved to @hapi/sntp. Please make sure to switch over as this distribution is no longer supported and may contain bugs and critical security issues.
-2026-04-20T14:56:29.9241660Z npm warn deprecated querystring@0.2.0: The querystring API is considered Legacy. new code should use the URLSearchParams API instead.
-2026-04-20T14:56:29.9413160Z npm warn deprecated request@2.36.0: request has been deprecated, see https://github.com/request/request/issues/3142
-2026-04-20T14:56:29.9414020Z npm warn deprecated mkdirp@0.3.0: Legacy versions of mkdirp are no longer supported. Please update to mkdirp 1.x. (Note that the API surface has changed to use Promises in 1.x.)
-2026-04-20T14:56:29.9465360Z npm warn deprecated tough-cookie@2.2.2: ReDoS vulnerability parsing Set-Cookie https://nodesecurity.io/advisories/130
-2026-04-20T14:56:29.9491230Z npm warn deprecated hoek@0.9.1: This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial).
-2026-04-20T14:56:29.9516200Z npm warn deprecated node-uuid@1.4.8: Use uuid module instead
-2026-04-20T14:56:29.9518570Z npm warn deprecated node-uuid@1.4.8: Use uuid module instead
-2026-04-20T14:56:29.9522020Z npm warn deprecated uuid@3.3.2: Please upgrade  to version 7 or higher.  Older versions may use Math.random() in certain circumstances, which is known to be problematic.  See https://v8.dev/blog/math-random for details.
-2026-04-20T14:56:29.9548370Z npm warn deprecated source-map-resolve@0.5.2: See https://github.com/lydell/source-map-resolve#deprecated
-2026-04-20T14:56:29.9580120Z npm warn deprecated har-validator@2.0.6: this library is no longer supported
-2026-04-20T14:56:29.9598850Z npm warn deprecated mkdirp@0.5.1: Legacy versions of mkdirp are no longer supported. Please update to mkdirp 1.x. (Note that the API surface has changed to use Promises in 1.x.)
-2026-04-20T14:56:29.9605500Z npm warn deprecated hoek@2.16.3: This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial).
-2026-04-20T14:56:29.9656920Z npm warn deprecated request@2.79.0: request has been deprecated, see https://github.com/request/request/issues/3142
-2026-04-20T14:56:29.9693550Z npm warn deprecated request@2.88.0: request has been deprecated, see https://github.com/request/request/issues/3142
-2026-04-20T14:56:29.9750920Z npm warn deprecated request@2.67.0: request has been deprecated, see https://github.com/request/request/issues/3142
-2026-04-20T14:56:29.9921120Z npm warn deprecated readdir-scoped-modules@1.0.2: This functionality has been moved to @npmcli/fs
-2026-04-20T14:56:29.9958840Z npm warn deprecated hawk@1.0.0: This module moved to @hapi/hawk. Please make sure to switch over as this distribution is no longer supported and may contain bugs and critical security issues.
-2026-04-20T14:56:30.0073920Z npm warn deprecated hawk@3.1.3: This module moved to @hapi/hawk. Please make sure to switch over as this distribution is no longer supported and may contain bugs and critical security issues.
-2026-04-20T14:56:30.0095940Z npm warn deprecated jade@0.26.3: Jade has been renamed to pug, please install the latest version of pug instead of jade
-2026-04-20T14:56:30.0267580Z npm warn deprecated swig@1.4.2: This package is no longer maintained
-2026-04-20T14:56:30.0367530Z npm warn deprecated bson@1.0.9: Fixed a critical issue with BSON serialization documented in CVE-2019-2391, see https://bit.ly/2KcpXdo for more details
-2026-04-20T14:56:30.1559200Z npm warn deprecated nodeunit@0.9.5: you are strongly encouraged to use other testing options
-2026-04-20T14:56:40.9253730Z 
-2026-04-20T14:56:40.9254260Z added 962 packages, and audited 1412 packages in 13s
-2026-04-20T14:56:40.9254540Z 
-2026-04-20T14:56:40.9254730Z 32 packages are looking for funding
-2026-04-20T14:56:40.9255020Z   run `npm fund` for details
-2026-04-20T14:56:40.9857440Z 
-2026-04-20T14:56:40.9857830Z 139 vulnerabilities (9 low, 33 moderate, 62 high, 35 critical)
-2026-04-20T14:56:40.9858090Z 
-2026-04-20T14:56:40.9858240Z To address issues that do not require attention, run:
-2026-04-20T14:56:40.9858510Z   npm audit fix
-2026-04-20T14:56:40.9858580Z 
-2026-04-20T14:56:40.9858730Z To address all issues possible (including breaking changes), run:
-2026-04-20T14:56:40.9858940Z   npm audit fix --force
-2026-04-20T14:56:40.9859020Z 
-2026-04-20T14:56:40.9859110Z Some issues need review, and may require choosing
-2026-04-20T14:56:40.9859290Z a different dependency.
-2026-04-20T14:56:40.9859370Z 
-2026-04-20T14:56:40.9859500Z Run `npm audit` for details.
+﻿2026-04-20T15:18:20.3303210Z ##[group]Run npm install
+2026-04-20T15:18:20.3303570Z [36;1mnpm install[0m
+2026-04-20T15:18:20.3328350Z shell: /bin/bash -e {0}
+2026-04-20T15:18:20.3328560Z ##[endgroup]
+2026-04-20T15:18:20.9723060Z npm warn deprecated fsevents@1.2.9: fsevents 1 will break on node v14+ and could be using insecure binaries. Upgrade to fsevents 2.
+2026-04-20T15:18:22.2427470Z npm warn deprecated set-value@2.0.0: Critical bug fixed in v3.0.1, please upgrade to the latest version.
+2026-04-20T15:18:22.2468000Z npm warn deprecated mixin-deep@1.3.1: Critical bug fixed in v2.0.1, please upgrade to the latest version.
+2026-04-20T15:18:22.2481590Z npm warn deprecated ini@1.3.5: Please update to ini >=1.3.6 to avoid a prototype pollution issue
+2026-04-20T15:18:22.2531800Z npm warn deprecated set-value@0.4.3: Critical bug fixed in v3.0.1, please upgrade to the latest version.
+2026-04-20T15:18:22.2557880Z npm warn deprecated path-is-absolute@2.0.0: This package is no longer relevant as Node.js 0.12 is unmaintained.
+2026-04-20T15:18:22.2821690Z npm warn deprecated urix@0.1.0: Please see https://github.com/lydell/urix#deprecated
+2026-04-20T15:18:22.2914680Z npm warn deprecated har-validator@5.1.3: this library is no longer supported
+2026-04-20T15:18:22.3004000Z npm warn deprecated to-iso-string@0.0.2: to-iso-string has been deprecated, use @segment/to-iso-string instead.
+2026-04-20T15:18:22.3050250Z npm warn deprecated cryptiles@2.0.5: This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial).
+2026-04-20T15:18:22.3094420Z npm warn deprecated resolve-url@0.2.1: https://github.com/lydell/resolve-url#deprecated
+2026-04-20T15:18:22.3130860Z npm warn deprecated bcrypt-nodejs@0.0.3: bcrypt-nodejs is no longer actively maintained. Please use bcrypt or bcryptjs. See https://github.com/kelektiv/node.bcrypt.js/wiki/bcrypt-vs-brypt.js to learn more about these two options
+2026-04-20T15:18:22.3217200Z npm warn deprecated cryptiles@0.2.2: This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial).
+2026-04-20T15:18:22.3302330Z npm warn deprecated source-map-url@0.4.0: See https://github.com/lydell/source-map-url#deprecated
+2026-04-20T15:18:22.3488640Z npm warn deprecated boom@0.4.2: This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial).
+2026-04-20T15:18:22.3490010Z npm warn deprecated debug@3.2.6: Debug versions >=3.2.0 <3.2.7 || >=4 <4.3.1 have a low-severity ReDos regression when used in a Node.js environment. It is recommended you upgrade to 3.2.7 or 4.3.1. (https://github.com/visionmedia/debug/issues/797)
+2026-04-20T15:18:22.3493950Z npm warn deprecated debug@3.2.6: Debug versions >=3.2.0 <3.2.7 || >=4 <4.3.1 have a low-severity ReDos regression when used in a Node.js environment. It is recommended you upgrade to 3.2.7 or 4.3.1. (https://github.com/visionmedia/debug/issues/797)
+2026-04-20T15:18:22.3494970Z npm warn deprecated debug@3.2.6: Debug versions >=3.2.0 <3.2.7 || >=4 <4.3.1 have a low-severity ReDos regression when used in a Node.js environment. It is recommended you upgrade to 3.2.7 or 4.3.1. (https://github.com/visionmedia/debug/issues/797)
+2026-04-20T15:18:22.3501400Z npm warn deprecated debug@3.2.6: Debug versions >=3.2.0 <3.2.7 || >=4 <4.3.1 have a low-severity ReDos regression when used in a Node.js environment. It is recommended you upgrade to 3.2.7 or 4.3.1. (https://github.com/visionmedia/debug/issues/797)
+2026-04-20T15:18:22.3531780Z npm warn deprecated boom@2.10.1: This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial).
+2026-04-20T15:18:22.3532810Z npm warn deprecated chokidar@2.1.6: Chokidar 2 does not receive security updates since 2019. Upgrade to chokidar 3 with 15x fewer dependencies
+2026-04-20T15:18:22.3533690Z npm warn deprecated sntp@0.2.4: This module moved to @hapi/sntp. Please make sure to switch over as this distribution is no longer supported and may contain bugs and critical security issues.
+2026-04-20T15:18:22.3647680Z npm warn deprecated minimatch@0.3.0: Please update to minimatch 3.0.2 or higher to avoid a RegExp DoS issue
+2026-04-20T15:18:22.3651520Z npm warn deprecated chokidar@2.1.8: Chokidar 2 does not receive security updates since 2019. Upgrade to chokidar 3 with 15x fewer dependencies
+2026-04-20T15:18:22.3664840Z npm warn deprecated sntp@1.0.9: This module moved to @hapi/sntp. Please make sure to switch over as this distribution is no longer supported and may contain bugs and critical security issues.
+2026-04-20T15:18:22.3666650Z npm warn deprecated querystring@0.2.0: The querystring API is considered Legacy. new code should use the URLSearchParams API instead.
+2026-04-20T15:18:22.4016880Z npm warn deprecated request@2.36.0: request has been deprecated, see https://github.com/request/request/issues/3142
+2026-04-20T15:18:22.4017770Z npm warn deprecated mkdirp@0.3.0: Legacy versions of mkdirp are no longer supported. Please update to mkdirp 1.x. (Note that the API surface has changed to use Promises in 1.x.)
+2026-04-20T15:18:22.4074520Z npm warn deprecated tough-cookie@2.2.2: ReDoS vulnerability parsing Set-Cookie https://nodesecurity.io/advisories/130
+2026-04-20T15:18:22.4102870Z npm warn deprecated hoek@0.9.1: This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial).
+2026-04-20T15:18:22.4125320Z npm warn deprecated node-uuid@1.4.8: Use uuid module instead
+2026-04-20T15:18:22.4127250Z npm warn deprecated node-uuid@1.4.8: Use uuid module instead
+2026-04-20T15:18:22.4133740Z npm warn deprecated uuid@3.3.2: Please upgrade  to version 7 or higher.  Older versions may use Math.random() in certain circumstances, which is known to be problematic.  See https://v8.dev/blog/math-random for details.
+2026-04-20T15:18:22.4161720Z npm warn deprecated source-map-resolve@0.5.2: See https://github.com/lydell/source-map-resolve#deprecated
+2026-04-20T15:18:22.4191190Z npm warn deprecated har-validator@2.0.6: this library is no longer supported
+2026-04-20T15:18:22.4209200Z npm warn deprecated mkdirp@0.5.1: Legacy versions of mkdirp are no longer supported. Please update to mkdirp 1.x. (Note that the API surface has changed to use Promises in 1.x.)
+2026-04-20T15:18:22.4215080Z npm warn deprecated hoek@2.16.3: This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial).
+2026-04-20T15:18:22.4283080Z npm warn deprecated request@2.79.0: request has been deprecated, see https://github.com/request/request/issues/3142
+2026-04-20T15:18:22.4304910Z npm warn deprecated request@2.88.0: request has been deprecated, see https://github.com/request/request/issues/3142
+2026-04-20T15:18:22.4365110Z npm warn deprecated request@2.67.0: request has been deprecated, see https://github.com/request/request/issues/3142
+2026-04-20T15:18:22.4524420Z npm warn deprecated readdir-scoped-modules@1.0.2: This functionality has been moved to @npmcli/fs
+2026-04-20T15:18:22.4573070Z npm warn deprecated hawk@1.0.0: This module moved to @hapi/hawk. Please make sure to switch over as this distribution is no longer supported and may contain bugs and critical security issues.
+2026-04-20T15:18:22.4676290Z npm warn deprecated hawk@3.1.3: This module moved to @hapi/hawk. Please make sure to switch over as this distribution is no longer supported and may contain bugs and critical security issues.
+2026-04-20T15:18:22.4685310Z npm warn deprecated jade@0.26.3: Jade has been renamed to pug, please install the latest version of pug instead of jade
+2026-04-20T15:18:22.4880350Z npm warn deprecated swig@1.4.2: This package is no longer maintained
+2026-04-20T15:18:22.4964310Z npm warn deprecated bson@1.0.9: Fixed a critical issue with BSON serialization documented in CVE-2019-2391, see https://bit.ly/2KcpXdo for more details
+2026-04-20T15:18:22.5514260Z npm warn deprecated nodeunit@0.9.5: you are strongly encouraged to use other testing options
+2026-04-20T15:18:36.4338760Z 
+2026-04-20T15:18:36.4339280Z added 962 packages, and audited 1412 packages in 16s
+2026-04-20T15:18:36.4339520Z 
+2026-04-20T15:18:36.4339680Z 32 packages are looking for funding
+2026-04-20T15:18:36.4339960Z   run `npm fund` for details
+2026-04-20T15:18:36.4925870Z 
+2026-04-20T15:18:36.4926280Z 139 vulnerabilities (9 low, 33 moderate, 62 high, 35 critical)
+2026-04-20T15:18:36.4926460Z 
+2026-04-20T15:18:36.4926590Z To address issues that do not require attention, run:
+2026-04-20T15:18:36.4926780Z   npm audit fix
+2026-04-20T15:18:36.4926840Z 
+2026-04-20T15:18:36.4926990Z To address all issues possible (including breaking changes), run:
+2026-04-20T15:18:36.4927200Z   npm audit fix --force
+2026-04-20T15:18:36.4927270Z 
+2026-04-20T15:18:36.4927380Z Some issues need review, and may require choosing
+2026-04-20T15:18:36.4927600Z a different dependency.
+2026-04-20T15:18:36.4927690Z 
+2026-04-20T15:18:36.4927800Z Run `npm audit` for details.

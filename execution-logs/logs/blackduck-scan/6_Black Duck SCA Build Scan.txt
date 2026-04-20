@@ -1,60 +1,60 @@
-﻿2026-04-20T14:56:41.4662520Z ##[group]Run blackduck-inc/black-duck-security-scan@v2
-2026-04-20T14:56:41.4662670Z with:
-2026-04-20T14:56:41.4662880Z   blackducksca_url: ***
-2026-04-20T14:56:41.4663170Z   blackducksca_token: ***
-2026-04-20T14:56:41.4663340Z   github_token: ***
-2026-04-20T14:56:41.4663520Z   detect_args: --detect.source.path=/Users/madhusud/actions-runner/_work/build-scan/build-scan
-2026-04-20T14:56:41.4663720Z   mark_build_status: failure
-2026-04-20T14:56:41.4663820Z env:
-2026-04-20T14:56:41.4663910Z   DETECT_PROJECT_NAME: build-scan
-2026-04-20T14:56:41.4664010Z ##[endgroup]
-2026-04-20T14:56:41.5858570Z Black Duck Security Action started...
-2026-04-20T14:56:41.5867360Z Checking for latest version of Bridge to download and configure
-2026-04-20T14:56:42.6242880Z Bridge CLI version is - 4.1.2
-2026-04-20T14:56:42.6254430Z Bridge CLI already exists, download has been skipped
-2026-04-20T14:56:42.6305250Z [command]/Users/madhusud/bridge-cli-bundle/bridge-cli-bundle-macos_arm/bridge-cli --stage blackducksca --input /var/folders/lp/36zm5r955w30nrqcfnkpyn6c0000gp/T/blackduck-security-actionnfhuYd/bd_input.json
-2026-04-20T14:56:42.6656270Z 2026-04-20 20:26:42.6652 IST [Bridge CLI] INFO: Using cache directory: /Users/madhusud/bridge-cli-bundle/bridge-cli-bundle-macos_arm
-2026-04-20T14:56:42.6712830Z 2026-04-20 20:26:42.6711 IST [Bridge CLI] INFO: Found version "3.0.234" in registry for workflow "blackducksca", trying to load it from local cache
-2026-04-20T14:56:42.7344010Z 2026-04-20 20:26:42.7342 IST [Bridge CLI] INFO: Input Resources:
-2026-04-20T14:56:42.7344440Z 2026-04-20 20:26:42.7342 IST [Bridge CLI] INFO: resource = value [source]
-2026-04-20T14:56:42.7344880Z 2026-04-20 20:26:42.7342 IST [Bridge CLI] INFO: ------------------------------------------------------------
-2026-04-20T14:56:42.7345920Z 2026-04-20 20:26:42.7342 IST [Bridge CLI] INFO: blackducksca.reports.sarif.file.path = .blackduck/integrations/blackducksca/sarif/report.sarif.json [bd_input.json]
-2026-04-20T14:56:42.7346590Z 2026-04-20 20:26:42.7342 IST [Bridge CLI] INFO: blackducksca.token = ***************************************** [bd_input.json]
-2026-04-20T14:56:42.7347300Z 2026-04-20 20:26:42.7343 IST [Bridge CLI] INFO: blackducksca.url = *** [bd_input.json]
-2026-04-20T14:56:42.7347920Z 2026-04-20 20:26:42.7343 IST [Bridge CLI] INFO: detect.args = --detect.source.path=/Users/madhusud/actions-runner/_work/build-scan/build-scan [bd_input.json]
-2026-04-20T14:56:42.7348500Z 2026-04-20 20:26:42.7343 IST [Bridge CLI] INFO: ------------------------------------------------------------
-2026-04-20T14:56:42.7348930Z 2026-04-20 20:26:42.7343 IST [Bridge CLI] INFO: Starting adapters for stage blackducksca
-2026-04-20T14:56:42.7349330Z 2026-04-20 20:26:42.7343 IST [Bridge CLI] INFO: Starting Adapter: Blackduck SCA Controller
-2026-04-20T14:56:42.7372070Z 2026-04-20 20:26:42.7371 IST [Bridge CLI] INFO: Starting Adapter: Set Blackduck SCA Wait For Scan
-2026-04-20T14:56:42.7372770Z 2026-04-20 20:26:42.7372 IST [Set Blackduck SCA Wait For Scan] INFO: Provided value for resource 'blackducksca.waitForScan'
-2026-04-20T14:56:42.7374030Z 2026-04-20 20:26:42.7372 IST [Set Blackduck SCA Wait For Scan] INFO: Adapter finished
-2026-04-20T14:56:42.7376470Z 2026-04-20 20:26:42.7375 IST [Bridge CLI] INFO: Starting Adapter: Default Black Duck SCA Scan Mode
-2026-04-20T14:56:42.7401030Z 2026-04-20 20:26:42.7400 IST [Bridge CLI] INFO: Starting Adapter: Check pull request
-2026-04-20T14:56:42.7533180Z 2026-04-20 20:26:42.7532 IST [Check pull request] INFO: Provided value for resource 'environment.scan.pull'
-2026-04-20T14:56:42.7537070Z 2026-04-20 20:26:42.7536 IST [Check pull request] INFO: Adapter finished
-2026-04-20T14:56:42.7641230Z 2026-04-20 20:26:42.7640 IST [Default Black Duck SCA Scan Mode] INFO: Provided value for resource 'blackducksca.scan.full'
-2026-04-20T14:56:42.7644810Z 2026-04-20 20:26:42.7644 IST [Default Black Duck SCA Scan Mode] INFO: Adapter finished
-2026-04-20T14:56:43.8801520Z 2026-04-20 20:26:43.8712 IST [Blackduck SCA Controller] INFO: Found Black Duck SCA Detect jar file "detect-11.3.0.jar" in "/Users/madhusud/.blackduck/bridge/tools/blackduck-detect/11.3.0"
-2026-04-20T14:56:43.8834190Z 2026-04-20 20:26:43.8830 IST [Blackduck SCA Controller] INFO: Provided value for resource 'detect.execution.path'
-2026-04-20T14:56:43.8835100Z 2026-04-20 20:26:43.8830 IST [Bridge CLI] INFO: Starting adapters for stage blackducksca-detect
-2026-04-20T14:56:43.8835800Z 2026-04-20 20:26:43.8830 IST [Bridge CLI] INFO: Starting adapters for stage scm
-2026-04-20T14:56:43.8836560Z 2026-04-20 20:26:43.8831 IST [Bridge CLI] INFO: Starting adapters for stage blackducksca-post-processing
-2026-04-20T14:56:43.8837890Z 2026-04-20 20:26:43.8831 IST [Bridge CLI] INFO: Starting Adapter: SCM Checker
-2026-04-20T14:56:43.8839300Z 2026-04-20 20:26:43.8831 IST [Bridge CLI] INFO: Starting Adapter: Blackduck SCA Results
-2026-04-20T14:56:43.8850940Z 2026-04-20 20:26:43.8832 IST [Bridge CLI] INFO: Starting Adapter: Blackduck SCA Detect Execution
-2026-04-20T14:56:43.8851720Z 2026-04-20 20:26:43.8837 IST [Blackduck SCA Controller] INFO: Adapter finished
-2026-04-20T14:56:43.8852620Z 2026-04-20 20:26:43.8832 IST [Bridge CLI] INFO: Starting Adapter: Detect Component Locator
-2026-04-20T14:56:43.9077050Z 2026-04-20 20:26:43.9071 IST [Blackduck SCA Detect Execution] INFO: Running command java -jar /Users/madhusud/.blackduck/bridge/tools/blackduck-detect/11.3.0/detect-11.3.0.jar --detect.cleanup=false --detect.bdio.file.name=scan --detect.bdio.output.path=/Users/madhusud/actions-runner/_work/build-scan/build-scan/.bridge/blackduck_sca_detect_execution/detect/bdio/blackduck_artifact --detect.output.path=/Users/madhusud/actions-runner/_work/build-scan/build-scan/.bridge/blackduck_sca_detect_execution/detect --blackduck.offline.mode=false --blackduck.url=*** --blackduck.api.token= --detect.wait.for.results=true --detect.blackduck.scan.mode=INTELLIGENT --detect.source.path=/Users/madhusud/actions-runner/_work/build-scan/build-scan
-2026-04-20T14:56:43.9219490Z 2026-04-20 20:26:43.9216 IST [Blackduck SCA Detect Execution] INFO: The operation couldn’t be completed. Unable to locate a Java Runtime.
-2026-04-20T14:56:43.9220280Z 2026-04-20 20:26:43.9217 IST [Blackduck SCA Detect Execution] INFO: Please visit http://www.java.com for information on installing Java.
-2026-04-20T14:56:43.9220790Z 2026-04-20 20:26:43.9217 IST [Blackduck SCA Detect Execution] INFO: 
-2026-04-20T14:56:43.9221750Z 2026-04-20 20:26:43.9220 IST [Blackduck SCA Detect Execution] ERROR: exit status 1
-2026-04-20T14:56:43.9265760Z 2026-04-20 20:26:43.9264 IST [Blackduck SCA Detect Execution] INFO: Provided value for resource 'detect.results.path'
-2026-04-20T14:56:43.9269810Z 2026-04-20 20:26:43.9269 IST [Blackduck SCA Detect Execution] ERROR: Adapter failed: exit status 1
-2026-04-20T14:56:43.9377010Z 2026-04-20 20:26:43.9374 IST [Blackduck SCA Results] INFO: Skipping Blackduck SCA issues retrieval as "blackducksca.fixpr.enabled" is configured to false
-2026-04-20T14:56:43.9414260Z 2026-04-20 20:26:43.9413 IST [Blackduck SCA Results] INFO: Adapter finished
-2026-04-20T14:56:43.9552550Z 2026-04-20 20:26:43.9551 IST [SCM Checker] INFO: Adapter finished
-2026-04-20T14:56:43.9627630Z 2026-04-20 20:26:43.9625 IST [Detect Component Locator] INFO: skipping fix pull requests creation as "blackducksca.fixpr.enabled" is configured to false
-2026-04-20T14:56:43.9661080Z 2026-04-20 20:26:43.9660 IST [Detect Component Locator] INFO: Provided value for resource 'blackducksca.fixpr.issueFrom'
-2026-04-20T14:56:43.9665700Z 2026-04-20 20:26:43.9664 IST [Detect Component Locator] INFO: Adapter finished
-2026-04-20T14:56:43.9714610Z ##[error]Workflow failed! Exit Code: 2 Error from adapter end
+﻿2026-04-20T15:18:36.9985640Z ##[group]Run blackduck-inc/black-duck-security-scan@v2
+2026-04-20T15:18:36.9985810Z with:
+2026-04-20T15:18:36.9986040Z   blackducksca_url: ***
+2026-04-20T15:18:36.9986320Z   blackducksca_token: ***
+2026-04-20T15:18:36.9986500Z   github_token: ***
+2026-04-20T15:18:36.9986690Z   detect_args: --detect.source.path=/Users/madhusud/actions-runner/_work/build-scan/build-scan
+2026-04-20T15:18:36.9986900Z   mark_build_status: failure
+2026-04-20T15:18:36.9987000Z env:
+2026-04-20T15:18:36.9987090Z   DETECT_PROJECT_NAME: build-scan
+2026-04-20T15:18:36.9987230Z ##[endgroup]
+2026-04-20T15:18:37.1151010Z Black Duck Security Action started...
+2026-04-20T15:18:37.1159700Z Checking for latest version of Bridge to download and configure
+2026-04-20T15:18:38.1655560Z Bridge CLI version is - 4.1.2
+2026-04-20T15:18:38.1671850Z Bridge CLI already exists, download has been skipped
+2026-04-20T15:18:38.1715900Z [command]/Users/madhusud/bridge-cli-bundle/bridge-cli-bundle-macos_arm/bridge-cli --stage blackducksca --input /var/folders/lp/36zm5r955w30nrqcfnkpyn6c0000gp/T/blackduck-security-action7PrzMT/bd_input.json
+2026-04-20T15:18:38.2107370Z 2026-04-20 20:48:38.2104 IST [Bridge CLI] INFO: Using cache directory: /Users/madhusud/bridge-cli-bundle/bridge-cli-bundle-macos_arm
+2026-04-20T15:18:38.2148480Z 2026-04-20 20:48:38.2147 IST [Bridge CLI] INFO: Found version "3.0.234" in registry for workflow "blackducksca", trying to load it from local cache
+2026-04-20T15:18:38.2782860Z 2026-04-20 20:48:38.2781 IST [Bridge CLI] INFO: Input Resources:
+2026-04-20T15:18:38.2783240Z 2026-04-20 20:48:38.2781 IST [Bridge CLI] INFO: resource = value [source]
+2026-04-20T15:18:38.2783620Z 2026-04-20 20:48:38.2781 IST [Bridge CLI] INFO: ------------------------------------------------------------
+2026-04-20T15:18:38.2784590Z 2026-04-20 20:48:38.2781 IST [Bridge CLI] INFO: blackducksca.reports.sarif.file.path = .blackduck/integrations/blackducksca/sarif/report.sarif.json [bd_input.json]
+2026-04-20T15:18:38.2785210Z 2026-04-20 20:48:38.2782 IST [Bridge CLI] INFO: blackducksca.token = ***************************************** [bd_input.json]
+2026-04-20T15:18:38.2785890Z 2026-04-20 20:48:38.2782 IST [Bridge CLI] INFO: blackducksca.url = *** [bd_input.json]
+2026-04-20T15:18:38.2786470Z 2026-04-20 20:48:38.2782 IST [Bridge CLI] INFO: detect.args = --detect.source.path=/Users/madhusud/actions-runner/_work/build-scan/build-scan [bd_input.json]
+2026-04-20T15:18:38.2787000Z 2026-04-20 20:48:38.2782 IST [Bridge CLI] INFO: ------------------------------------------------------------
+2026-04-20T15:18:38.2787410Z 2026-04-20 20:48:38.2782 IST [Bridge CLI] INFO: Starting adapters for stage blackducksca
+2026-04-20T15:18:38.2787780Z 2026-04-20 20:48:38.2782 IST [Bridge CLI] INFO: Starting Adapter: Blackduck SCA Controller
+2026-04-20T15:18:38.2811220Z 2026-04-20 20:48:38.2810 IST [Bridge CLI] INFO: Starting Adapter: Set Blackduck SCA Wait For Scan
+2026-04-20T15:18:38.2812550Z 2026-04-20 20:48:38.2811 IST [Set Blackduck SCA Wait For Scan] INFO: Provided value for resource 'blackducksca.waitForScan'
+2026-04-20T15:18:38.2812990Z 2026-04-20 20:48:38.2811 IST [Set Blackduck SCA Wait For Scan] INFO: Adapter finished
+2026-04-20T15:18:38.2813380Z 2026-04-20 20:48:38.2812 IST [Bridge CLI] INFO: Starting Adapter: Default Black Duck SCA Scan Mode
+2026-04-20T15:18:38.2840190Z 2026-04-20 20:48:38.2839 IST [Bridge CLI] INFO: Starting Adapter: Check pull request
+2026-04-20T15:18:38.3045350Z 2026-04-20 20:48:38.3043 IST [Check pull request] INFO: Provided value for resource 'environment.scan.pull'
+2026-04-20T15:18:38.3048370Z 2026-04-20 20:48:38.3047 IST [Check pull request] INFO: Adapter finished
+2026-04-20T15:18:38.3222600Z 2026-04-20 20:48:38.3221 IST [Default Black Duck SCA Scan Mode] INFO: Provided value for resource 'blackducksca.scan.full'
+2026-04-20T15:18:38.3225800Z 2026-04-20 20:48:38.3225 IST [Default Black Duck SCA Scan Mode] INFO: Adapter finished
+2026-04-20T15:18:39.4054580Z 2026-04-20 20:48:39.4030 IST [Blackduck SCA Controller] INFO: Found Black Duck SCA Detect jar file "detect-11.3.0.jar" in "/Users/madhusud/.blackduck/bridge/tools/blackduck-detect/11.3.0"
+2026-04-20T15:18:39.4157810Z 2026-04-20 20:48:39.4153 IST [Blackduck SCA Controller] INFO: Provided value for resource 'detect.execution.path'
+2026-04-20T15:18:39.4159090Z 2026-04-20 20:48:39.4153 IST [Bridge CLI] INFO: Starting adapters for stage blackducksca-detect
+2026-04-20T15:18:39.4159840Z 2026-04-20 20:48:39.4153 IST [Bridge CLI] INFO: Starting adapters for stage scm
+2026-04-20T15:18:39.4200580Z 2026-04-20 20:48:39.4153 IST [Bridge CLI] INFO: Starting adapters for stage blackducksca-post-processing
+2026-04-20T15:18:39.4201290Z 2026-04-20 20:48:39.4154 IST [Bridge CLI] INFO: Starting Adapter: Detect Component Locator
+2026-04-20T15:18:39.4201900Z 2026-04-20 20:48:39.4154 IST [Bridge CLI] INFO: Starting Adapter: Blackduck SCA Results
+2026-04-20T15:18:39.4202490Z 2026-04-20 20:48:39.4155 IST [Bridge CLI] INFO: Starting Adapter: SCM Checker
+2026-04-20T15:18:39.4203120Z 2026-04-20 20:48:39.4155 IST [Bridge CLI] INFO: Starting Adapter: Blackduck SCA Detect Execution
+2026-04-20T15:18:39.4203720Z 2026-04-20 20:48:39.4162 IST [Blackduck SCA Controller] INFO: Adapter finished
+2026-04-20T15:18:39.4493970Z 2026-04-20 20:48:39.4488 IST [Blackduck SCA Detect Execution] INFO: Running command java -jar /Users/madhusud/.blackduck/bridge/tools/blackduck-detect/11.3.0/detect-11.3.0.jar --detect.cleanup=false --detect.bdio.file.name=scan --detect.bdio.output.path=/Users/madhusud/actions-runner/_work/build-scan/build-scan/.bridge/blackduck_sca_detect_execution/detect/bdio/blackduck_artifact --detect.output.path=/Users/madhusud/actions-runner/_work/build-scan/build-scan/.bridge/blackduck_sca_detect_execution/detect --blackduck.offline.mode=false --blackduck.url=*** --blackduck.api.token= --detect.wait.for.results=true --detect.blackduck.scan.mode=INTELLIGENT --detect.source.path=/Users/madhusud/actions-runner/_work/build-scan/build-scan
+2026-04-20T15:18:39.4636790Z 2026-04-20 20:48:39.4634 IST [Blackduck SCA Detect Execution] INFO: The operation couldn’t be completed. Unable to locate a Java Runtime.
+2026-04-20T15:18:39.4637630Z 2026-04-20 20:48:39.4634 IST [Blackduck SCA Detect Execution] INFO: Please visit http://www.java.com for information on installing Java.
+2026-04-20T15:18:39.4638120Z 2026-04-20 20:48:39.4634 IST [Blackduck SCA Detect Execution] INFO: 
+2026-04-20T15:18:39.4638510Z 2026-04-20 20:48:39.4636 IST [Blackduck SCA Detect Execution] ERROR: exit status 1
+2026-04-20T15:18:39.4679980Z 2026-04-20 20:48:39.4678 IST [Blackduck SCA Detect Execution] INFO: Provided value for resource 'detect.results.path'
+2026-04-20T15:18:39.4683600Z 2026-04-20 20:48:39.4682 IST [Blackduck SCA Detect Execution] ERROR: Adapter failed: exit status 1
+2026-04-20T15:18:39.4940580Z 2026-04-20 20:48:39.4937 IST [Blackduck SCA Results] INFO: Skipping Blackduck SCA issues retrieval as "blackducksca.fixpr.enabled" is configured to false
+2026-04-20T15:18:39.4977340Z 2026-04-20 20:48:39.4976 IST [Blackduck SCA Results] INFO: Adapter finished
+2026-04-20T15:18:39.5239550Z 2026-04-20 20:48:39.5238 IST [SCM Checker] INFO: Adapter finished
+2026-04-20T15:18:39.5393140Z 2026-04-20 20:48:39.5390 IST [Detect Component Locator] INFO: skipping fix pull requests creation as "blackducksca.fixpr.enabled" is configured to false
+2026-04-20T15:18:39.5423200Z 2026-04-20 20:48:39.5422 IST [Detect Component Locator] INFO: Provided value for resource 'blackducksca.fixpr.issueFrom'
+2026-04-20T15:18:39.5426710Z 2026-04-20 20:48:39.5426 IST [Detect Component Locator] INFO: Adapter finished
+2026-04-20T15:18:39.5469660Z ##[error]Workflow failed! Exit Code: 2 Error from adapter end
