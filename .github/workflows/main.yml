@@ -42,3 +42,4 @@ jobs:
         
       env:
         DETECT_PROJECT_NAME: ${{ github.event.repository.name }}
+        
