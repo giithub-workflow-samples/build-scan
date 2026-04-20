@@ -1,419 +1,415 @@
-﻿2026-04-20T15:32:40.2298480Z Current runner version: '2.333.1'
-2026-04-20T15:32:40.2301390Z Runner name: 'mac-arm-runner'
-2026-04-20T15:32:40.2301690Z Runner group name: 'default'
-2026-04-20T15:32:40.2302060Z Machine name: 'BD-MB65227'
-2026-04-20T15:32:40.2303290Z ##[group]GITHUB_TOKEN Permissions
-2026-04-20T15:32:40.2304000Z Contents: read
-2026-04-20T15:32:40.2304220Z Metadata: read
-2026-04-20T15:32:40.2304430Z Packages: read
-2026-04-20T15:32:40.2304640Z ##[endgroup]
-2026-04-20T15:32:40.2305460Z Secret source: Actions
-2026-04-20T15:32:40.2305750Z Prepare workflow directory
-2026-04-20T15:32:40.2907600Z Prepare all required actions
-2026-04-20T15:32:40.2927280Z Getting action download info
-2026-04-20T15:32:41.6887410Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
-2026-04-20T15:32:44.1365750Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
-2026-04-20T15:32:46.9974150Z Download action repository 'blackduck-inc/black-duck-security-scan@v2' (SHA:659a0742e793a093377fab3117b0d90f23b04bfa)
-2026-04-20T15:32:48.5164260Z Complete job name: blackduck-scan
-2026-04-20T15:32:48.5393440Z ##[group]Run actions/checkout@v4
-2026-04-20T15:32:48.5393650Z with:
-2026-04-20T15:32:48.5393770Z   repository: giithub-workflow-samples/build-scan
-2026-04-20T15:32:48.5393980Z   token: ***
-2026-04-20T15:32:48.5394060Z   ssh-strict: true
-2026-04-20T15:32:48.5394150Z   ssh-user: git
-2026-04-20T15:32:48.5394240Z   persist-credentials: true
-2026-04-20T15:32:48.5394350Z   clean: true
-2026-04-20T15:32:48.5394450Z   sparse-checkout-cone-mode: true
-2026-04-20T15:32:48.5394570Z   fetch-depth: 1
-2026-04-20T15:32:48.5394660Z   fetch-tags: false
-2026-04-20T15:32:48.5394760Z   show-progress: true
-2026-04-20T15:32:48.5394850Z   lfs: false
-2026-04-20T15:32:48.5394940Z   submodules: false
-2026-04-20T15:32:48.5395040Z   set-safe-directory: true
-2026-04-20T15:32:48.5395200Z ##[endgroup]
-2026-04-20T15:32:48.6106240Z Syncing repository: giithub-workflow-samples/build-scan
-2026-04-20T15:32:48.6106830Z ##[group]Getting Git version info
-2026-04-20T15:32:48.6107080Z Working directory is '/Users/madhusud/actions-runner/_work/build-scan/build-scan'
-2026-04-20T15:32:48.6107400Z [command]/opt/homebrew/bin/git version
-2026-04-20T15:32:48.6174640Z git version 2.53.0
-2026-04-20T15:32:48.6186430Z ##[endgroup]
-2026-04-20T15:32:48.6192900Z Temporarily overriding HOME='/Users/madhusud/actions-runner/_work/_temp/6fecefa6-3699-42b3-b57a-d7bf126afe4f' before making global git config changes
-2026-04-20T15:32:48.6193350Z Adding repository directory to the temporary git global config as a safe directory
-2026-04-20T15:32:48.6195180Z [command]/opt/homebrew/bin/git config --global --add safe.directory /Users/madhusud/actions-runner/_work/build-scan/build-scan
-2026-04-20T15:32:48.6273040Z [command]/opt/homebrew/bin/git config --local --get remote.origin.url
-2026-04-20T15:32:48.6335790Z https://github.com/giithub-workflow-samples/build-scan
-2026-04-20T15:32:48.6343000Z ##[group]Removing previously created refs, to avoid conflicts
-2026-04-20T15:32:48.6344760Z [command]/opt/homebrew/bin/git rev-parse --symbolic-full-name --verify --quiet HEAD
-2026-04-20T15:32:48.6403360Z refs/heads/main
-2026-04-20T15:32:48.6408180Z [command]/opt/homebrew/bin/git checkout --detach
-2026-04-20T15:32:48.6538850Z HEAD is now at 3bd29ef Update main.yml
-2026-04-20T15:32:48.6631040Z [command]/opt/homebrew/bin/git branch --delete --force main
-2026-04-20T15:32:48.6716060Z Deleted branch main (was 3bd29ef).
-2026-04-20T15:32:48.6793510Z ##[endgroup]
-2026-04-20T15:32:48.6795310Z [command]/opt/homebrew/bin/git submodule status
-2026-04-20T15:32:48.7646980Z ##[group]Cleaning the repository
-2026-04-20T15:32:48.7649480Z [command]/opt/homebrew/bin/git clean -ffdx
-2026-04-20T15:32:51.9147860Z Removing .bridge/
-2026-04-20T15:32:51.9148150Z Removing node_modules/
-2026-04-20T15:32:51.9156980Z [command]/opt/homebrew/bin/git reset --hard HEAD
-2026-04-20T15:32:51.9232020Z HEAD is now at 3bd29ef Update main.yml
-2026-04-20T15:32:51.9236620Z ##[endgroup]
-2026-04-20T15:32:51.9238230Z ##[group]Disabling automatic garbage collection
-2026-04-20T15:32:51.9240380Z [command]/opt/homebrew/bin/git config --local gc.auto 0
-2026-04-20T15:32:51.9294010Z ##[endgroup]
-2026-04-20T15:32:51.9294230Z ##[group]Setting up auth
-2026-04-20T15:32:51.9297680Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp core\.sshCommand
-2026-04-20T15:32:51.9353120Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
-2026-04-20T15:32:52.0019420Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
-2026-04-20T15:32:52.0066620Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
-2026-04-20T15:32:52.0732120Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
-2026-04-20T15:32:52.0778600Z [command]/opt/homebrew/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
-2026-04-20T15:32:52.1417810Z [command]/opt/homebrew/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
-2026-04-20T15:32:52.1467890Z ##[endgroup]
-2026-04-20T15:32:52.1468100Z ##[group]Fetching the repository
-2026-04-20T15:32:52.1471960Z [command]/opt/homebrew/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +e2ca88a53d784a67ce2e83a560651951b60fe9a7:refs/remotes/origin/main
-2026-04-20T15:32:52.9180860Z From https://github.com/giithub-workflow-samples/build-scan
-2026-04-20T15:32:52.9182560Z  + 3bd29ef...e2ca88a e2ca88a53d784a67ce2e83a560651951b60fe9a7 -> origin/main  (forced update)
-2026-04-20T15:32:52.9360210Z ##[endgroup]
-2026-04-20T15:32:52.9362320Z ##[group]Determining the checkout info
-2026-04-20T15:32:52.9362990Z ##[endgroup]
-2026-04-20T15:32:52.9365950Z [command]/opt/homebrew/bin/git sparse-checkout disable
-2026-04-20T15:32:52.9476410Z [command]/opt/homebrew/bin/git config --local --unset-all extensions.worktreeConfig
-2026-04-20T15:32:52.9557330Z ##[group]Checking out the ref
-2026-04-20T15:32:52.9559390Z [command]/opt/homebrew/bin/git checkout --progress --force -B main refs/remotes/origin/main
-2026-04-20T15:32:52.9687580Z Warning: you are leaving 1 commit behind, not connected to
-2026-04-20T15:32:52.9687890Z any of your branches:
-2026-04-20T15:32:52.9688040Z 
-2026-04-20T15:32:52.9688120Z   3bd29ef Update main.yml
-2026-04-20T15:32:52.9688240Z 
-2026-04-20T15:32:52.9689570Z If you want to keep it by creating a new branch, this may be a good time
-2026-04-20T15:32:52.9689840Z to do so with:
-2026-04-20T15:32:52.9689950Z 
-2026-04-20T15:32:52.9690050Z  git branch <new-branch-name> 3bd29ef
-2026-04-20T15:32:52.9690170Z 
-2026-04-20T15:32:52.9738820Z Switched to a new branch 'main'
-2026-04-20T15:32:52.9750820Z branch 'main' set up to track 'origin/main'.
-2026-04-20T15:32:52.9756760Z ##[endgroup]
-2026-04-20T15:32:52.9840270Z [command]/opt/homebrew/bin/git log -1 --format=%H
-2026-04-20T15:32:52.9915270Z e2ca88a53d784a67ce2e83a560651951b60fe9a7
-2026-04-20T15:32:53.0062580Z ##[group]Run actions/setup-node@v4
-2026-04-20T15:32:53.0062750Z with:
-2026-04-20T15:32:53.0062860Z   node-version: 24
-2026-04-20T15:32:53.0062970Z   cache: npm
-2026-04-20T15:32:53.0063080Z   cache-dependency-path: package-lock.json
-2026-04-20T15:32:53.0063230Z   always-auth: false
-2026-04-20T15:32:53.0063350Z   check-latest: false
-2026-04-20T15:32:53.0063520Z   token: ***
-2026-04-20T15:32:53.0063630Z ##[endgroup]
-2026-04-20T15:32:53.0998300Z Attempting to download 24...
-2026-04-20T15:32:54.7963560Z Acquiring 24.15.0 - arm64 from https://github.com/actions/node-versions/releases/download/24.15.0-24511264946/node-24.15.0-darwin-arm64.tar.gz
-2026-04-20T15:32:59.4141440Z Extracting ...
-2026-04-20T15:32:59.4345530Z [command]/usr/bin/tar xz --strip 1 -C /Users/madhusud/actions-runner/_work/_temp/feb2e64e-f647-42f8-97cd-c14df85f7a3e -f /Users/madhusud/actions-runner/_work/_temp/971cffc8-8891-44ae-b78c-6bfc391f3ee1
-2026-04-20T15:33:00.2892970Z Adding to the cache ...
-2026-04-20T15:33:01.1364320Z ##[group]Environment details
-2026-04-20T15:33:02.1476700Z node: v24.15.0
-2026-04-20T15:33:02.1476850Z npm: 11.12.1
-2026-04-20T15:33:02.1476950Z yarn: 
-2026-04-20T15:33:02.1477220Z ##[endgroup]
-2026-04-20T15:33:02.1482430Z [command]/Users/madhusud/actions-runner/_work/_tool/node/24.15.0/arm64/bin/npm config get cache
-2026-04-20T15:33:02.2220740Z /Users/madhusud/.npm
-2026-04-20T15:33:03.1633180Z Cache hit for: node-cache-macOS-arm64-npm-18b38877e3f7a35364161ea1520408d71317919979076ede5bbb12b47441b3ea
-2026-04-20T15:33:05.2894200Z Received 0 of 127248640 (0.0%), 0.0 MBs/sec
-2026-04-20T15:33:06.2906250Z Received 0 of 127248640 (0.0%), 0.0 MBs/sec
-2026-04-20T15:33:07.2907820Z Received 0 of 127248640 (0.0%), 0.0 MBs/sec
-2026-04-20T15:33:08.2917300Z Received 0 of 127248640 (0.0%), 0.0 MBs/sec
-2026-04-20T15:33:09.2927220Z Received 0 of 127248640 (0.0%), 0.0 MBs/sec
-2026-04-20T15:33:10.2926100Z Received 29360128 of 127248640 (23.1%), 4.7 MBs/sec
-2026-04-20T15:33:11.2932050Z Received 37748736 of 127248640 (29.7%), 5.1 MBs/sec
-2026-04-20T15:33:12.2931630Z Received 54525952 of 127248640 (42.8%), 6.5 MBs/sec
-2026-04-20T15:33:13.2924260Z Received 71303168 of 127248640 (56.0%), 7.6 MBs/sec
-2026-04-20T15:33:14.2935640Z Received 83886080 of 127248640 (65.9%), 8.0 MBs/sec
-2026-04-20T15:33:15.2934030Z Received 109051904 of 127248640 (85.7%), 9.4 MBs/sec
-2026-04-20T15:33:15.9431050Z Received 127248640 of 127248640 (100.0%), 10.4 MBs/sec
-2026-04-20T15:33:15.9432440Z Cache Size: ~121 MB (127248640 B)
-2026-04-20T15:33:15.9474060Z [command]/usr/bin/tar -xf /Users/madhusud/actions-runner/_work/_temp/25bc9117-cf91-4272-b006-9ce616fe70f2/cache.tzst -P -C /Users/madhusud/actions-runner/_work/build-scan/build-scan --use-compress-program unzstd
-2026-04-20T15:33:16.8857390Z Cache restored successfully
-2026-04-20T15:33:16.8862740Z Cache restored from key: node-cache-macOS-arm64-npm-18b38877e3f7a35364161ea1520408d71317919979076ede5bbb12b47441b3ea
-2026-04-20T15:33:16.8973090Z ##[group]Run npm install
-2026-04-20T15:33:16.8973280Z [36;1mnpm install[0m
-2026-04-20T15:33:16.8991890Z shell: /bin/bash -e {0}
-2026-04-20T15:33:16.8992020Z ##[endgroup]
-2026-04-20T15:33:17.4174490Z npm warn deprecated fsevents@1.2.9: fsevents 1 will break on node v14+ and could be using insecure binaries. Upgrade to fsevents 2.
-2026-04-20T15:33:18.5955580Z npm warn deprecated set-value@2.0.0: Critical bug fixed in v3.0.1, please upgrade to the latest version.
-2026-04-20T15:33:18.6024970Z npm warn deprecated mixin-deep@1.3.1: Critical bug fixed in v2.0.1, please upgrade to the latest version.
-2026-04-20T15:33:18.6103520Z npm warn deprecated ini@1.3.5: Please update to ini >=1.3.6 to avoid a prototype pollution issue
-2026-04-20T15:33:18.6104050Z npm warn deprecated set-value@0.4.3: Critical bug fixed in v3.0.1, please upgrade to the latest version.
-2026-04-20T15:33:18.6104670Z npm warn deprecated path-is-absolute@2.0.0: This package is no longer relevant as Node.js 0.12 is unmaintained.
-2026-04-20T15:33:18.6279540Z npm warn deprecated urix@0.1.0: Please see https://github.com/lydell/urix#deprecated
-2026-04-20T15:33:18.6431960Z npm warn deprecated to-iso-string@0.0.2: to-iso-string has been deprecated, use @segment/to-iso-string instead.
-2026-04-20T15:33:18.6468410Z npm warn deprecated cryptiles@2.0.5: This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial).
-2026-04-20T15:33:18.6493730Z npm warn deprecated resolve-url@0.2.1: https://github.com/lydell/resolve-url#deprecated
-2026-04-20T15:33:18.6530970Z npm warn deprecated bcrypt-nodejs@0.0.3: bcrypt-nodejs is no longer actively maintained. Please use bcrypt or bcryptjs. See https://github.com/kelektiv/node.bcrypt.js/wiki/bcrypt-vs-brypt.js to learn more about these two options
-2026-04-20T15:33:18.6588510Z npm warn deprecated cryptiles@0.2.2: This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial).
-2026-04-20T15:33:18.6598430Z npm warn deprecated har-validator@5.1.3: this library is no longer supported
-2026-04-20T15:33:18.6647150Z npm warn deprecated source-map-url@0.4.0: See https://github.com/lydell/source-map-url#deprecated
-2026-04-20T15:33:18.6795480Z npm warn deprecated boom@0.4.2: This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial).
-2026-04-20T15:33:18.6826520Z npm warn deprecated boom@2.10.1: This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial).
-2026-04-20T15:33:18.7023160Z npm warn deprecated chokidar@2.1.6: Chokidar 2 does not receive security updates since 2019. Upgrade to chokidar 3 with 15x fewer dependencies
-2026-04-20T15:33:18.7023970Z npm warn deprecated sntp@0.2.4: This module moved to @hapi/sntp. Please make sure to switch over as this distribution is no longer supported and may contain bugs and critical security issues.
-2026-04-20T15:33:18.7030130Z npm warn deprecated chokidar@2.1.8: Chokidar 2 does not receive security updates since 2019. Upgrade to chokidar 3 with 15x fewer dependencies
-2026-04-20T15:33:18.7049850Z npm warn deprecated sntp@1.0.9: This module moved to @hapi/sntp. Please make sure to switch over as this distribution is no longer supported and may contain bugs and critical security issues.
-2026-04-20T15:33:18.7102640Z npm warn deprecated debug@3.2.6: Debug versions >=3.2.0 <3.2.7 || >=4 <4.3.1 have a low-severity ReDos regression when used in a Node.js environment. It is recommended you upgrade to 3.2.7 or 4.3.1. (https://github.com/visionmedia/debug/issues/797)
-2026-04-20T15:33:18.7103910Z npm warn deprecated debug@3.2.6: Debug versions >=3.2.0 <3.2.7 || >=4 <4.3.1 have a low-severity ReDos regression when used in a Node.js environment. It is recommended you upgrade to 3.2.7 or 4.3.1. (https://github.com/visionmedia/debug/issues/797)
-2026-04-20T15:33:18.7112010Z npm warn deprecated debug@3.2.6: Debug versions >=3.2.0 <3.2.7 || >=4 <4.3.1 have a low-severity ReDos regression when used in a Node.js environment. It is recommended you upgrade to 3.2.7 or 4.3.1. (https://github.com/visionmedia/debug/issues/797)
-2026-04-20T15:33:18.7113300Z npm warn deprecated debug@3.2.6: Debug versions >=3.2.0 <3.2.7 || >=4 <4.3.1 have a low-severity ReDos regression when used in a Node.js environment. It is recommended you upgrade to 3.2.7 or 4.3.1. (https://github.com/visionmedia/debug/issues/797)
-2026-04-20T15:33:18.7135950Z npm warn deprecated querystring@0.2.0: The querystring API is considered Legacy. new code should use the URLSearchParams API instead.
-2026-04-20T15:33:18.7174650Z npm warn deprecated minimatch@0.3.0: Please update to minimatch 3.0.2 or higher to avoid a RegExp DoS issue
-2026-04-20T15:33:18.7271090Z npm warn deprecated request@2.36.0: request has been deprecated, see https://github.com/request/request/issues/3142
-2026-04-20T15:33:18.7346410Z npm warn deprecated tough-cookie@2.2.2: ReDoS vulnerability parsing Set-Cookie https://nodesecurity.io/advisories/130
-2026-04-20T15:33:18.7396540Z npm warn deprecated source-map-resolve@0.5.2: See https://github.com/lydell/source-map-resolve#deprecated
-2026-04-20T15:33:18.7402720Z npm warn deprecated node-uuid@1.4.8: Use uuid module instead
-2026-04-20T15:33:18.7403240Z npm warn deprecated node-uuid@1.4.8: Use uuid module instead
-2026-04-20T15:33:18.7423080Z npm warn deprecated hoek@0.9.1: This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial).
-2026-04-20T15:33:18.7436610Z npm warn deprecated uuid@3.3.2: Please upgrade  to version 7 or higher.  Older versions may use Math.random() in certain circumstances, which is known to be problematic.  See https://v8.dev/blog/math-random for details.
-2026-04-20T15:33:18.7511150Z npm warn deprecated mkdirp@0.3.0: Legacy versions of mkdirp are no longer supported. Please update to mkdirp 1.x. (Note that the API surface has changed to use Promises in 1.x.)
-2026-04-20T15:33:18.7556290Z npm warn deprecated hoek@2.16.3: This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial).
-2026-04-20T15:33:18.7600440Z npm warn deprecated request@2.79.0: request has been deprecated, see https://github.com/request/request/issues/3142
-2026-04-20T15:33:18.7664230Z npm warn deprecated request@2.88.0: request has been deprecated, see https://github.com/request/request/issues/3142
-2026-04-20T15:33:18.7673290Z npm warn deprecated request@2.67.0: request has been deprecated, see https://github.com/request/request/issues/3142
-2026-04-20T15:33:18.7715990Z npm warn deprecated mkdirp@0.5.1: Legacy versions of mkdirp are no longer supported. Please update to mkdirp 1.x. (Note that the API surface has changed to use Promises in 1.x.)
-2026-04-20T15:33:18.7751270Z npm warn deprecated readdir-scoped-modules@1.0.2: This functionality has been moved to @npmcli/fs
-2026-04-20T15:33:18.7891520Z npm warn deprecated hawk@1.0.0: This module moved to @hapi/hawk. Please make sure to switch over as this distribution is no longer supported and may contain bugs and critical security issues.
-2026-04-20T15:33:18.7930930Z npm warn deprecated hawk@3.1.3: This module moved to @hapi/hawk. Please make sure to switch over as this distribution is no longer supported and may contain bugs and critical security issues.
-2026-04-20T15:33:18.8022970Z npm warn deprecated har-validator@2.0.6: this library is no longer supported
-2026-04-20T15:33:18.8709440Z npm warn deprecated jade@0.26.3: Jade has been renamed to pug, please install the latest version of pug instead of jade
-2026-04-20T15:33:18.9395050Z npm warn deprecated swig@1.4.2: This package is no longer maintained
-2026-04-20T15:33:18.9428610Z npm warn deprecated bson@1.0.9: Fixed a critical issue with BSON serialization documented in CVE-2019-2391, see https://bit.ly/2KcpXdo for more details
-2026-04-20T15:33:19.0324310Z npm warn deprecated nodeunit@0.9.5: you are strongly encouraged to use other testing options
-2026-04-20T15:33:24.2099120Z 
-2026-04-20T15:33:24.2099500Z added 962 packages, and audited 1412 packages in 7s
-2026-04-20T15:33:24.2099680Z 
-2026-04-20T15:33:24.2099790Z 32 packages are looking for funding
-2026-04-20T15:33:24.2099980Z   run `npm fund` for details
-2026-04-20T15:33:24.2431990Z 
-2026-04-20T15:33:24.2432370Z 141 vulnerabilities (9 low, 33 moderate, 63 high, 36 critical)
-2026-04-20T15:33:24.2432560Z 
-2026-04-20T15:33:24.2432690Z To address issues that do not require attention, run:
-2026-04-20T15:33:24.2432870Z   npm audit fix
-2026-04-20T15:33:24.2432940Z 
-2026-04-20T15:33:24.2433090Z To address all issues possible (including breaking changes), run:
-2026-04-20T15:33:24.2433290Z   npm audit fix --force
-2026-04-20T15:33:24.2433380Z 
-2026-04-20T15:33:24.2433500Z Some issues need review, and may require choosing
-2026-04-20T15:33:24.2433750Z a different dependency.
-2026-04-20T15:33:24.2434320Z 
-2026-04-20T15:33:24.2434420Z Run `npm audit` for details.
-2026-04-20T15:33:24.3132360Z ##[group]Run npm rebuild
-2026-04-20T15:33:24.3132510Z [36;1mnpm rebuild[0m
-2026-04-20T15:33:24.3148640Z shell: /bin/bash -e {0}
-2026-04-20T15:33:24.3148760Z ##[endgroup]
-2026-04-20T15:33:24.6979100Z rebuilt dependencies successfully
-2026-04-20T15:33:24.7179210Z ##[group]Run blackduck-inc/black-duck-security-scan@v2
-2026-04-20T15:33:24.7179380Z with:
-2026-04-20T15:33:24.7179640Z   blackducksca_url: ***
-2026-04-20T15:33:24.7179980Z   blackducksca_token: ***
-2026-04-20T15:33:24.7180190Z   github_token: ***
-2026-04-20T15:33:24.7180430Z   detect_args: --detect.source.path=/Users/madhusud/actions-runner/_work/build-scan/build-scan
-2026-04-20T15:33:24.7180690Z   mark_build_status: failure
-2026-04-20T15:33:24.7180810Z env:
-2026-04-20T15:33:24.7180920Z   DETECT_PROJECT_NAME: build-scan
-2026-04-20T15:33:24.7181050Z ##[endgroup]
-2026-04-20T15:33:24.8438170Z Black Duck Security Action started...
-2026-04-20T15:33:24.8446840Z Checking for latest version of Bridge to download and configure
-2026-04-20T15:33:25.8363070Z Bridge CLI version is - 4.1.2
-2026-04-20T15:33:25.8382480Z Bridge CLI already exists, download has been skipped
-2026-04-20T15:33:25.8426770Z [command]/Users/madhusud/bridge-cli-bundle/bridge-cli-bundle-macos_arm/bridge-cli --stage blackducksca --input /var/folders/lp/36zm5r955w30nrqcfnkpyn6c0000gp/T/blackduck-security-actionH0jklp/bd_input.json
-2026-04-20T15:33:25.8924190Z 2026-04-20 21:03:25.8919 IST [Bridge CLI] INFO: Using cache directory: /Users/madhusud/bridge-cli-bundle/bridge-cli-bundle-macos_arm
-2026-04-20T15:33:25.8978550Z 2026-04-20 21:03:25.8976 IST [Bridge CLI] INFO: Found version "3.0.234" in registry for workflow "blackducksca", trying to load it from local cache
-2026-04-20T15:33:25.9611570Z 2026-04-20 21:03:25.9609 IST [Bridge CLI] INFO: Input Resources:
-2026-04-20T15:33:25.9611910Z 2026-04-20 21:03:25.9610 IST [Bridge CLI] INFO: resource = value [source]
-2026-04-20T15:33:25.9612310Z 2026-04-20 21:03:25.9610 IST [Bridge CLI] INFO: ------------------------------------------------------------
-2026-04-20T15:33:25.9612950Z 2026-04-20 21:03:25.9610 IST [Bridge CLI] INFO: blackducksca.reports.sarif.file.path = .blackduck/integrations/blackducksca/sarif/report.sarif.json [bd_input.json]
-2026-04-20T15:33:25.9613550Z 2026-04-20 21:03:25.9610 IST [Bridge CLI] INFO: blackducksca.token = ***************************************** [bd_input.json]
-2026-04-20T15:33:25.9614190Z 2026-04-20 21:03:25.9610 IST [Bridge CLI] INFO: blackducksca.url = *** [bd_input.json]
-2026-04-20T15:33:25.9614790Z 2026-04-20 21:03:25.9610 IST [Bridge CLI] INFO: detect.args = --detect.source.path=/Users/madhusud/actions-runner/_work/build-scan/build-scan [bd_input.json]
-2026-04-20T15:33:25.9615320Z 2026-04-20 21:03:25.9610 IST [Bridge CLI] INFO: ------------------------------------------------------------
-2026-04-20T15:33:25.9615700Z 2026-04-20 21:03:25.9610 IST [Bridge CLI] INFO: Starting adapters for stage blackducksca
-2026-04-20T15:33:25.9616100Z 2026-04-20 21:03:25.9611 IST [Bridge CLI] INFO: Starting Adapter: Blackduck SCA Controller
-2026-04-20T15:33:25.9639080Z 2026-04-20 21:03:25.9638 IST [Bridge CLI] INFO: Starting Adapter: Set Blackduck SCA Wait For Scan
-2026-04-20T15:33:25.9639830Z 2026-04-20 21:03:25.9638 IST [Set Blackduck SCA Wait For Scan] INFO: Provided value for resource 'blackducksca.waitForScan'
-2026-04-20T15:33:25.9640320Z 2026-04-20 21:03:25.9639 IST [Set Blackduck SCA Wait For Scan] INFO: Adapter finished
-2026-04-20T15:33:25.9640950Z 2026-04-20 21:03:25.9639 IST [Bridge CLI] INFO: Starting Adapter: Default Black Duck SCA Scan Mode
-2026-04-20T15:33:25.9664320Z 2026-04-20 21:03:25.9663 IST [Bridge CLI] INFO: Starting Adapter: Check pull request
-2026-04-20T15:33:25.9864450Z 2026-04-20 21:03:25.9863 IST [Check pull request] INFO: Provided value for resource 'environment.scan.pull'
-2026-04-20T15:33:25.9867740Z 2026-04-20 21:03:25.9867 IST [Check pull request] INFO: Adapter finished
-2026-04-20T15:33:26.0037360Z 2026-04-20 21:03:26.0036 IST [Default Black Duck SCA Scan Mode] INFO: Provided value for resource 'blackducksca.scan.full'
-2026-04-20T15:33:26.0039550Z 2026-04-20 21:03:26.0038 IST [Default Black Duck SCA Scan Mode] INFO: Adapter finished
-2026-04-20T15:33:27.1091050Z 2026-04-20 21:03:27.1061 IST [Blackduck SCA Controller] INFO: Found Black Duck SCA Detect jar file "detect-11.3.0.jar" in "/Users/madhusud/.blackduck/bridge/tools/blackduck-detect/11.3.0"
-2026-04-20T15:33:27.1187390Z 2026-04-20 21:03:27.1168 IST [Blackduck SCA Controller] INFO: Provided value for resource 'detect.execution.path'
-2026-04-20T15:33:27.1188700Z 2026-04-20 21:03:27.1175 IST [Bridge CLI] INFO: Starting adapters for stage blackducksca-detect
-2026-04-20T15:33:27.1189530Z 2026-04-20 21:03:27.1176 IST [Bridge CLI] INFO: Starting adapters for stage scm
-2026-04-20T15:33:27.1190420Z 2026-04-20 21:03:27.1176 IST [Bridge CLI] INFO: Starting adapters for stage blackducksca-post-processing
-2026-04-20T15:33:27.1191180Z 2026-04-20 21:03:27.1176 IST [Bridge CLI] INFO: Starting Adapter: SCM Checker
-2026-04-20T15:33:27.1191980Z 2026-04-20 21:03:27.1176 IST [Bridge CLI] INFO: Starting Adapter: Blackduck SCA Results
-2026-04-20T15:33:27.1192730Z 2026-04-20 21:03:27.1176 IST [Bridge CLI] INFO: Starting Adapter: Blackduck SCA Detect Execution
-2026-04-20T15:33:27.1193560Z 2026-04-20 21:03:27.1177 IST [Bridge CLI] INFO: Starting Adapter: Detect Component Locator
-2026-04-20T15:33:27.1194860Z 2026-04-20 21:03:27.1184 IST [Blackduck SCA Controller] INFO: Adapter finished
-2026-04-20T15:33:27.1636050Z 2026-04-20 21:03:27.1629 IST [Blackduck SCA Detect Execution] INFO: Running command /opt/homebrew/opt/java/libexec/openjdk.jdk/Contents/Home/bin/java -jar /Users/madhusud/.blackduck/bridge/tools/blackduck-detect/11.3.0/detect-11.3.0.jar --detect.cleanup=false --detect.bdio.file.name=scan --detect.bdio.output.path=/Users/madhusud/actions-runner/_work/build-scan/build-scan/.bridge/blackduck_sca_detect_execution/detect/bdio/blackduck_artifact --detect.output.path=/Users/madhusud/actions-runner/_work/build-scan/build-scan/.bridge/blackduck_sca_detect_execution/detect --blackduck.offline.mode=false --blackduck.url=*** --blackduck.api.token= --detect.wait.for.results=true --detect.blackduck.scan.mode=INTELLIGENT --detect.source.path=/Users/madhusud/actions-runner/_work/build-scan/build-scan
-2026-04-20T15:33:27.6397000Z 2026-04-20 21:03:27.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Detect-Self-Updater:  Checking ***/api/tools/detect API for centrally managed Detect version to download to /Users/madhusud/tmp.
-2026-04-20T15:33:30.3752100Z 2026-04-20 21:03:30.0000 IST [Blackduck SCA Detect Execution][main] WARNING: --- Detect-Self-Updater:  Unable to download jar from ***/api/tools/detect.
-2026-04-20T15:33:30.3754420Z 2026-04-20 21:03:30.0000 IST [Blackduck SCA Detect Execution][main] WARNING: --- Detect-Self-Updater:  Response code from ***/api/tools/detect was: 400 Bad Request
-2026-04-20T15:33:30.5283280Z 2026-04-20 21:03:30.5279 IST [Blackduck SCA Detect Execution] INFO: ______     _            _
-2026-04-20T15:33:30.5283700Z 2026-04-20 21:03:30.5280 IST [Blackduck SCA Detect Execution] INFO: |  _  \   | |          | |
-2026-04-20T15:33:30.5284120Z 2026-04-20 21:03:30.5280 IST [Blackduck SCA Detect Execution] INFO: | | | |___| |_ ___  ___| |_
-2026-04-20T15:33:30.5284480Z 2026-04-20 21:03:30.5280 IST [Blackduck SCA Detect Execution] INFO: | | | / _ \ __/ _ \/ __| __|
-2026-04-20T15:33:30.5284830Z 2026-04-20 21:03:30.5280 IST [Blackduck SCA Detect Execution] INFO: | |/ /  __/ ||  __/ (__| |_
-2026-04-20T15:33:30.5285190Z 2026-04-20 21:03:30.5280 IST [Blackduck SCA Detect Execution] INFO: |___/ \___|\__\___|\___|\__|
-2026-04-20T15:33:30.5285560Z 2026-04-20 21:03:30.5280 IST [Blackduck SCA Detect Execution] INFO: 
-2026-04-20T15:33:30.5946110Z 2026-04-20 21:03:30.5943 IST [Blackduck SCA Detect Execution] INFO: 
-2026-04-20T15:33:30.5946470Z 2026-04-20 21:03:30.5944 IST [Blackduck SCA Detect Execution] INFO: Detect Version: 11.3.0
-2026-04-20T15:33:30.5946780Z 2026-04-20 21:03:30.5944 IST [Blackduck SCA Detect Execution] INFO: 
-2026-04-20T15:33:30.7493290Z 2026-04-20 21:03:30.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- 
-2026-04-20T15:33:30.7493690Z 2026-04-20 21:03:30.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Current property values:
-2026-04-20T15:33:30.7494410Z 2026-04-20 21:03:30.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- --property = value [notes]
-2026-04-20T15:33:30.7494890Z 2026-04-20 21:03:30.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- ------------------------------------------------------------
-2026-04-20T15:33:30.7498870Z 2026-04-20 21:03:30.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- blackduck.api.token = **************************************************************************************************** [cmd] 
-2026-04-20T15:33:30.7499540Z 2026-04-20 21:03:30.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- blackduck.offline.mode = false [cmd] 
-2026-04-20T15:33:30.7500200Z 2026-04-20 21:03:30.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- blackduck.url = *** [cmd] 
-2026-04-20T15:33:30.7500660Z 2026-04-20 21:03:30.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- detect.bdio.file.name = scan [cmd] 
-2026-04-20T15:33:30.7501450Z 2026-04-20 21:03:30.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- detect.bdio.output.path = /Users/madhusud/actions-runner/_work/build-scan/build-scan/.bridge/blackduck_sca_detect_execution/detect/bdio/blackduck_artifact [cmd] 
-2026-04-20T15:33:30.7502350Z 2026-04-20 21:03:30.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- detect.blackduck.scan.mode = INTELLIGENT [cmd] 
-2026-04-20T15:33:30.7502810Z 2026-04-20 21:03:30.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- detect.cleanup = false [cmd] 
-2026-04-20T15:33:30.7503400Z 2026-04-20 21:03:30.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- detect.excluded.directories = /Users/madhusud/actions-runner/_work/build-scan/build-scan/.bridge [env] 
-2026-04-20T15:33:30.7504260Z 2026-04-20 21:03:30.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- detect.output.path = /Users/madhusud/actions-runner/_work/build-scan/build-scan/.bridge/blackduck_sca_detect_execution/detect [cmd] 
-2026-04-20T15:33:30.7504880Z 2026-04-20 21:03:30.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- detect.project.name = build-scan [env] 
-2026-04-20T15:33:30.7505450Z 2026-04-20 21:03:30.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- detect.source.path = /Users/madhusud/actions-runner/_work/build-scan/build-scan [cmd] 
-2026-04-20T15:33:30.7506010Z 2026-04-20 21:03:30.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- detect.wait.for.results = true [cmd] 
-2026-04-20T15:33:30.7506520Z 2026-04-20 21:03:30.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- ------------------------------------------------------------
-2026-04-20T15:33:30.7506860Z 2026-04-20 21:03:30.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- 
-2026-04-20T15:33:30.7507200Z 2026-04-20 21:03:30.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Detect build date: 2026-03-12
-2026-04-20T15:33:30.7832760Z 2026-04-20 21:03:30.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Source directory: /Users/madhusud/actions-runner/_work/build-scan/build-scan
-2026-04-20T15:33:30.7833610Z 2026-04-20 21:03:30.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Output directory: /Users/madhusud/actions-runner/_work/build-scan/build-scan/.bridge/blackduck_sca_detect_execution/detect
-2026-04-20T15:33:30.7839820Z 2026-04-20 21:03:30.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Run directory: /Users/madhusud/actions-runner/_work/build-scan/build-scan/.bridge/blackduck_sca_detect_execution/detect/runs/2026-04-20-15-33-30-588
-2026-04-20T15:33:30.7855100Z 2026-04-20 21:03:30.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- 
-2026-04-20T15:33:37.7379080Z 2026-04-20 21:03:37.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Successfully connected to Black Duck SCA (version 2026.1.1)!
-2026-04-20T15:33:39.6411880Z 2026-04-20 21:03:39.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- ----------------------------------
-2026-04-20T15:33:39.6412720Z 2026-04-20 21:03:39.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Will include the Docker tool.
-2026-04-20T15:33:39.6454320Z 2026-04-20 21:03:39.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Docker actions finished.
-2026-04-20T15:33:39.6456210Z 2026-04-20 21:03:39.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- ----------------------------------
-2026-04-20T15:33:39.6457430Z 2026-04-20 21:03:39.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Will include the Bazel tool.
-2026-04-20T15:33:39.6462580Z 2026-04-20 21:03:39.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Initializing the Bazel tool.
-2026-04-20T15:33:39.6475230Z 2026-04-20 21:03:39.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- The Bazel tool not applicable.
-2026-04-20T15:33:39.6475810Z 2026-04-20 21:03:39.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Bazel actions finished.
-2026-04-20T15:33:39.6476380Z 2026-04-20 21:03:39.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- ----------------------------------
-2026-04-20T15:33:39.6476980Z 2026-04-20 21:03:39.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Will include the Detectors tool.
-2026-04-20T15:33:39.6618810Z 2026-04-20 21:03:39.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Searching for detectors.
-2026-04-20T15:33:39.6664840Z 2026-04-20 21:03:39.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Evaluating detectors. This may take a while.
-2026-04-20T15:33:39.7439820Z 2026-04-20 21:03:39.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Running executable >/opt/homebrew/bin/git config --get remote.origin.url
-2026-04-20T15:33:39.7657110Z 2026-04-20 21:03:39.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Process return code: 0
-2026-04-20T15:33:39.7658710Z 2026-04-20 21:03:39.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Running executable >/opt/homebrew/bin/git rev-parse --abbrev-ref HEAD
-2026-04-20T15:33:39.7786340Z 2026-04-20 21:03:39.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Process return code: 0
-2026-04-20T15:33:39.7786960Z 2026-04-20 21:03:39.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Running executable >/opt/homebrew/bin/git rev-parse HEAD
-2026-04-20T15:33:39.7897870Z 2026-04-20 21:03:39.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Process return code: 0
-2026-04-20T15:33:39.7970280Z 2026-04-20 21:03:39.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- ======================================================================================================
-2026-04-20T15:33:39.7970790Z 2026-04-20 21:03:39.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Detector Report
-2026-04-20T15:33:39.7971330Z 2026-04-20 21:03:39.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- ======================================================================================================
-2026-04-20T15:33:39.7971940Z 2026-04-20 21:03:39.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- 	/Users/madhusud/actions-runner/_work/build-scan/build-scan (depth 0)
-2026-04-20T15:33:39.7972450Z 2026-04-20 21:03:39.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- 		NPM Package Lock: SUCCESS
-2026-04-20T15:33:39.7973030Z 2026-04-20 21:03:39.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- 			Found file: /Users/madhusud/actions-runner/_work/build-scan/build-scan/package-lock.json
-2026-04-20T15:33:39.7973710Z 2026-04-20 21:03:39.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- 			Found file: /Users/madhusud/actions-runner/_work/build-scan/build-scan/package.json
-2026-04-20T15:33:39.7974190Z 2026-04-20 21:03:39.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- 		Git: SUCCESS
-2026-04-20T15:33:39.7974710Z 2026-04-20 21:03:39.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- 			Found file: /Users/madhusud/actions-runner/_work/build-scan/build-scan/.git
-2026-04-20T15:33:39.7975520Z 2026-04-20 21:03:39.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- 			Found executable: /opt/homebrew/bin/git
-2026-04-20T15:33:39.7976010Z 2026-04-20 21:03:39.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- ----------------------------------
-2026-04-20T15:33:39.8002580Z 2026-04-20 21:03:39.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- The following project names were found: 
-2026-04-20T15:33:39.8003130Z 2026-04-20 21:03:39.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- 	NPM: owasp-nodejs-goat, 1.3.0
-2026-04-20T15:33:39.8003710Z 2026-04-20 21:03:39.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Chose to use NPM at depth 0 for project name and version. Override with detect.project.detector.
-2026-04-20T15:33:39.8018040Z 2026-04-20 21:03:39.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Quack Patch cannot run because not all required properties are set. Please check your configuration.
-2026-04-20T15:33:39.8018610Z 2026-04-20 21:03:39.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Detectors actions finished.
-2026-04-20T15:33:39.8019520Z 2026-04-20 21:03:39.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- ----------------------------------
-2026-04-20T15:33:39.8025000Z 2026-04-20 21:03:39.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Project name: build-scan
-2026-04-20T15:33:39.8025540Z 2026-04-20 21:03:39.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Project version: 1.3.0
-2026-04-20T15:33:45.8853760Z 2026-04-20 21:03:45.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Successfully completed package manager scan of file: /Users/madhusud/actions-runner/_work/build-scan/build-scan/.bridge/blackduck_sca_detect_execution/detect/bdio/blackduck_artifact/scan.bdio
-2026-04-20T15:33:45.8874500Z 2026-04-20 21:03:45.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- ----------------------------------
-2026-04-20T15:33:45.8876000Z 2026-04-20 21:03:45.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Will include the Signature Scanner tool.
-2026-04-20T15:33:45.9017080Z 2026-04-20 21:03:45.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- No metadata file exists, assuming this is new installation and the signature scanner should be downloaded.
-2026-04-20T15:33:49.9535650Z 2026-04-20 21:03:49.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Downloading the Black Duck Signature Scanner.
-2026-04-20T15:33:49.9541430Z 2026-04-20 21:03:49.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- If the Signature Scanner on your Black Duck server has changed, the contents of /Users/madhusud/actions-runner/_work/build-scan/build-scan/.bridge/blackduck_sca_detect_execution/detect/tools/Black_Duck_Scan_Installation may change which could involve deleting files - please do not place items in the expansion directory as this directory is assumed to be under blackduck-common control.
-2026-04-20T15:34:04.3563410Z 2026-04-20 21:04:04.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Black Duck Signature Scanner downloaded successfully.
-2026-04-20T15:34:04.3567130Z 2026-04-20 21:04:04.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- The Black Duck Signature Scanner downloaded/found successfully: /Users/madhusud/actions-runner/_work/build-scan/build-scan/.bridge/blackduck_sca_detect_execution/detect/tools
-2026-04-20T15:34:04.3588600Z 2026-04-20 21:04:04.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- No scan targets provided - registering the source path /Users/madhusud/actions-runner/_work/build-scan/build-scan to scan
-2026-04-20T15:34:06.6088390Z 2026-04-20 21:04:06.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Starting the Black Duck Signature Scan commands.
-2026-04-20T15:34:06.6109720Z 2026-04-20 21:04:06.0000 IST [Blackduck SCA Detect Execution][pool-3-thread-1] INFO: --- Black Duck CLI command: /Users/madhusud/actions-runner/_work/build-scan/build-scan/.bridge/blackduck_sca_detect_execution/detect/tools/Black_Duck_Scan_Installation/scan.cli-1.0.9/jre/Contents/Home/bin/java -Done-jar.silent=true -Done-jar.jar.path=/Users/madhusud/actions-runner/_work/build-scan/build-scan/.bridge/blackduck_sca_detect_execution/detect/tools/Black_Duck_Scan_Installation/scan.cli-1.0.9/lib/cache/scan.cli.impl-standalone.jar -Xmx4096m -jar /Users/madhusud/actions-runner/_work/build-scan/build-scan/.bridge/blackduck_sca_detect_execution/detect/tools/Black_Duck_Scan_Installation/scan.cli-1.0.9/lib/scan.cli-1.0.9-standalone.jar --no-prompt --scheme https --host saastest.app.blackduck.com --port 443 -v --logDir /Users/madhusud/actions-runner/_work/build-scan/build-scan/.bridge/blackduck_sca_detect_execution/detect/runs/2026-04-20-15-33-30-588/scan/BlackDuckScanOutput/2026-04-20_15-34-06-607_1 --statusWriteDir /Users/madhusud/actions-runner/_work/build-scan/build-scan/.bridge/blackduck_sca_detect_execution/detect/runs/2026-04-20-15-33-30-588/scan/BlackDuckScanOutput/2026-04-20_15-34-06-607_1 --project build-scan --release 1.3.0 --name build-scan/build-scan/1.3.0 signature --exclude /.git/ --exclude /node_modules/ --exclude /.bridge/ --scass-scan /Users/madhusud/actions-runner/_work/build-scan/build-scan
-2026-04-20T15:34:17.6491880Z 2026-04-20 21:04:17.0000 IST [Blackduck SCA Detect Execution][pool-3-thread-1] INFO: --- 
-2026-04-20T15:34:17.6492680Z 2026-04-20 21:04:17.0000 IST [Blackduck SCA Detect Execution][pool-3-thread-1] INFO: --- Black Duck Signature Scanner return code: 0
-2026-04-20T15:34:17.6494050Z 2026-04-20 21:04:17.0000 IST [Blackduck SCA Detect Execution][pool-3-thread-1] INFO: --- Signature Scanner log output directory: '/Users/madhusud/actions-runner/_work/build-scan/build-scan/.bridge/blackduck_sca_detect_execution/detect/runs/2026-04-20-15-33-30-588/scan/BlackDuckScanOutput/2026-04-20_15-34-06-607_1'
-2026-04-20T15:34:17.6499490Z 2026-04-20 21:04:17.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Completed the Black Duck Signature Scan commands.
-2026-04-20T15:34:19.7319440Z 2026-04-20 21:04:19.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Signature Scanner actions finished.
-2026-04-20T15:34:19.7324260Z 2026-04-20 21:04:19.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- ----------------------------------
-2026-04-20T15:34:19.7325800Z 2026-04-20 21:04:19.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Will include the Binary Scanner tool.
-2026-04-20T15:34:19.7330360Z 2026-04-20 21:04:19.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Binary scanner found nothing to upload.
-2026-04-20T15:34:19.7331390Z 2026-04-20 21:04:19.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Binary Scanner actions finished.
-2026-04-20T15:34:19.7332700Z 2026-04-20 21:04:19.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- ----------------------------------
-2026-04-20T15:34:19.7333690Z 2026-04-20 21:04:19.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Will include the Container Scanner tool.
-2026-04-20T15:34:19.7340300Z 2026-04-20 21:04:19.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- No detect.container.scan.file.path property was provided. Skipping container scan.
-2026-04-20T15:34:19.7341790Z 2026-04-20 21:04:19.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Container Scanner actions finished.
-2026-04-20T15:34:19.7344750Z 2026-04-20 21:04:19.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- ----------------------------------
-2026-04-20T15:34:19.7346070Z 2026-04-20 21:04:19.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Vulnerability Impact Analysis tool will not be run.
-2026-04-20T15:34:19.7347290Z 2026-04-20 21:04:19.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- ----------------------------------
-2026-04-20T15:34:19.7348410Z 2026-04-20 21:04:19.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- IaC Scanner tool will not be run.
-2026-04-20T15:34:19.7354770Z 2026-04-20 21:04:19.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- ----------------------------------
-2026-04-20T15:34:20.7598830Z 2026-04-20 21:04:20.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Try #1 for task BOM Scan Wait Job ***/api/projects/707a5779-afc7-4a1c-b823-66234e0bb984/versions/07c8c92b-3407-494f-9fd7-9a3df32f3a9d/bom-status/a2c051b4-7054-44db-989f-f674d2c987a1 (elapsed: 00:00:00.000)...not done yet, waiting 1 seconds and trying again...
-2026-04-20T15:34:22.7515360Z 2026-04-20 21:04:22.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Try #2 for task BOM Scan Wait Job ***/api/projects/707a5779-afc7-4a1c-b823-66234e0bb984/versions/07c8c92b-3407-494f-9fd7-9a3df32f3a9d/bom-status/a2c051b4-7054-44db-989f-f674d2c987a1 (elapsed: 00:00:02.025)...not done yet, waiting 2 seconds and trying again...
-2026-04-20T15:34:25.7406150Z 2026-04-20 21:04:25.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Try #3 for task BOM Scan Wait Job ***/api/projects/707a5779-afc7-4a1c-b823-66234e0bb984/versions/07c8c92b-3407-494f-9fd7-9a3df32f3a9d/bom-status/a2c051b4-7054-44db-989f-f674d2c987a1 (elapsed: 00:00:05.015)...not done yet, waiting 3 seconds and trying again...
-2026-04-20T15:34:29.7262930Z 2026-04-20 21:04:29.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Try #4 for task BOM Scan Wait Job ***/api/projects/707a5779-afc7-4a1c-b823-66234e0bb984/versions/07c8c92b-3407-494f-9fd7-9a3df32f3a9d/bom-status/a2c051b4-7054-44db-989f-f674d2c987a1 (elapsed: 00:00:09.006)...not done yet, waiting 5 seconds and trying again...
-2026-04-20T15:34:35.7733840Z 2026-04-20 21:04:35.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Try #5 for task BOM Scan Wait Job ***/api/projects/707a5779-afc7-4a1c-b823-66234e0bb984/versions/07c8c92b-3407-494f-9fd7-9a3df32f3a9d/bom-status/a2c051b4-7054-44db-989f-f674d2c987a1 (elapsed: 00:00:14.989)...not done yet, waiting 5 seconds and trying again...
-2026-04-20T15:34:41.7721200Z 2026-04-20 21:04:41.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Try #6 for task BOM Scan Wait Job ***/api/projects/707a5779-afc7-4a1c-b823-66234e0bb984/versions/07c8c92b-3407-494f-9fd7-9a3df32f3a9d/bom-status/a2c051b4-7054-44db-989f-f674d2c987a1 (elapsed: 00:00:21.037)...complete!
-2026-04-20T15:34:42.7719930Z 2026-04-20 21:04:42.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Try #1 for task BOM Scan Wait Job ***/api/projects/707a5779-afc7-4a1c-b823-66234e0bb984/versions/07c8c92b-3407-494f-9fd7-9a3df32f3a9d/bom-status/65db0624-0ca9-4dc4-8067-31acc2c9eeae (elapsed: 00:00:00.000)...complete!
-2026-04-20T15:34:42.7750060Z 2026-04-20 21:04:42.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Checking to see if Detect should check policy for violations.
-2026-04-20T15:34:43.7150150Z 2026-04-20 21:04:43.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- 
-2026-04-20T15:34:43.7152710Z 2026-04-20 21:04:43.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- 
-2026-04-20T15:34:43.7166410Z 2026-04-20 21:04:43.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Creating status file: /Users/madhusud/actions-runner/_work/build-scan/build-scan/.bridge/blackduck_sca_detect_execution/detect/runs/2026-04-20-15-33-30-588/status/status.json
-2026-04-20T15:34:43.7298910Z 2026-04-20 21:04:43.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- 
-2026-04-20T15:34:43.7325680Z 2026-04-20 21:04:43.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Skipping cleanup, it is disabled.
-2026-04-20T15:34:43.9048290Z 2026-04-20 21:04:43.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- 
-2026-04-20T15:34:43.9049950Z 2026-04-20 21:04:43.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- 
-2026-04-20T15:34:43.9053000Z 2026-04-20 21:04:43.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- ======== Detect Result ========
-2026-04-20T15:34:43.9053710Z 2026-04-20 21:04:43.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- 
-2026-04-20T15:34:43.9055550Z 2026-04-20 21:04:43.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Black Duck SCA Project BOM: ***/api/projects/707a5779-afc7-4a1c-b823-66234e0bb984/versions/07c8c92b-3407-494f-9fd7-9a3df32f3a9d/components
-2026-04-20T15:34:43.9056630Z 2026-04-20 21:04:43.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- 
-2026-04-20T15:34:43.9057860Z 2026-04-20 21:04:43.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- ======== Detect Status ========
-2026-04-20T15:34:43.9058550Z 2026-04-20 21:04:43.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- 
-2026-04-20T15:34:43.9059590Z 2026-04-20 21:04:43.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- GIT: SUCCESS
-2026-04-20T15:34:43.9060300Z 2026-04-20 21:04:43.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- NPM: SUCCESS
-2026-04-20T15:34:43.9060900Z 2026-04-20 21:04:43.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- 
-2026-04-20T15:34:43.9061930Z 2026-04-20 21:04:43.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Signature scan / Snippet scan on /Users/madhusud/actions-runner/_work/build-scan/build-scan: SUCCESS
-2026-04-20T15:34:43.9063090Z 2026-04-20 21:04:43.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Overall Status: SUCCESS - Detect exited successfully.
-2026-04-20T15:34:43.9063850Z 2026-04-20 21:04:43.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- 
-2026-04-20T15:34:43.9064540Z 2026-04-20 21:04:43.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- ===============================
-2026-04-20T15:34:43.9065220Z 2026-04-20 21:04:43.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- 
-2026-04-20T15:34:43.9065920Z 2026-04-20 21:04:43.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Detect duration: 00h 01m 16s 332ms
-2026-04-20T15:34:43.9229470Z 2026-04-20 21:04:43.9226 IST [Blackduck SCA Detect Execution] INFO: Provided value for resource 'detect.completed'
-2026-04-20T15:34:43.9230180Z 2026-04-20 21:04:43.9227 IST [Blackduck SCA Detect Execution] INFO: Provided value for resource 'detect.results.path'
-2026-04-20T15:34:43.9233970Z 2026-04-20 21:04:43.9233 IST [Blackduck SCA Detect Execution] INFO: Adapter finished
-2026-04-20T15:34:43.9480680Z 2026-04-20 21:04:43.9477 IST [Blackduck SCA Results] INFO: Skipping Blackduck SCA issues retrieval as "blackducksca.fixpr.enabled" is configured to false
-2026-04-20T15:34:43.9520500Z 2026-04-20 21:04:43.9519 IST [Blackduck SCA Results] INFO: Adapter finished
-2026-04-20T15:34:43.9783910Z 2026-04-20 21:04:43.9782 IST [SCM Checker] INFO: Adapter finished
-2026-04-20T15:34:43.9936540Z 2026-04-20 21:04:43.9932 IST [Detect Component Locator] INFO: skipping fix pull requests creation as "blackducksca.fixpr.enabled" is configured to false
-2026-04-20T15:34:43.9963410Z 2026-04-20 21:04:43.9962 IST [Detect Component Locator] INFO: Provided value for resource 'blackducksca.fixpr.issueFrom'
-2026-04-20T15:34:43.9967320Z 2026-04-20 21:04:43.9966 IST [Detect Component Locator] INFO: Adapter finished
-2026-04-20T15:34:43.9979400Z Black Duck Security Action workflow execution completed successfully.
-2026-04-20T15:34:43.9984470Z Fetching GitHub client service instance...
-2026-04-20T15:34:44.0073410Z Post job cleanup.
-2026-04-20T15:34:44.0940980Z Cache hit occurred on the primary key node-cache-macOS-arm64-npm-18b38877e3f7a35364161ea1520408d71317919979076ede5bbb12b47441b3ea, not saving cache.
-2026-04-20T15:34:44.1003250Z Post job cleanup.
-2026-04-20T15:34:44.1645160Z [command]/opt/homebrew/bin/git version
-2026-04-20T15:34:44.1725660Z git version 2.53.0
-2026-04-20T15:34:44.1745640Z Temporarily overriding HOME='/Users/madhusud/actions-runner/_work/_temp/d52fb9d6-d181-4505-9fe4-619ee74dea53' before making global git config changes
-2026-04-20T15:34:44.1746140Z Adding repository directory to the temporary git global config as a safe directory
-2026-04-20T15:34:44.1748040Z [command]/opt/homebrew/bin/git config --global --add safe.directory /Users/madhusud/actions-runner/_work/build-scan/build-scan
-2026-04-20T15:34:44.1824030Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp core\.sshCommand
-2026-04-20T15:34:44.1887480Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
-2026-04-20T15:34:44.2808120Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
-2026-04-20T15:34:44.2863200Z http.https://github.com/.extraheader
-2026-04-20T15:34:44.2870770Z [command]/opt/homebrew/bin/git config --local --unset-all http.https://github.com/.extraheader
-2026-04-20T15:34:44.2927020Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
-2026-04-20T15:34:44.3727850Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
-2026-04-20T15:34:44.3784640Z [command]/opt/homebrew/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
-2026-04-20T15:34:44.4614420Z Cleaning up orphan processes
-2026-04-20T15:34:45.0427770Z ##[warning]Node.js 20 actions are deprecated. The following actions are running on Node.js 20 and may not work as expected: actions/checkout@v4, actions/setup-node@v4, blackduck-inc/black-duck-security-scan@v2. Actions will be forced to run with Node.js 24 by default starting June 2nd, 2026. Node.js 20 will be removed from the runner on September 16th, 2026. Please check if updated versions of these actions are available that support Node.js 24. To opt into Node.js 24 now, set the FORCE_JAVASCRIPT_ACTIONS_TO_NODE24=true environment variable on the runner or in your workflow file. Once Node.js 24 becomes the default, you can temporarily opt out by setting ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+﻿2026-04-20T15:38:38.4069550Z Current runner version: '2.333.1'
+2026-04-20T15:38:38.4071910Z Runner name: 'mac-arm-runner'
+2026-04-20T15:38:38.4072210Z Runner group name: 'default'
+2026-04-20T15:38:38.4072630Z Machine name: 'BD-MB65227'
+2026-04-20T15:38:38.4073770Z ##[group]GITHUB_TOKEN Permissions
+2026-04-20T15:38:38.4074430Z Contents: read
+2026-04-20T15:38:38.4074640Z Metadata: read
+2026-04-20T15:38:38.4074850Z Packages: read
+2026-04-20T15:38:38.4075080Z ##[endgroup]
+2026-04-20T15:38:38.4075790Z Secret source: Actions
+2026-04-20T15:38:38.4076060Z Prepare workflow directory
+2026-04-20T15:38:38.4732890Z Prepare all required actions
+2026-04-20T15:38:38.4751670Z Getting action download info
+2026-04-20T15:38:39.8840530Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
+2026-04-20T15:38:40.9662810Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+2026-04-20T15:38:42.1737510Z Download action repository 'blackduck-inc/black-duck-security-scan@v2' (SHA:659a0742e793a093377fab3117b0d90f23b04bfa)
+2026-04-20T15:38:44.5980050Z Complete job name: blackduck-scan
+2026-04-20T15:38:44.6202930Z ##[group]Run actions/checkout@v4
+2026-04-20T15:38:44.6203120Z with:
+2026-04-20T15:38:44.6203220Z   repository: giithub-workflow-samples/build-scan
+2026-04-20T15:38:44.6203400Z   token: ***
+2026-04-20T15:38:44.6203480Z   ssh-strict: true
+2026-04-20T15:38:44.6203560Z   ssh-user: git
+2026-04-20T15:38:44.6203640Z   persist-credentials: true
+2026-04-20T15:38:44.6203730Z   clean: true
+2026-04-20T15:38:44.6203820Z   sparse-checkout-cone-mode: true
+2026-04-20T15:38:44.6203920Z   fetch-depth: 1
+2026-04-20T15:38:44.6204010Z   fetch-tags: false
+2026-04-20T15:38:44.6204090Z   show-progress: true
+2026-04-20T15:38:44.6204170Z   lfs: false
+2026-04-20T15:38:44.6204250Z   submodules: false
+2026-04-20T15:38:44.6204330Z   set-safe-directory: true
+2026-04-20T15:38:44.6204480Z ##[endgroup]
+2026-04-20T15:38:44.6928270Z Syncing repository: giithub-workflow-samples/build-scan
+2026-04-20T15:38:44.6928910Z ##[group]Getting Git version info
+2026-04-20T15:38:44.6929120Z Working directory is '/Users/madhusud/actions-runner/_work/build-scan/build-scan'
+2026-04-20T15:38:44.6929410Z [command]/opt/homebrew/bin/git version
+2026-04-20T15:38:44.6998920Z git version 2.53.0
+2026-04-20T15:38:44.7009330Z ##[endgroup]
+2026-04-20T15:38:44.7015870Z Temporarily overriding HOME='/Users/madhusud/actions-runner/_work/_temp/ca906c2b-6649-4b61-8f68-266c45b722e2' before making global git config changes
+2026-04-20T15:38:44.7016310Z Adding repository directory to the temporary git global config as a safe directory
+2026-04-20T15:38:44.7018300Z [command]/opt/homebrew/bin/git config --global --add safe.directory /Users/madhusud/actions-runner/_work/build-scan/build-scan
+2026-04-20T15:38:44.7092820Z [command]/opt/homebrew/bin/git config --local --get remote.origin.url
+2026-04-20T15:38:44.7150910Z https://github.com/giithub-workflow-samples/build-scan
+2026-04-20T15:38:44.7158840Z ##[group]Removing previously created refs, to avoid conflicts
+2026-04-20T15:38:44.7160560Z [command]/opt/homebrew/bin/git rev-parse --symbolic-full-name --verify --quiet HEAD
+2026-04-20T15:38:44.7222990Z refs/heads/main
+2026-04-20T15:38:44.7227980Z [command]/opt/homebrew/bin/git checkout --detach
+2026-04-20T15:38:44.7417920Z HEAD is now at e2ca88a Update main.yml
+2026-04-20T15:38:44.7505090Z [command]/opt/homebrew/bin/git branch --delete --force main
+2026-04-20T15:38:44.7583480Z Deleted branch main (was e2ca88a).
+2026-04-20T15:38:44.7654730Z ##[endgroup]
+2026-04-20T15:38:44.7657180Z [command]/opt/homebrew/bin/git submodule status
+2026-04-20T15:38:44.8496350Z ##[group]Cleaning the repository
+2026-04-20T15:38:44.8498890Z [command]/opt/homebrew/bin/git clean -ffdx
+2026-04-20T15:38:47.6842870Z Removing .bridge/
+2026-04-20T15:38:47.6843070Z Removing node_modules/
+2026-04-20T15:38:47.6850860Z [command]/opt/homebrew/bin/git reset --hard HEAD
+2026-04-20T15:38:47.6946330Z HEAD is now at e2ca88a Update main.yml
+2026-04-20T15:38:47.6950620Z ##[endgroup]
+2026-04-20T15:38:47.6951810Z ##[group]Disabling automatic garbage collection
+2026-04-20T15:38:47.6953600Z [command]/opt/homebrew/bin/git config --local gc.auto 0
+2026-04-20T15:38:47.7001800Z ##[endgroup]
+2026-04-20T15:38:47.7002040Z ##[group]Setting up auth
+2026-04-20T15:38:47.7005680Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-04-20T15:38:47.7058720Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-04-20T15:38:47.7649940Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-04-20T15:38:47.7692290Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-04-20T15:38:47.8289870Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-04-20T15:38:47.8339000Z [command]/opt/homebrew/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-04-20T15:38:47.8906990Z [command]/opt/homebrew/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-04-20T15:38:47.8955780Z ##[endgroup]
+2026-04-20T15:38:47.8956020Z ##[group]Fetching the repository
+2026-04-20T15:38:47.8959920Z [command]/opt/homebrew/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +ca88f0f2800871e1cb8b8fb1e8459d904ab2ada9:refs/remotes/origin/main
+2026-04-20T15:38:48.8144360Z From https://github.com/giithub-workflow-samples/build-scan
+2026-04-20T15:38:48.8144850Z  + e2ca88a...ca88f0f ca88f0f2800871e1cb8b8fb1e8459d904ab2ada9 -> origin/main  (forced update)
+2026-04-20T15:38:48.8294850Z ##[endgroup]
+2026-04-20T15:38:48.8296400Z ##[group]Determining the checkout info
+2026-04-20T15:38:48.8296760Z ##[endgroup]
+2026-04-20T15:38:48.8298280Z [command]/opt/homebrew/bin/git sparse-checkout disable
+2026-04-20T15:38:48.8388590Z [command]/opt/homebrew/bin/git config --local --unset-all extensions.worktreeConfig
+2026-04-20T15:38:48.8446990Z ##[group]Checking out the ref
+2026-04-20T15:38:48.8448640Z [command]/opt/homebrew/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2026-04-20T15:38:48.8576300Z Warning: you are leaving 1 commit behind, not connected to
+2026-04-20T15:38:48.8576620Z any of your branches:
+2026-04-20T15:38:48.8576740Z 
+2026-04-20T15:38:48.8576800Z   e2ca88a Update main.yml
+2026-04-20T15:38:48.8576900Z 
+2026-04-20T15:38:48.8577030Z If you want to keep it by creating a new branch, this may be a good time
+2026-04-20T15:38:48.8577240Z to do so with:
+2026-04-20T15:38:48.8577340Z 
+2026-04-20T15:38:48.8577410Z  git branch <new-branch-name> e2ca88a
+2026-04-20T15:38:48.8577530Z 
+2026-04-20T15:38:48.8626340Z Switched to a new branch 'main'
+2026-04-20T15:38:48.8634970Z branch 'main' set up to track 'origin/main'.
+2026-04-20T15:38:48.8640160Z ##[endgroup]
+2026-04-20T15:38:48.8723200Z [command]/opt/homebrew/bin/git log -1 --format=%H
+2026-04-20T15:38:48.8785310Z ca88f0f2800871e1cb8b8fb1e8459d904ab2ada9
+2026-04-20T15:38:48.8911310Z ##[group]Run actions/setup-node@v4
+2026-04-20T15:38:48.8911470Z with:
+2026-04-20T15:38:48.8911560Z   node-version: 18
+2026-04-20T15:38:48.8911660Z   cache: npm
+2026-04-20T15:38:48.8911780Z   cache-dependency-path: package-lock.json
+2026-04-20T15:38:48.8911930Z   always-auth: false
+2026-04-20T15:38:48.8912030Z   check-latest: false
+2026-04-20T15:38:48.8912200Z   token: ***
+2026-04-20T15:38:48.8912300Z ##[endgroup]
+2026-04-20T15:38:48.9905550Z Found in cache @ /Users/madhusud/actions-runner/_work/_tool/node/18.20.8/arm64
+2026-04-20T15:38:48.9908990Z ##[group]Environment details
+2026-04-20T15:38:49.0905200Z node: v18.20.8
+2026-04-20T15:38:49.0905340Z npm: 10.8.2
+2026-04-20T15:38:49.0905440Z yarn: 
+2026-04-20T15:38:49.0905840Z ##[endgroup]
+2026-04-20T15:38:49.0913510Z [command]/Users/madhusud/actions-runner/_work/_tool/node/18.20.8/arm64/bin/npm config get cache
+2026-04-20T15:38:49.1723220Z /Users/madhusud/.npm
+2026-04-20T15:38:50.0949540Z Cache hit for: node-cache-macOS-arm64-npm-18b38877e3f7a35364161ea1520408d71317919979076ede5bbb12b47441b3ea
+2026-04-20T15:38:52.0279480Z Received 0 of 127248640 (0.0%), 0.0 MBs/sec
+2026-04-20T15:38:53.0280550Z Received 0 of 127248640 (0.0%), 0.0 MBs/sec
+2026-04-20T15:38:54.0277640Z Received 0 of 127248640 (0.0%), 0.0 MBs/sec
+2026-04-20T15:38:55.0277700Z Received 0 of 127248640 (0.0%), 0.0 MBs/sec
+2026-04-20T15:38:56.0277450Z Received 4194304 of 127248640 (3.3%), 0.8 MBs/sec
+2026-04-20T15:38:57.0277600Z Received 29360128 of 127248640 (23.1%), 4.7 MBs/sec
+2026-04-20T15:38:58.0276220Z Received 37748736 of 127248640 (29.7%), 5.1 MBs/sec
+2026-04-20T15:38:59.0276750Z Received 54525952 of 127248640 (42.8%), 6.5 MBs/sec
+2026-04-20T15:39:00.0285980Z Received 67108864 of 127248640 (52.7%), 7.1 MBs/sec
+2026-04-20T15:39:01.0286210Z Received 88080384 of 127248640 (69.2%), 8.4 MBs/sec
+2026-04-20T15:39:02.0298850Z Received 106277120 of 127248640 (83.5%), 9.2 MBs/sec
+2026-04-20T15:39:02.6938110Z Received 127248640 of 127248640 (100.0%), 10.4 MBs/sec
+2026-04-20T15:39:02.6940670Z Cache Size: ~121 MB (127248640 B)
+2026-04-20T15:39:02.6973050Z [command]/usr/bin/tar -xf /Users/madhusud/actions-runner/_work/_temp/57fe5dd6-3159-436e-901f-35adae934ad9/cache.tzst -P -C /Users/madhusud/actions-runner/_work/build-scan/build-scan --use-compress-program unzstd
+2026-04-20T15:39:03.5649540Z Cache restored successfully
+2026-04-20T15:39:03.5655240Z Cache restored from key: node-cache-macOS-arm64-npm-18b38877e3f7a35364161ea1520408d71317919979076ede5bbb12b47441b3ea
+2026-04-20T15:39:03.5746450Z ##[group]Run npm install
+2026-04-20T15:39:03.5746630Z [36;1mnpm install[0m
+2026-04-20T15:39:03.5765060Z shell: /bin/bash -e {0}
+2026-04-20T15:39:03.5765180Z ##[endgroup]
+2026-04-20T15:39:04.2179770Z npm warn deprecated fsevents@1.2.9: fsevents 1 will break on node v14+ and could be using insecure binaries. Upgrade to fsevents 2.
+2026-04-20T15:39:05.5433280Z npm warn deprecated set-value@2.0.0: Critical bug fixed in v3.0.1, please upgrade to the latest version.
+2026-04-20T15:39:05.5456530Z npm warn deprecated mixin-deep@1.3.1: Critical bug fixed in v2.0.1, please upgrade to the latest version.
+2026-04-20T15:39:05.5478640Z npm warn deprecated ini@1.3.5: Please update to ini >=1.3.6 to avoid a prototype pollution issue
+2026-04-20T15:39:05.5533380Z npm warn deprecated set-value@0.4.3: Critical bug fixed in v3.0.1, please upgrade to the latest version.
+2026-04-20T15:39:05.5565900Z npm warn deprecated path-is-absolute@2.0.0: This package is no longer relevant as Node.js 0.12 is unmaintained.
+2026-04-20T15:39:05.5819330Z npm warn deprecated urix@0.1.0: Please see https://github.com/lydell/urix#deprecated
+2026-04-20T15:39:05.5909790Z npm warn deprecated har-validator@5.1.3: this library is no longer supported
+2026-04-20T15:39:05.6013680Z npm warn deprecated to-iso-string@0.0.2: to-iso-string has been deprecated, use @segment/to-iso-string instead.
+2026-04-20T15:39:05.6058290Z npm warn deprecated cryptiles@2.0.5: This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial).
+2026-04-20T15:39:05.6109900Z npm warn deprecated resolve-url@0.2.1: https://github.com/lydell/resolve-url#deprecated
+2026-04-20T15:39:05.6143660Z npm warn deprecated bcrypt-nodejs@0.0.3: bcrypt-nodejs is no longer actively maintained. Please use bcrypt or bcryptjs. See https://github.com/kelektiv/node.bcrypt.js/wiki/bcrypt-vs-brypt.js to learn more about these two options
+2026-04-20T15:39:05.6225820Z npm warn deprecated cryptiles@0.2.2: This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial).
+2026-04-20T15:39:05.6317320Z npm warn deprecated source-map-url@0.4.0: See https://github.com/lydell/source-map-url#deprecated
+2026-04-20T15:39:05.6514160Z npm warn deprecated debug@3.2.6: Debug versions >=3.2.0 <3.2.7 || >=4 <4.3.1 have a low-severity ReDos regression when used in a Node.js environment. It is recommended you upgrade to 3.2.7 or 4.3.1. (https://github.com/visionmedia/debug/issues/797)
+2026-04-20T15:39:05.6515460Z npm warn deprecated boom@0.4.2: This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial).
+2026-04-20T15:39:05.6516610Z npm warn deprecated debug@3.2.6: Debug versions >=3.2.0 <3.2.7 || >=4 <4.3.1 have a low-severity ReDos regression when used in a Node.js environment. It is recommended you upgrade to 3.2.7 or 4.3.1. (https://github.com/visionmedia/debug/issues/797)
+2026-04-20T15:39:05.6521390Z npm warn deprecated debug@3.2.6: Debug versions >=3.2.0 <3.2.7 || >=4 <4.3.1 have a low-severity ReDos regression when used in a Node.js environment. It is recommended you upgrade to 3.2.7 or 4.3.1. (https://github.com/visionmedia/debug/issues/797)
+2026-04-20T15:39:05.6528110Z npm warn deprecated debug@3.2.6: Debug versions >=3.2.0 <3.2.7 || >=4 <4.3.1 have a low-severity ReDos regression when used in a Node.js environment. It is recommended you upgrade to 3.2.7 or 4.3.1. (https://github.com/visionmedia/debug/issues/797)
+2026-04-20T15:39:05.6577070Z npm warn deprecated boom@2.10.1: This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial).
+2026-04-20T15:39:05.6578080Z npm warn deprecated chokidar@2.1.6: Chokidar 2 does not receive security updates since 2019. Upgrade to chokidar 3 with 15x fewer dependencies
+2026-04-20T15:39:05.6578810Z npm warn deprecated sntp@0.2.4: This module moved to @hapi/sntp. Please make sure to switch over as this distribution is no longer supported and may contain bugs and critical security issues.
+2026-04-20T15:39:05.6585250Z npm warn deprecated minimatch@0.3.0: Please update to minimatch 3.0.2 or higher to avoid a RegExp DoS issue
+2026-04-20T15:39:05.6589380Z npm warn deprecated chokidar@2.1.8: Chokidar 2 does not receive security updates since 2019. Upgrade to chokidar 3 with 15x fewer dependencies
+2026-04-20T15:39:05.6597240Z npm warn deprecated sntp@1.0.9: This module moved to @hapi/sntp. Please make sure to switch over as this distribution is no longer supported and may contain bugs and critical security issues.
+2026-04-20T15:39:05.6597950Z npm warn deprecated querystring@0.2.0: The querystring API is considered Legacy. new code should use the URLSearchParams API instead.
+2026-04-20T15:39:05.6876310Z npm warn deprecated request@2.36.0: request has been deprecated, see https://github.com/request/request/issues/3142
+2026-04-20T15:39:05.6879280Z npm warn deprecated mkdirp@0.3.0: Legacy versions of mkdirp are no longer supported. Please update to mkdirp 1.x. (Note that the API surface has changed to use Promises in 1.x.)
+2026-04-20T15:39:05.6944940Z npm warn deprecated tough-cookie@2.2.2: ReDoS vulnerability parsing Set-Cookie https://nodesecurity.io/advisories/130
+2026-04-20T15:39:05.6973610Z npm warn deprecated hoek@0.9.1: This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial).
+2026-04-20T15:39:05.6999830Z npm warn deprecated node-uuid@1.4.8: Use uuid module instead
+2026-04-20T15:39:05.7004350Z npm warn deprecated node-uuid@1.4.8: Use uuid module instead
+2026-04-20T15:39:05.7009330Z npm warn deprecated uuid@3.3.2: Please upgrade  to version 7 or higher.  Older versions may use Math.random() in certain circumstances, which is known to be problematic.  See https://v8.dev/blog/math-random for details.
+2026-04-20T15:39:05.7037640Z npm warn deprecated source-map-resolve@0.5.2: See https://github.com/lydell/source-map-resolve#deprecated
+2026-04-20T15:39:05.7069860Z npm warn deprecated har-validator@2.0.6: this library is no longer supported
+2026-04-20T15:39:05.7088050Z npm warn deprecated mkdirp@0.5.1: Legacy versions of mkdirp are no longer supported. Please update to mkdirp 1.x. (Note that the API surface has changed to use Promises in 1.x.)
+2026-04-20T15:39:05.7093750Z npm warn deprecated hoek@2.16.3: This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial).
+2026-04-20T15:39:05.7155530Z npm warn deprecated request@2.79.0: request has been deprecated, see https://github.com/request/request/issues/3142
+2026-04-20T15:39:05.7191630Z npm warn deprecated request@2.88.0: request has been deprecated, see https://github.com/request/request/issues/3142
+2026-04-20T15:39:05.7251200Z npm warn deprecated request@2.67.0: request has been deprecated, see https://github.com/request/request/issues/3142
+2026-04-20T15:39:05.7578880Z npm warn deprecated readdir-scoped-modules@1.0.2: This functionality has been moved to @npmcli/fs
+2026-04-20T15:39:05.7664830Z npm warn deprecated hawk@1.0.0: This module moved to @hapi/hawk. Please make sure to switch over as this distribution is no longer supported and may contain bugs and critical security issues.
+2026-04-20T15:39:05.7793090Z npm warn deprecated hawk@3.1.3: This module moved to @hapi/hawk. Please make sure to switch over as this distribution is no longer supported and may contain bugs and critical security issues.
+2026-04-20T15:39:05.7807260Z npm warn deprecated jade@0.26.3: Jade has been renamed to pug, please install the latest version of pug instead of jade
+2026-04-20T15:39:05.8008090Z npm warn deprecated swig@1.4.2: This package is no longer maintained
+2026-04-20T15:39:05.8115740Z npm warn deprecated bson@1.0.9: Fixed a critical issue with BSON serialization documented in CVE-2019-2391, see https://bit.ly/2KcpXdo for more details
+2026-04-20T15:39:05.9126090Z npm warn deprecated nodeunit@0.9.5: you are strongly encouraged to use other testing options
+2026-04-20T15:39:19.0299890Z 
+2026-04-20T15:39:19.0300410Z added 962 packages, and audited 1412 packages in 15s
+2026-04-20T15:39:19.0300670Z 
+2026-04-20T15:39:19.0300810Z 32 packages are looking for funding
+2026-04-20T15:39:19.0302370Z   run `npm fund` for details
+2026-04-20T15:39:19.0900380Z 
+2026-04-20T15:39:19.0900710Z 139 vulnerabilities (9 low, 33 moderate, 62 high, 35 critical)
+2026-04-20T15:39:19.0900910Z 
+2026-04-20T15:39:19.0901070Z To address issues that do not require attention, run:
+2026-04-20T15:39:19.0901240Z   npm audit fix
+2026-04-20T15:39:19.0901330Z 
+2026-04-20T15:39:19.0901480Z To address all issues possible (including breaking changes), run:
+2026-04-20T15:39:19.0901690Z   npm audit fix --force
+2026-04-20T15:39:19.0901790Z 
+2026-04-20T15:39:19.0901900Z Some issues need review, and may require choosing
+2026-04-20T15:39:19.0902140Z a different dependency.
+2026-04-20T15:39:19.0902240Z 
+2026-04-20T15:39:19.0902320Z Run `npm audit` for details.
+2026-04-20T15:39:19.1022570Z ##[group]Run npm rebuild
+2026-04-20T15:39:19.1022750Z [36;1mnpm rebuild[0m
+2026-04-20T15:39:19.1040010Z shell: /bin/bash -e {0}
+2026-04-20T15:39:19.1040160Z ##[endgroup]
+2026-04-20T15:39:19.5656140Z rebuilt dependencies successfully
+2026-04-20T15:39:19.5822840Z ##[group]Run blackduck-inc/black-duck-security-scan@v2
+2026-04-20T15:39:19.5823190Z with:
+2026-04-20T15:39:19.5823450Z   blackducksca_url: ***
+2026-04-20T15:39:19.5823780Z   blackducksca_token: ***
+2026-04-20T15:39:19.5823960Z   github_token: ***
+2026-04-20T15:39:19.5824170Z   detect_args: --detect.source.path=/Users/madhusud/actions-runner/_work/build-scan/build-scan
+2026-04-20T15:39:19.5824390Z   mark_build_status: failure
+2026-04-20T15:39:19.5824490Z env:
+2026-04-20T15:39:19.5824570Z   DETECT_PROJECT_NAME: build-scan
+2026-04-20T15:39:19.5824680Z ##[endgroup]
+2026-04-20T15:39:19.7154890Z Black Duck Security Action started...
+2026-04-20T15:39:19.7164070Z Checking for latest version of Bridge to download and configure
+2026-04-20T15:39:20.6995210Z Bridge CLI version is - 4.1.2
+2026-04-20T15:39:20.7011030Z Bridge CLI already exists, download has been skipped
+2026-04-20T15:39:20.7051900Z [command]/Users/madhusud/bridge-cli-bundle/bridge-cli-bundle-macos_arm/bridge-cli --stage blackducksca --input /var/folders/lp/36zm5r955w30nrqcfnkpyn6c0000gp/T/blackduck-security-actionWkHSOI/bd_input.json
+2026-04-20T15:39:20.7485030Z 2026-04-20 21:09:20.7482 IST [Bridge CLI] INFO: Using cache directory: /Users/madhusud/bridge-cli-bundle/bridge-cli-bundle-macos_arm
+2026-04-20T15:39:20.7532490Z 2026-04-20 21:09:20.7531 IST [Bridge CLI] INFO: Found version "3.0.234" in registry for workflow "blackducksca", trying to load it from local cache
+2026-04-20T15:39:20.8135810Z 2026-04-20 21:09:20.8134 IST [Bridge CLI] INFO: Input Resources:
+2026-04-20T15:39:20.8136150Z 2026-04-20 21:09:20.8134 IST [Bridge CLI] INFO: resource = value [source]
+2026-04-20T15:39:20.8136540Z 2026-04-20 21:09:20.8134 IST [Bridge CLI] INFO: ------------------------------------------------------------
+2026-04-20T15:39:20.8137190Z 2026-04-20 21:09:20.8134 IST [Bridge CLI] INFO: blackducksca.reports.sarif.file.path = .blackduck/integrations/blackducksca/sarif/report.sarif.json [bd_input.json]
+2026-04-20T15:39:20.8137810Z 2026-04-20 21:09:20.8134 IST [Bridge CLI] INFO: blackducksca.token = ***************************************** [bd_input.json]
+2026-04-20T15:39:20.8138450Z 2026-04-20 21:09:20.8134 IST [Bridge CLI] INFO: blackducksca.url = *** [bd_input.json]
+2026-04-20T15:39:20.8139020Z 2026-04-20 21:09:20.8135 IST [Bridge CLI] INFO: detect.args = --detect.source.path=/Users/madhusud/actions-runner/_work/build-scan/build-scan [bd_input.json]
+2026-04-20T15:39:20.8139590Z 2026-04-20 21:09:20.8135 IST [Bridge CLI] INFO: ------------------------------------------------------------
+2026-04-20T15:39:20.8139980Z 2026-04-20 21:09:20.8135 IST [Bridge CLI] INFO: Starting adapters for stage blackducksca
+2026-04-20T15:39:20.8140350Z 2026-04-20 21:09:20.8135 IST [Bridge CLI] INFO: Starting Adapter: Blackduck SCA Controller
+2026-04-20T15:39:20.8165000Z 2026-04-20 21:09:20.8163 IST [Bridge CLI] INFO: Starting Adapter: Set Blackduck SCA Wait For Scan
+2026-04-20T15:39:20.8166200Z 2026-04-20 21:09:20.8164 IST [Set Blackduck SCA Wait For Scan] INFO: Provided value for resource 'blackducksca.waitForScan'
+2026-04-20T15:39:20.8166650Z 2026-04-20 21:09:20.8164 IST [Set Blackduck SCA Wait For Scan] INFO: Adapter finished
+2026-04-20T15:39:20.8167040Z 2026-04-20 21:09:20.8165 IST [Bridge CLI] INFO: Starting Adapter: Default Black Duck SCA Scan Mode
+2026-04-20T15:39:20.8189120Z 2026-04-20 21:09:20.8188 IST [Bridge CLI] INFO: Starting Adapter: Check pull request
+2026-04-20T15:39:20.8387780Z 2026-04-20 21:09:20.8386 IST [Check pull request] INFO: Provided value for resource 'environment.scan.pull'
+2026-04-20T15:39:20.8389940Z 2026-04-20 21:09:20.8389 IST [Check pull request] INFO: Adapter finished
+2026-04-20T15:39:20.8550890Z 2026-04-20 21:09:20.8549 IST [Default Black Duck SCA Scan Mode] INFO: Provided value for resource 'blackducksca.scan.full'
+2026-04-20T15:39:20.8554320Z 2026-04-20 21:09:20.8553 IST [Default Black Duck SCA Scan Mode] INFO: Adapter finished
+2026-04-20T15:39:21.9308070Z 2026-04-20 21:09:21.9284 IST [Blackduck SCA Controller] INFO: Found Black Duck SCA Detect jar file "detect-11.3.0.jar" in "/Users/madhusud/.blackduck/bridge/tools/blackduck-detect/11.3.0"
+2026-04-20T15:39:21.9399780Z 2026-04-20 21:09:21.9394 IST [Blackduck SCA Controller] INFO: Provided value for resource 'detect.execution.path'
+2026-04-20T15:39:21.9400740Z 2026-04-20 21:09:21.9394 IST [Bridge CLI] INFO: Starting adapters for stage blackducksca-detect
+2026-04-20T15:39:21.9401460Z 2026-04-20 21:09:21.9394 IST [Bridge CLI] INFO: Starting adapters for stage scm
+2026-04-20T15:39:21.9402490Z 2026-04-20 21:09:21.9394 IST [Bridge CLI] INFO: Starting adapters for stage blackducksca-post-processing
+2026-04-20T15:39:21.9403380Z 2026-04-20 21:09:21.9395 IST [Bridge CLI] INFO: Starting Adapter: SCM Checker
+2026-04-20T15:39:21.9404100Z 2026-04-20 21:09:21.9395 IST [Bridge CLI] INFO: Starting Adapter: Detect Component Locator
+2026-04-20T15:39:21.9404820Z 2026-04-20 21:09:21.9395 IST [Bridge CLI] INFO: Starting Adapter: Blackduck SCA Results
+2026-04-20T15:39:21.9405600Z 2026-04-20 21:09:21.9396 IST [Bridge CLI] INFO: Starting Adapter: Blackduck SCA Detect Execution
+2026-04-20T15:39:21.9406310Z 2026-04-20 21:09:21.9401 IST [Blackduck SCA Controller] INFO: Adapter finished
+2026-04-20T15:39:21.9723270Z 2026-04-20 21:09:21.9717 IST [Blackduck SCA Detect Execution] INFO: Running command /opt/homebrew/opt/java/libexec/openjdk.jdk/Contents/Home/bin/java -jar /Users/madhusud/.blackduck/bridge/tools/blackduck-detect/11.3.0/detect-11.3.0.jar --detect.cleanup=false --detect.bdio.file.name=scan --detect.bdio.output.path=/Users/madhusud/actions-runner/_work/build-scan/build-scan/.bridge/blackduck_sca_detect_execution/detect/bdio/blackduck_artifact --detect.output.path=/Users/madhusud/actions-runner/_work/build-scan/build-scan/.bridge/blackduck_sca_detect_execution/detect --blackduck.offline.mode=false --blackduck.url=*** --blackduck.api.token= --detect.wait.for.results=true --detect.blackduck.scan.mode=INTELLIGENT --detect.source.path=/Users/madhusud/actions-runner/_work/build-scan/build-scan
+2026-04-20T15:39:22.4607080Z 2026-04-20 21:09:22.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Detect-Self-Updater:  Checking ***/api/tools/detect API for centrally managed Detect version to download to /Users/madhusud/tmp.
+2026-04-20T15:39:25.1876560Z 2026-04-20 21:09:25.0000 IST [Blackduck SCA Detect Execution][main] WARNING: --- Detect-Self-Updater:  Unable to download jar from ***/api/tools/detect.
+2026-04-20T15:39:25.1878550Z 2026-04-20 21:09:25.0000 IST [Blackduck SCA Detect Execution][main] WARNING: --- Detect-Self-Updater:  Response code from ***/api/tools/detect was: 400 Bad Request
+2026-04-20T15:39:25.3448040Z 2026-04-20 21:09:25.3444 IST [Blackduck SCA Detect Execution] INFO: ______     _            _
+2026-04-20T15:39:25.3448450Z 2026-04-20 21:09:25.3445 IST [Blackduck SCA Detect Execution] INFO: |  _  \   | |          | |
+2026-04-20T15:39:25.3448800Z 2026-04-20 21:09:25.3445 IST [Blackduck SCA Detect Execution] INFO: | | | |___| |_ ___  ___| |_
+2026-04-20T15:39:25.3449170Z 2026-04-20 21:09:25.3445 IST [Blackduck SCA Detect Execution] INFO: | | | / _ \ __/ _ \/ __| __|
+2026-04-20T15:39:25.3449510Z 2026-04-20 21:09:25.3445 IST [Blackduck SCA Detect Execution] INFO: | |/ /  __/ ||  __/ (__| |_
+2026-04-20T15:39:25.3449860Z 2026-04-20 21:09:25.3445 IST [Blackduck SCA Detect Execution] INFO: |___/ \___|\__\___|\___|\__|
+2026-04-20T15:39:25.3450180Z 2026-04-20 21:09:25.3445 IST [Blackduck SCA Detect Execution] INFO: 
+2026-04-20T15:39:25.4112340Z 2026-04-20 21:09:25.4109 IST [Blackduck SCA Detect Execution] INFO: 
+2026-04-20T15:39:25.4112760Z 2026-04-20 21:09:25.4110 IST [Blackduck SCA Detect Execution] INFO: Detect Version: 11.3.0
+2026-04-20T15:39:25.4113080Z 2026-04-20 21:09:25.4110 IST [Blackduck SCA Detect Execution] INFO: 
+2026-04-20T15:39:25.5623700Z 2026-04-20 21:09:25.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- 
+2026-04-20T15:39:25.5625780Z 2026-04-20 21:09:25.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Current property values:
+2026-04-20T15:39:25.5627990Z 2026-04-20 21:09:25.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- --property = value [notes]
+2026-04-20T15:39:25.5629030Z 2026-04-20 21:09:25.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- ------------------------------------------------------------
+2026-04-20T15:39:25.5629690Z 2026-04-20 21:09:25.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- blackduck.api.token = **************************************************************************************************** [cmd] 
+2026-04-20T15:39:25.5630360Z 2026-04-20 21:09:25.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- blackduck.offline.mode = false [cmd] 
+2026-04-20T15:39:25.5631020Z 2026-04-20 21:09:25.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- blackduck.url = *** [cmd] 
+2026-04-20T15:39:25.5631450Z 2026-04-20 21:09:25.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- detect.bdio.file.name = scan [cmd] 
+2026-04-20T15:39:25.5632160Z 2026-04-20 21:09:25.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- detect.bdio.output.path = /Users/madhusud/actions-runner/_work/build-scan/build-scan/.bridge/blackduck_sca_detect_execution/detect/bdio/blackduck_artifact [cmd] 
+2026-04-20T15:39:25.5632820Z 2026-04-20 21:09:25.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- detect.blackduck.scan.mode = INTELLIGENT [cmd] 
+2026-04-20T15:39:25.5633240Z 2026-04-20 21:09:25.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- detect.cleanup = false [cmd] 
+2026-04-20T15:39:25.5633770Z 2026-04-20 21:09:25.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- detect.excluded.directories = /Users/madhusud/actions-runner/_work/build-scan/build-scan/.bridge [env] 
+2026-04-20T15:39:25.5634480Z 2026-04-20 21:09:25.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- detect.output.path = /Users/madhusud/actions-runner/_work/build-scan/build-scan/.bridge/blackduck_sca_detect_execution/detect [cmd] 
+2026-04-20T15:39:25.5635030Z 2026-04-20 21:09:25.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- detect.project.name = build-scan [env] 
+2026-04-20T15:39:25.5635640Z 2026-04-20 21:09:25.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- detect.source.path = /Users/madhusud/actions-runner/_work/build-scan/build-scan [cmd] 
+2026-04-20T15:39:25.5636140Z 2026-04-20 21:09:25.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- detect.wait.for.results = true [cmd] 
+2026-04-20T15:39:25.5636590Z 2026-04-20 21:09:25.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- ------------------------------------------------------------
+2026-04-20T15:39:25.5636950Z 2026-04-20 21:09:25.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- 
+2026-04-20T15:39:25.5637390Z 2026-04-20 21:09:25.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Detect build date: 2026-03-12
+2026-04-20T15:39:25.5955720Z 2026-04-20 21:09:25.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Source directory: /Users/madhusud/actions-runner/_work/build-scan/build-scan
+2026-04-20T15:39:25.5957470Z 2026-04-20 21:09:25.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Output directory: /Users/madhusud/actions-runner/_work/build-scan/build-scan/.bridge/blackduck_sca_detect_execution/detect
+2026-04-20T15:39:25.5960640Z 2026-04-20 21:09:25.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Run directory: /Users/madhusud/actions-runner/_work/build-scan/build-scan/.bridge/blackduck_sca_detect_execution/detect/runs/2026-04-20-15-39-25-405
+2026-04-20T15:39:25.5975340Z 2026-04-20 21:09:25.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- 
+2026-04-20T15:39:32.4418150Z 2026-04-20 21:09:32.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Successfully connected to Black Duck SCA (version 2026.1.1)!
+2026-04-20T15:39:34.3268870Z 2026-04-20 21:09:34.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- ----------------------------------
+2026-04-20T15:39:34.3269400Z 2026-04-20 21:09:34.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Will include the Docker tool.
+2026-04-20T15:39:34.3312560Z 2026-04-20 21:09:34.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Docker actions finished.
+2026-04-20T15:39:34.3316670Z 2026-04-20 21:09:34.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- ----------------------------------
+2026-04-20T15:39:34.3317510Z 2026-04-20 21:09:34.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Will include the Bazel tool.
+2026-04-20T15:39:34.3326250Z 2026-04-20 21:09:34.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Initializing the Bazel tool.
+2026-04-20T15:39:34.3338630Z 2026-04-20 21:09:34.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- The Bazel tool not applicable.
+2026-04-20T15:39:34.3339120Z 2026-04-20 21:09:34.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Bazel actions finished.
+2026-04-20T15:39:34.3340280Z 2026-04-20 21:09:34.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- ----------------------------------
+2026-04-20T15:39:34.3341000Z 2026-04-20 21:09:34.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Will include the Detectors tool.
+2026-04-20T15:39:34.3516550Z 2026-04-20 21:09:34.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Searching for detectors.
+2026-04-20T15:39:34.3566960Z 2026-04-20 21:09:34.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Evaluating detectors. This may take a while.
+2026-04-20T15:39:34.4357720Z 2026-04-20 21:09:34.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Running executable >/opt/homebrew/bin/git config --get remote.origin.url
+2026-04-20T15:39:34.4471420Z 2026-04-20 21:09:34.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Process return code: 0
+2026-04-20T15:39:34.4472730Z 2026-04-20 21:09:34.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Running executable >/opt/homebrew/bin/git rev-parse --abbrev-ref HEAD
+2026-04-20T15:39:34.4572710Z 2026-04-20 21:09:34.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Process return code: 0
+2026-04-20T15:39:34.4573290Z 2026-04-20 21:09:34.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Running executable >/opt/homebrew/bin/git rev-parse HEAD
+2026-04-20T15:39:34.4677030Z 2026-04-20 21:09:34.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Process return code: 0
+2026-04-20T15:39:34.4747850Z 2026-04-20 21:09:34.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- ======================================================================================================
+2026-04-20T15:39:34.4748430Z 2026-04-20 21:09:34.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Detector Report
+2026-04-20T15:39:34.4748990Z 2026-04-20 21:09:34.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- ======================================================================================================
+2026-04-20T15:39:34.4749600Z 2026-04-20 21:09:34.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- 	/Users/madhusud/actions-runner/_work/build-scan/build-scan (depth 0)
+2026-04-20T15:39:34.4750150Z 2026-04-20 21:09:34.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- 		NPM Package Lock: SUCCESS
+2026-04-20T15:39:34.4750880Z 2026-04-20 21:09:34.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- 			Found file: /Users/madhusud/actions-runner/_work/build-scan/build-scan/package-lock.json
+2026-04-20T15:39:34.4751650Z 2026-04-20 21:09:34.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- 			Found file: /Users/madhusud/actions-runner/_work/build-scan/build-scan/package.json
+2026-04-20T15:39:34.4753240Z 2026-04-20 21:09:34.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- 		Git: SUCCESS
+2026-04-20T15:39:34.4753810Z 2026-04-20 21:09:34.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- 			Found file: /Users/madhusud/actions-runner/_work/build-scan/build-scan/.git
+2026-04-20T15:39:34.4754360Z 2026-04-20 21:09:34.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- 			Found executable: /opt/homebrew/bin/git
+2026-04-20T15:39:34.4754820Z 2026-04-20 21:09:34.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- ----------------------------------
+2026-04-20T15:39:34.4784600Z 2026-04-20 21:09:34.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- The following project names were found: 
+2026-04-20T15:39:34.4785390Z 2026-04-20 21:09:34.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- 	NPM: owasp-nodejs-goat, 1.3.0
+2026-04-20T15:39:34.4786000Z 2026-04-20 21:09:34.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Chose to use NPM at depth 0 for project name and version. Override with detect.project.detector.
+2026-04-20T15:39:34.4796020Z 2026-04-20 21:09:34.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Quack Patch cannot run because not all required properties are set. Please check your configuration.
+2026-04-20T15:39:34.4796580Z 2026-04-20 21:09:34.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Detectors actions finished.
+2026-04-20T15:39:34.4797990Z 2026-04-20 21:09:34.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- ----------------------------------
+2026-04-20T15:39:34.4802540Z 2026-04-20 21:09:34.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Project name: build-scan
+2026-04-20T15:39:34.4802990Z 2026-04-20 21:09:34.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Project version: 1.3.0
+2026-04-20T15:39:40.5491280Z 2026-04-20 21:09:40.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Successfully completed package manager scan of file: /Users/madhusud/actions-runner/_work/build-scan/build-scan/.bridge/blackduck_sca_detect_execution/detect/bdio/blackduck_artifact/scan.bdio
+2026-04-20T15:39:40.5602330Z 2026-04-20 21:09:40.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- ----------------------------------
+2026-04-20T15:39:40.5704290Z 2026-04-20 21:09:40.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Will include the Signature Scanner tool.
+2026-04-20T15:39:40.5705450Z 2026-04-20 21:09:40.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- No metadata file exists, assuming this is new installation and the signature scanner should be downloaded.
+2026-04-20T15:39:43.9846300Z 2026-04-20 21:09:43.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Downloading the Black Duck Signature Scanner.
+2026-04-20T15:39:43.9953080Z 2026-04-20 21:09:43.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- If the Signature Scanner on your Black Duck server has changed, the contents of /Users/madhusud/actions-runner/_work/build-scan/build-scan/.bridge/blackduck_sca_detect_execution/detect/tools/Black_Duck_Scan_Installation may change which could involve deleting files - please do not place items in the expansion directory as this directory is assumed to be under blackduck-common control.
+2026-04-20T15:39:57.3718010Z 2026-04-20 21:09:57.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Black Duck Signature Scanner downloaded successfully.
+2026-04-20T15:39:57.3719490Z 2026-04-20 21:09:57.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- The Black Duck Signature Scanner downloaded/found successfully: /Users/madhusud/actions-runner/_work/build-scan/build-scan/.bridge/blackduck_sca_detect_execution/detect/tools
+2026-04-20T15:39:57.3733690Z 2026-04-20 21:09:57.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- No scan targets provided - registering the source path /Users/madhusud/actions-runner/_work/build-scan/build-scan to scan
+2026-04-20T15:39:59.6548680Z 2026-04-20 21:09:59.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Starting the Black Duck Signature Scan commands.
+2026-04-20T15:39:59.6572990Z 2026-04-20 21:09:59.0000 IST [Blackduck SCA Detect Execution][pool-3-thread-1] INFO: --- Black Duck CLI command: /Users/madhusud/actions-runner/_work/build-scan/build-scan/.bridge/blackduck_sca_detect_execution/detect/tools/Black_Duck_Scan_Installation/scan.cli-1.0.9/jre/Contents/Home/bin/java -Done-jar.silent=true -Done-jar.jar.path=/Users/madhusud/actions-runner/_work/build-scan/build-scan/.bridge/blackduck_sca_detect_execution/detect/tools/Black_Duck_Scan_Installation/scan.cli-1.0.9/lib/cache/scan.cli.impl-standalone.jar -Xmx4096m -jar /Users/madhusud/actions-runner/_work/build-scan/build-scan/.bridge/blackduck_sca_detect_execution/detect/tools/Black_Duck_Scan_Installation/scan.cli-1.0.9/lib/scan.cli-1.0.9-standalone.jar --no-prompt --scheme https --host saastest.app.blackduck.com --port 443 -v --logDir /Users/madhusud/actions-runner/_work/build-scan/build-scan/.bridge/blackduck_sca_detect_execution/detect/runs/2026-04-20-15-39-25-405/scan/BlackDuckScanOutput/2026-04-20_15-39-59-653_1 --statusWriteDir /Users/madhusud/actions-runner/_work/build-scan/build-scan/.bridge/blackduck_sca_detect_execution/detect/runs/2026-04-20-15-39-25-405/scan/BlackDuckScanOutput/2026-04-20_15-39-59-653_1 --project build-scan --release 1.3.0 --name build-scan/build-scan/1.3.0 signature --exclude /.git/ --exclude /node_modules/ --exclude /.bridge/ --scass-scan /Users/madhusud/actions-runner/_work/build-scan/build-scan
+2026-04-20T15:40:08.9671420Z 2026-04-20 21:10:08.0000 IST [Blackduck SCA Detect Execution][pool-3-thread-1] INFO: --- 
+2026-04-20T15:40:08.9672170Z 2026-04-20 21:10:08.0000 IST [Blackduck SCA Detect Execution][pool-3-thread-1] INFO: --- Black Duck Signature Scanner return code: 0
+2026-04-20T15:40:08.9673520Z 2026-04-20 21:10:08.0000 IST [Blackduck SCA Detect Execution][pool-3-thread-1] INFO: --- Signature Scanner log output directory: '/Users/madhusud/actions-runner/_work/build-scan/build-scan/.bridge/blackduck_sca_detect_execution/detect/runs/2026-04-20-15-39-25-405/scan/BlackDuckScanOutput/2026-04-20_15-39-59-653_1'
+2026-04-20T15:40:08.9678640Z 2026-04-20 21:10:08.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Completed the Black Duck Signature Scan commands.
+2026-04-20T15:40:11.0026430Z 2026-04-20 21:10:11.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Signature Scanner actions finished.
+2026-04-20T15:40:11.0125110Z 2026-04-20 21:10:11.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- ----------------------------------
+2026-04-20T15:40:11.0126430Z 2026-04-20 21:10:11.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Will include the Binary Scanner tool.
+2026-04-20T15:40:11.0127690Z 2026-04-20 21:10:11.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Binary scanner found nothing to upload.
+2026-04-20T15:40:11.0128890Z 2026-04-20 21:10:11.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Binary Scanner actions finished.
+2026-04-20T15:40:11.0129960Z 2026-04-20 21:10:11.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- ----------------------------------
+2026-04-20T15:40:11.0131080Z 2026-04-20 21:10:11.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Will include the Container Scanner tool.
+2026-04-20T15:40:11.0132330Z 2026-04-20 21:10:11.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- No detect.container.scan.file.path property was provided. Skipping container scan.
+2026-04-20T15:40:11.0133480Z 2026-04-20 21:10:11.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Container Scanner actions finished.
+2026-04-20T15:40:11.0134430Z 2026-04-20 21:10:11.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- ----------------------------------
+2026-04-20T15:40:11.0135490Z 2026-04-20 21:10:11.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Vulnerability Impact Analysis tool will not be run.
+2026-04-20T15:40:11.0136490Z 2026-04-20 21:10:11.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- ----------------------------------
+2026-04-20T15:40:11.0137390Z 2026-04-20 21:10:11.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- IaC Scanner tool will not be run.
+2026-04-20T15:40:11.0138390Z 2026-04-20 21:10:11.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- ----------------------------------
+2026-04-20T15:40:12.0512410Z 2026-04-20 21:10:12.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Try #1 for task BOM Scan Wait Job ***/api/projects/707a5779-afc7-4a1c-b823-66234e0bb984/versions/07c8c92b-3407-494f-9fd7-9a3df32f3a9d/bom-status/0ef36ee5-02a9-4c9f-bbf1-b198775339a8 (elapsed: 00:00:00.000)...not done yet, waiting 1 seconds and trying again...
+2026-04-20T15:40:14.0323460Z 2026-04-20 21:10:14.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Try #2 for task BOM Scan Wait Job ***/api/projects/707a5779-afc7-4a1c-b823-66234e0bb984/versions/07c8c92b-3407-494f-9fd7-9a3df32f3a9d/bom-status/0ef36ee5-02a9-4c9f-bbf1-b198775339a8 (elapsed: 00:00:02.039)...not done yet, waiting 2 seconds and trying again...
+2026-04-20T15:40:17.0190910Z 2026-04-20 21:10:17.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Try #3 for task BOM Scan Wait Job ***/api/projects/707a5779-afc7-4a1c-b823-66234e0bb984/versions/07c8c92b-3407-494f-9fd7-9a3df32f3a9d/bom-status/0ef36ee5-02a9-4c9f-bbf1-b198775339a8 (elapsed: 00:00:05.021)...not done yet, waiting 3 seconds and trying again...
+2026-04-20T15:40:21.0183490Z 2026-04-20 21:10:21.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Try #4 for task BOM Scan Wait Job ***/api/projects/707a5779-afc7-4a1c-b823-66234e0bb984/versions/07c8c92b-3407-494f-9fd7-9a3df32f3a9d/bom-status/0ef36ee5-02a9-4c9f-bbf1-b198775339a8 (elapsed: 00:00:09.008)...not done yet, waiting 5 seconds and trying again...
+2026-04-20T15:40:27.2062370Z 2026-04-20 21:10:27.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Try #5 for task BOM Scan Wait Job ***/api/projects/707a5779-afc7-4a1c-b823-66234e0bb984/versions/07c8c92b-3407-494f-9fd7-9a3df32f3a9d/bom-status/0ef36ee5-02a9-4c9f-bbf1-b198775339a8 (elapsed: 00:00:15.008)...not done yet, waiting 5 seconds and trying again...
+2026-04-20T15:40:33.4134750Z 2026-04-20 21:10:33.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Try #6 for task BOM Scan Wait Job ***/api/projects/707a5779-afc7-4a1c-b823-66234e0bb984/versions/07c8c92b-3407-494f-9fd7-9a3df32f3a9d/bom-status/0ef36ee5-02a9-4c9f-bbf1-b198775339a8 (elapsed: 00:00:21.194)...complete!
+2026-04-20T15:40:34.6229010Z 2026-04-20 21:10:34.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Try #1 for task BOM Scan Wait Job ***/api/projects/707a5779-afc7-4a1c-b823-66234e0bb984/versions/07c8c92b-3407-494f-9fd7-9a3df32f3a9d/bom-status/10f55484-f29b-4076-a461-eadf1a3f70e3 (elapsed: 00:00:00.000)...complete!
+2026-04-20T15:40:34.6236520Z 2026-04-20 21:10:34.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Checking to see if Detect should check policy for violations.
+2026-04-20T15:40:35.8785120Z 2026-04-20 21:10:35.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- 
+2026-04-20T15:40:35.8786060Z 2026-04-20 21:10:35.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- 
+2026-04-20T15:40:35.8787200Z 2026-04-20 21:10:35.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Creating status file: /Users/madhusud/actions-runner/_work/build-scan/build-scan/.bridge/blackduck_sca_detect_execution/detect/runs/2026-04-20-15-39-25-405/status/status.json
+2026-04-20T15:40:35.8788410Z 2026-04-20 21:10:35.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- 
+2026-04-20T15:40:35.8807780Z 2026-04-20 21:10:35.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Skipping cleanup, it is disabled.
+2026-04-20T15:40:36.0867220Z 2026-04-20 21:10:36.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- 
+2026-04-20T15:40:36.0868240Z 2026-04-20 21:10:36.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- 
+2026-04-20T15:40:36.0873950Z 2026-04-20 21:10:36.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- ======== Detect Result ========
+2026-04-20T15:40:36.0876060Z 2026-04-20 21:10:36.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- 
+2026-04-20T15:40:36.0879620Z 2026-04-20 21:10:36.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Black Duck SCA Project BOM: ***/api/projects/707a5779-afc7-4a1c-b823-66234e0bb984/versions/07c8c92b-3407-494f-9fd7-9a3df32f3a9d/components
+2026-04-20T15:40:36.0881720Z 2026-04-20 21:10:36.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- 
+2026-04-20T15:40:36.0895550Z 2026-04-20 21:10:36.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- ======== Detect Status ========
+2026-04-20T15:40:36.0896670Z 2026-04-20 21:10:36.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- 
+2026-04-20T15:40:36.0898340Z 2026-04-20 21:10:36.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- GIT: SUCCESS
+2026-04-20T15:40:36.0899880Z 2026-04-20 21:10:36.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- NPM: SUCCESS
+2026-04-20T15:40:36.0900770Z 2026-04-20 21:10:36.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- 
+2026-04-20T15:40:36.0902320Z 2026-04-20 21:10:36.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Signature scan / Snippet scan on /Users/madhusud/actions-runner/_work/build-scan/build-scan: SUCCESS
+2026-04-20T15:40:36.0903650Z 2026-04-20 21:10:36.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Overall Status: SUCCESS - Detect exited successfully.
+2026-04-20T15:40:36.0904480Z 2026-04-20 21:10:36.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- 
+2026-04-20T15:40:36.0905290Z 2026-04-20 21:10:36.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- ===============================
+2026-04-20T15:40:36.0906040Z 2026-04-20 21:10:36.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- 
+2026-04-20T15:40:36.0906840Z 2026-04-20 21:10:36.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Detect duration: 00h 01m 13s 697ms
+2026-04-20T15:40:36.1105650Z 2026-04-20 21:10:36.1102 IST [Blackduck SCA Detect Execution] INFO: Provided value for resource 'detect.completed'
+2026-04-20T15:40:36.1106480Z 2026-04-20 21:10:36.1103 IST [Blackduck SCA Detect Execution] INFO: Provided value for resource 'detect.results.path'
+2026-04-20T15:40:36.1108160Z 2026-04-20 21:10:36.1107 IST [Blackduck SCA Detect Execution] INFO: Adapter finished
+2026-04-20T15:40:36.1385960Z 2026-04-20 21:10:36.1381 IST [Blackduck SCA Results] INFO: Skipping Blackduck SCA issues retrieval as "blackducksca.fixpr.enabled" is configured to false
+2026-04-20T15:40:36.1425410Z 2026-04-20 21:10:36.1424 IST [Blackduck SCA Results] INFO: Adapter finished
+2026-04-20T15:40:36.1693510Z 2026-04-20 21:10:36.1692 IST [SCM Checker] INFO: Adapter finished
+2026-04-20T15:40:36.1840390Z 2026-04-20 21:10:36.1838 IST [Detect Component Locator] INFO: skipping fix pull requests creation as "blackducksca.fixpr.enabled" is configured to false
+2026-04-20T15:40:36.1868340Z 2026-04-20 21:10:36.1867 IST [Detect Component Locator] INFO: Provided value for resource 'blackducksca.fixpr.issueFrom'
+2026-04-20T15:40:36.1871460Z 2026-04-20 21:10:36.1870 IST [Detect Component Locator] INFO: Adapter finished
+2026-04-20T15:40:36.1883730Z Black Duck Security Action workflow execution completed successfully.
+2026-04-20T15:40:36.1888990Z Fetching GitHub client service instance...
+2026-04-20T15:40:36.1972400Z Post job cleanup.
+2026-04-20T15:40:36.2907720Z Cache hit occurred on the primary key node-cache-macOS-arm64-npm-18b38877e3f7a35364161ea1520408d71317919979076ede5bbb12b47441b3ea, not saving cache.
+2026-04-20T15:40:36.2972870Z Post job cleanup.
+2026-04-20T15:40:36.3662710Z [command]/opt/homebrew/bin/git version
+2026-04-20T15:40:36.3729390Z git version 2.53.0
+2026-04-20T15:40:36.3747400Z Temporarily overriding HOME='/Users/madhusud/actions-runner/_work/_temp/c290203b-c86f-476e-be17-c9d2f188b0f0' before making global git config changes
+2026-04-20T15:40:36.3747940Z Adding repository directory to the temporary git global config as a safe directory
+2026-04-20T15:40:36.3749820Z [command]/opt/homebrew/bin/git config --global --add safe.directory /Users/madhusud/actions-runner/_work/build-scan/build-scan
+2026-04-20T15:40:36.3808560Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-04-20T15:40:36.3861890Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-04-20T15:40:36.4691740Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-04-20T15:40:36.4735760Z http.https://github.com/.extraheader
+2026-04-20T15:40:36.4742400Z [command]/opt/homebrew/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-04-20T15:40:36.4792130Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-04-20T15:40:36.5528930Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-04-20T15:40:36.5582900Z [command]/opt/homebrew/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-04-20T15:40:36.6394860Z Cleaning up orphan processes
+2026-04-20T15:40:37.3583180Z ##[warning]Node.js 20 actions are deprecated. The following actions are running on Node.js 20 and may not work as expected: actions/checkout@v4, actions/setup-node@v4, blackduck-inc/black-duck-security-scan@v2. Actions will be forced to run with Node.js 24 by default starting June 2nd, 2026. Node.js 20 will be removed from the runner on September 16th, 2026. Please check if updated versions of these actions are available that support Node.js 24. To opt into Node.js 24 now, set the FORCE_JAVASCRIPT_ACTIONS_TO_NODE24=true environment variable on the runner or in your workflow file. Once Node.js 24 becomes the default, you can temporarily opt out by setting ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

@@ -1,17 +1,17 @@
-﻿2026-04-20T15:32:40.2297730Z Current runner version: '2.333.1'
-2026-04-20T15:32:40.2301380Z Runner name: 'mac-arm-runner'
-2026-04-20T15:32:40.2301690Z Runner group name: 'default'
-2026-04-20T15:32:40.2302060Z Machine name: 'BD-MB65227'
-2026-04-20T15:32:40.2303290Z ##[group]GITHUB_TOKEN Permissions
-2026-04-20T15:32:40.2303990Z Contents: read
-2026-04-20T15:32:40.2304220Z Metadata: read
-2026-04-20T15:32:40.2304430Z Packages: read
-2026-04-20T15:32:40.2304640Z ##[endgroup]
-2026-04-20T15:32:40.2305460Z Secret source: Actions
-2026-04-20T15:32:40.2305740Z Prepare workflow directory
-2026-04-20T15:32:40.2907560Z Prepare all required actions
-2026-04-20T15:32:40.2927270Z Getting action download info
-2026-04-20T15:32:41.6887370Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
-2026-04-20T15:32:44.1365710Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
-2026-04-20T15:32:46.9974040Z Download action repository 'blackduck-inc/black-duck-security-scan@v2' (SHA:659a0742e793a093377fab3117b0d90f23b04bfa)
-2026-04-20T15:32:48.5164230Z Complete job name: blackduck-scan
+﻿2026-04-20T15:38:38.4068930Z Current runner version: '2.333.1'
+2026-04-20T15:38:38.4071900Z Runner name: 'mac-arm-runner'
+2026-04-20T15:38:38.4072210Z Runner group name: 'default'
+2026-04-20T15:38:38.4072630Z Machine name: 'BD-MB65227'
+2026-04-20T15:38:38.4073770Z ##[group]GITHUB_TOKEN Permissions
+2026-04-20T15:38:38.4074420Z Contents: read
+2026-04-20T15:38:38.4074640Z Metadata: read
+2026-04-20T15:38:38.4074850Z Packages: read
+2026-04-20T15:38:38.4075080Z ##[endgroup]
+2026-04-20T15:38:38.4075790Z Secret source: Actions
+2026-04-20T15:38:38.4076060Z Prepare workflow directory
+2026-04-20T15:38:38.4732860Z Prepare all required actions
+2026-04-20T15:38:38.4751670Z Getting action download info
+2026-04-20T15:38:39.8840490Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
+2026-04-20T15:38:40.9662780Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+2026-04-20T15:38:42.1737430Z Download action repository 'blackduck-inc/black-duck-security-scan@v2' (SHA:659a0742e793a093377fab3117b0d90f23b04bfa)
+2026-04-20T15:38:44.5980020Z Complete job name: blackduck-scan

@@ -1,7 +1,7 @@
-2026-04-20T15:32:35.1790000Z Evaluating blackduck-scan.if
-2026-04-20T15:32:35.1790000Z Evaluating: success()
-2026-04-20T15:32:35.1790000Z Result: true
-2026-04-20T15:32:35.1830000Z Requested labels: self-hosted
-2026-04-20T15:32:35.1830000Z Job defined at: giithub-workflow-samples/build-scan/.github/workflows/main.yml@refs/heads/main
-2026-04-20T15:32:35.1830000Z Waiting for a runner to pick up this job...
-2026-04-20T15:32:36.1160000Z Job is about to start running on the runner: mac-arm-runner
+2026-04-20T15:38:32.4610000Z Evaluating blackduck-scan.if
+2026-04-20T15:38:32.4610000Z Evaluating: success()
+2026-04-20T15:38:32.4610000Z Result: true
+2026-04-20T15:38:32.4810000Z Requested labels: self-hosted
+2026-04-20T15:38:32.4810000Z Job defined at: giithub-workflow-samples/build-scan/.github/workflows/main.yml@refs/heads/main
+2026-04-20T15:38:32.4810000Z Waiting for a runner to pick up this job...
+2026-04-20T15:38:33.0840000Z Job is about to start running on the runner: mac-arm-runner
