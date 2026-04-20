@@ -1,60 +1,194 @@
-﻿2026-04-20T15:21:09.4761370Z ##[group]Run blackduck-inc/black-duck-security-scan@v2
-2026-04-20T15:21:09.4761570Z with:
-2026-04-20T15:21:09.4761890Z   blackducksca_url: ***
-2026-04-20T15:21:09.4762210Z   blackducksca_token: ***
-2026-04-20T15:21:09.4762430Z   github_token: ***
-2026-04-20T15:21:09.4762650Z   detect_args: --detect.source.path=/Users/madhusud/actions-runner/_work/build-scan/build-scan
-2026-04-20T15:21:09.4762880Z   mark_build_status: failure
-2026-04-20T15:21:09.4763000Z env:
-2026-04-20T15:21:09.4763100Z   DETECT_PROJECT_NAME: build-scan
-2026-04-20T15:21:09.4763210Z ##[endgroup]
-2026-04-20T15:21:09.5997690Z Black Duck Security Action started...
-2026-04-20T15:21:09.6007780Z Checking for latest version of Bridge to download and configure
-2026-04-20T15:21:10.6105950Z Bridge CLI version is - 4.1.2
-2026-04-20T15:21:10.6310260Z Bridge CLI already exists, download has been skipped
-2026-04-20T15:21:10.6411350Z [command]/Users/madhusud/bridge-cli-bundle/bridge-cli-bundle-macos_arm/bridge-cli --stage blackducksca --input /var/folders/lp/36zm5r955w30nrqcfnkpyn6c0000gp/T/blackduck-security-actionWLsI4c/bd_input.json
-2026-04-20T15:21:10.6613030Z 2026-04-20 20:51:10.6606 IST [Bridge CLI] INFO: Using cache directory: /Users/madhusud/bridge-cli-bundle/bridge-cli-bundle-macos_arm
-2026-04-20T15:21:10.6681590Z 2026-04-20 20:51:10.6679 IST [Bridge CLI] INFO: Found version "3.0.234" in registry for workflow "blackducksca", trying to load it from local cache
-2026-04-20T15:21:10.7475290Z 2026-04-20 20:51:10.7473 IST [Bridge CLI] INFO: Input Resources:
-2026-04-20T15:21:10.7475690Z 2026-04-20 20:51:10.7474 IST [Bridge CLI] INFO: resource = value [source]
-2026-04-20T15:21:10.7476120Z 2026-04-20 20:51:10.7474 IST [Bridge CLI] INFO: ------------------------------------------------------------
-2026-04-20T15:21:10.7477240Z 2026-04-20 20:51:10.7474 IST [Bridge CLI] INFO: blackducksca.reports.sarif.file.path = .blackduck/integrations/blackducksca/sarif/report.sarif.json [bd_input.json]
-2026-04-20T15:21:10.7477960Z 2026-04-20 20:51:10.7474 IST [Bridge CLI] INFO: blackducksca.token = ***************************************** [bd_input.json]
-2026-04-20T15:21:10.7478700Z 2026-04-20 20:51:10.7474 IST [Bridge CLI] INFO: blackducksca.url = *** [bd_input.json]
-2026-04-20T15:21:10.7479360Z 2026-04-20 20:51:10.7474 IST [Bridge CLI] INFO: detect.args = --detect.source.path=/Users/madhusud/actions-runner/_work/build-scan/build-scan [bd_input.json]
-2026-04-20T15:21:10.7479990Z 2026-04-20 20:51:10.7474 IST [Bridge CLI] INFO: ------------------------------------------------------------
-2026-04-20T15:21:10.7480450Z 2026-04-20 20:51:10.7474 IST [Bridge CLI] INFO: Starting adapters for stage blackducksca
-2026-04-20T15:21:10.7480880Z 2026-04-20 20:51:10.7475 IST [Bridge CLI] INFO: Starting Adapter: Blackduck SCA Controller
-2026-04-20T15:21:10.7511240Z 2026-04-20 20:51:10.7508 IST [Bridge CLI] INFO: Starting Adapter: Set Blackduck SCA Wait For Scan
-2026-04-20T15:21:10.7514640Z 2026-04-20 20:51:10.7509 IST [Set Blackduck SCA Wait For Scan] INFO: Provided value for resource 'blackducksca.waitForScan'
-2026-04-20T15:21:10.7515210Z 2026-04-20 20:51:10.7510 IST [Set Blackduck SCA Wait For Scan] INFO: Adapter finished
-2026-04-20T15:21:10.7515640Z 2026-04-20 20:51:10.7511 IST [Bridge CLI] INFO: Starting Adapter: Default Black Duck SCA Scan Mode
-2026-04-20T15:21:10.7542370Z 2026-04-20 20:51:10.7541 IST [Bridge CLI] INFO: Starting Adapter: Check pull request
-2026-04-20T15:21:10.7674810Z 2026-04-20 20:51:10.7673 IST [Check pull request] INFO: Provided value for resource 'environment.scan.pull'
-2026-04-20T15:21:10.7677720Z 2026-04-20 20:51:10.7677 IST [Check pull request] INFO: Adapter finished
-2026-04-20T15:21:10.7772350Z 2026-04-20 20:51:10.7771 IST [Default Black Duck SCA Scan Mode] INFO: Provided value for resource 'blackducksca.scan.full'
-2026-04-20T15:21:10.7775690Z 2026-04-20 20:51:10.7774 IST [Default Black Duck SCA Scan Mode] INFO: Adapter finished
-2026-04-20T15:21:11.8411360Z 2026-04-20 20:51:11.8367 IST [Blackduck SCA Controller] INFO: Found Black Duck SCA Detect jar file "detect-11.3.0.jar" in "/Users/madhusud/.blackduck/bridge/tools/blackduck-detect/11.3.0"
-2026-04-20T15:21:11.8584780Z 2026-04-20 20:51:11.8542 IST [Blackduck SCA Controller] INFO: Provided value for resource 'detect.execution.path'
-2026-04-20T15:21:11.8621490Z 2026-04-20 20:51:11.8543 IST [Bridge CLI] INFO: Starting adapters for stage blackducksca-detect
-2026-04-20T15:21:11.8623900Z 2026-04-20 20:51:11.8543 IST [Bridge CLI] INFO: Starting adapters for stage scm
-2026-04-20T15:21:11.8625180Z 2026-04-20 20:51:11.8544 IST [Bridge CLI] INFO: Starting adapters for stage blackducksca-post-processing
-2026-04-20T15:21:11.8626080Z 2026-04-20 20:51:11.8545 IST [Bridge CLI] INFO: Starting Adapter: SCM Checker
-2026-04-20T15:21:11.8626970Z 2026-04-20 20:51:11.8545 IST [Bridge CLI] INFO: Starting Adapter: Blackduck SCA Results
-2026-04-20T15:21:11.8627770Z 2026-04-20 20:51:11.8570 IST [Blackduck SCA Controller] INFO: Adapter finished
-2026-04-20T15:21:11.8628670Z 2026-04-20 20:51:11.8546 IST [Bridge CLI] INFO: Starting Adapter: Blackduck SCA Detect Execution
-2026-04-20T15:21:11.8682380Z 2026-04-20 20:51:11.8546 IST [Bridge CLI] INFO: Starting Adapter: Detect Component Locator
-2026-04-20T15:21:11.8871520Z 2026-04-20 20:51:11.8863 IST [Blackduck SCA Detect Execution] INFO: Running command java -jar /Users/madhusud/.blackduck/bridge/tools/blackduck-detect/11.3.0/detect-11.3.0.jar --detect.cleanup=false --detect.bdio.file.name=scan --detect.bdio.output.path=/Users/madhusud/actions-runner/_work/build-scan/build-scan/.bridge/blackduck_sca_detect_execution/detect/bdio/blackduck_artifact --detect.output.path=/Users/madhusud/actions-runner/_work/build-scan/build-scan/.bridge/blackduck_sca_detect_execution/detect --blackduck.offline.mode=false --blackduck.url=*** --blackduck.api.token= --detect.wait.for.results=true --detect.blackduck.scan.mode=INTELLIGENT --detect.source.path=/Users/madhusud/actions-runner/_work/build-scan/build-scan
-2026-04-20T15:21:11.9046220Z 2026-04-20 20:51:11.9041 IST [Blackduck SCA Detect Execution] INFO: The operation couldn’t be completed. Unable to locate a Java Runtime.
-2026-04-20T15:21:11.9047630Z 2026-04-20 20:51:11.9042 IST [Blackduck SCA Detect Execution] INFO: Please visit http://www.java.com for information on installing Java.
-2026-04-20T15:21:11.9048300Z 2026-04-20 20:51:11.9042 IST [Blackduck SCA Detect Execution] INFO: 
-2026-04-20T15:21:11.9048770Z 2026-04-20 20:51:11.9047 IST [Blackduck SCA Detect Execution] ERROR: exit status 1
-2026-04-20T15:21:11.9101990Z 2026-04-20 20:51:11.9100 IST [Blackduck SCA Detect Execution] INFO: Provided value for resource 'detect.results.path'
-2026-04-20T15:21:11.9105640Z 2026-04-20 20:51:11.9105 IST [Blackduck SCA Detect Execution] ERROR: Adapter failed: exit status 1
-2026-04-20T15:21:11.9226210Z 2026-04-20 20:51:11.9222 IST [Blackduck SCA Results] INFO: Skipping Blackduck SCA issues retrieval as "blackducksca.fixpr.enabled" is configured to false
-2026-04-20T15:21:11.9273110Z 2026-04-20 20:51:11.9272 IST [Blackduck SCA Results] INFO: Adapter finished
-2026-04-20T15:21:11.9425980Z 2026-04-20 20:51:11.9424 IST [SCM Checker] INFO: Adapter finished
-2026-04-20T15:21:11.9513340Z 2026-04-20 20:51:11.9510 IST [Detect Component Locator] INFO: skipping fix pull requests creation as "blackducksca.fixpr.enabled" is configured to false
-2026-04-20T15:21:11.9548840Z 2026-04-20 20:51:11.9547 IST [Detect Component Locator] INFO: Provided value for resource 'blackducksca.fixpr.issueFrom'
-2026-04-20T15:21:11.9552300Z 2026-04-20 20:51:11.9551 IST [Detect Component Locator] INFO: Adapter finished
-2026-04-20T15:21:11.9597040Z ##[error]Workflow failed! Exit Code: 2 Error from adapter end
+﻿2026-04-20T15:29:07.4862740Z ##[group]Run blackduck-inc/black-duck-security-scan@v2
+2026-04-20T15:29:07.4862890Z with:
+2026-04-20T15:29:07.4863130Z   blackducksca_url: ***
+2026-04-20T15:29:07.4863420Z   blackducksca_token: ***
+2026-04-20T15:29:07.4863610Z   github_token: ***
+2026-04-20T15:29:07.4863810Z   detect_args: --detect.source.path=/Users/madhusud/actions-runner/_work/build-scan/build-scan
+2026-04-20T15:29:07.4864020Z   mark_build_status: failure
+2026-04-20T15:29:07.4864110Z env:
+2026-04-20T15:29:07.4864200Z   DETECT_PROJECT_NAME: build-scan
+2026-04-20T15:29:07.4864330Z ##[endgroup]
+2026-04-20T15:29:07.6063160Z Black Duck Security Action started...
+2026-04-20T15:29:07.6072200Z Checking for latest version of Bridge to download and configure
+2026-04-20T15:29:08.7225360Z Bridge CLI version is - 4.1.2
+2026-04-20T15:29:08.7242560Z Bridge CLI already exists, download has been skipped
+2026-04-20T15:29:08.7270940Z [command]/Users/madhusud/bridge-cli-bundle/bridge-cli-bundle-macos_arm/bridge-cli --stage blackducksca --input /var/folders/lp/36zm5r955w30nrqcfnkpyn6c0000gp/T/blackduck-security-action5b9w7F/bd_input.json
+2026-04-20T15:29:08.7734710Z 2026-04-20 20:59:08.7726 IST [Bridge CLI] INFO: Using cache directory: /Users/madhusud/bridge-cli-bundle/bridge-cli-bundle-macos_arm
+2026-04-20T15:29:08.7812900Z 2026-04-20 20:59:08.7810 IST [Bridge CLI] INFO: Found version "3.0.234" in registry for workflow "blackducksca", trying to load it from local cache
+2026-04-20T15:29:08.8631250Z 2026-04-20 20:59:08.8628 IST [Bridge CLI] INFO: Input Resources:
+2026-04-20T15:29:08.8631740Z 2026-04-20 20:59:08.8629 IST [Bridge CLI] INFO: resource = value [source]
+2026-04-20T15:29:08.8632820Z 2026-04-20 20:59:08.8629 IST [Bridge CLI] INFO: ------------------------------------------------------------
+2026-04-20T15:29:08.8633600Z 2026-04-20 20:59:08.8629 IST [Bridge CLI] INFO: blackducksca.reports.sarif.file.path = .blackduck/integrations/blackducksca/sarif/report.sarif.json [bd_input.json]
+2026-04-20T15:29:08.8634370Z 2026-04-20 20:59:08.8629 IST [Bridge CLI] INFO: blackducksca.token = ***************************************** [bd_input.json]
+2026-04-20T15:29:08.8635200Z 2026-04-20 20:59:08.8629 IST [Bridge CLI] INFO: blackducksca.url = *** [bd_input.json]
+2026-04-20T15:29:08.8635910Z 2026-04-20 20:59:08.8629 IST [Bridge CLI] INFO: detect.args = --detect.source.path=/Users/madhusud/actions-runner/_work/build-scan/build-scan [bd_input.json]
+2026-04-20T15:29:08.8636580Z 2026-04-20 20:59:08.8630 IST [Bridge CLI] INFO: ------------------------------------------------------------
+2026-04-20T15:29:08.8637070Z 2026-04-20 20:59:08.8630 IST [Bridge CLI] INFO: Starting adapters for stage blackducksca
+2026-04-20T15:29:08.8637570Z 2026-04-20 20:59:08.8630 IST [Bridge CLI] INFO: Starting Adapter: Blackduck SCA Controller
+2026-04-20T15:29:08.8665450Z 2026-04-20 20:59:08.8664 IST [Bridge CLI] INFO: Starting Adapter: Set Blackduck SCA Wait For Scan
+2026-04-20T15:29:08.8666060Z 2026-04-20 20:59:08.8664 IST [Set Blackduck SCA Wait For Scan] INFO: Provided value for resource 'blackducksca.waitForScan'
+2026-04-20T15:29:08.8666960Z 2026-04-20 20:59:08.8665 IST [Set Blackduck SCA Wait For Scan] INFO: Adapter finished
+2026-04-20T15:29:08.8667420Z 2026-04-20 20:59:08.8666 IST [Bridge CLI] INFO: Starting Adapter: Default Black Duck SCA Scan Mode
+2026-04-20T15:29:08.8694880Z 2026-04-20 20:59:08.8694 IST [Bridge CLI] INFO: Starting Adapter: Check pull request
+2026-04-20T15:29:08.8842540Z 2026-04-20 20:59:08.8840 IST [Check pull request] INFO: Provided value for resource 'environment.scan.pull'
+2026-04-20T15:29:08.8845540Z 2026-04-20 20:59:08.8844 IST [Check pull request] INFO: Adapter finished
+2026-04-20T15:29:08.8964370Z 2026-04-20 20:59:08.8963 IST [Default Black Duck SCA Scan Mode] INFO: Provided value for resource 'blackducksca.scan.full'
+2026-04-20T15:29:08.8969010Z 2026-04-20 20:59:08.8967 IST [Default Black Duck SCA Scan Mode] INFO: Adapter finished
+2026-04-20T15:29:10.0067090Z 2026-04-20 20:59:10.0048 IST [Blackduck SCA Controller] INFO: Found Black Duck SCA Detect jar file "detect-11.3.0.jar" in "/Users/madhusud/.blackduck/bridge/tools/blackduck-detect/11.3.0"
+2026-04-20T15:29:10.0277900Z 2026-04-20 20:59:10.0183 IST [Blackduck SCA Controller] INFO: Provided value for resource 'detect.execution.path'
+2026-04-20T15:29:10.0305750Z 2026-04-20 20:59:10.0184 IST [Bridge CLI] INFO: Starting adapters for stage blackducksca-detect
+2026-04-20T15:29:10.0306800Z 2026-04-20 20:59:10.0184 IST [Bridge CLI] INFO: Starting adapters for stage scm
+2026-04-20T15:29:10.0307640Z 2026-04-20 20:59:10.0184 IST [Bridge CLI] INFO: Starting adapters for stage blackducksca-post-processing
+2026-04-20T15:29:10.0308620Z 2026-04-20 20:59:10.0185 IST [Bridge CLI] INFO: Starting Adapter: Blackduck SCA Detect Execution
+2026-04-20T15:29:10.0309400Z 2026-04-20 20:59:10.0185 IST [Bridge CLI] INFO: Starting Adapter: SCM Checker
+2026-04-20T15:29:10.0310120Z 2026-04-20 20:59:10.0209 IST [Blackduck SCA Controller] INFO: Adapter finished
+2026-04-20T15:29:10.0310820Z 2026-04-20 20:59:10.0186 IST [Bridge CLI] INFO: Starting Adapter: Detect Component Locator
+2026-04-20T15:29:10.0311570Z 2026-04-20 20:59:10.0186 IST [Bridge CLI] INFO: Starting Adapter: Blackduck SCA Results
+2026-04-20T15:29:10.0536890Z 2026-04-20 20:59:10.0526 IST [Blackduck SCA Detect Execution] INFO: Running command /opt/homebrew/opt/java/libexec/openjdk.jdk/Contents/Home/bin/java -jar /Users/madhusud/.blackduck/bridge/tools/blackduck-detect/11.3.0/detect-11.3.0.jar --detect.cleanup=false --detect.bdio.file.name=scan --detect.bdio.output.path=/Users/madhusud/actions-runner/_work/build-scan/build-scan/.bridge/blackduck_sca_detect_execution/detect/bdio/blackduck_artifact --detect.output.path=/Users/madhusud/actions-runner/_work/build-scan/build-scan/.bridge/blackduck_sca_detect_execution/detect --blackduck.offline.mode=false --blackduck.url=*** --blackduck.api.token= --detect.wait.for.results=true --detect.blackduck.scan.mode=INTELLIGENT --detect.source.path=/Users/madhusud/actions-runner/_work/build-scan/build-scan
+2026-04-20T15:29:10.4630120Z 2026-04-20 20:59:10.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Detect-Self-Updater:  Checking ***/api/tools/detect API for centrally managed Detect version to download to /Users/madhusud/tmp.
+2026-04-20T15:29:13.7767820Z 2026-04-20 20:59:13.0000 IST [Blackduck SCA Detect Execution][main] WARNING: --- Detect-Self-Updater:  Unable to download jar from ***/api/tools/detect.
+2026-04-20T15:29:13.7771800Z 2026-04-20 20:59:13.0000 IST [Blackduck SCA Detect Execution][main] WARNING: --- Detect-Self-Updater:  Response code from ***/api/tools/detect was: 400 Bad Request
+2026-04-20T15:29:13.9384240Z 2026-04-20 20:59:13.9380 IST [Blackduck SCA Detect Execution] INFO: ______     _            _
+2026-04-20T15:29:13.9384670Z 2026-04-20 20:59:13.9380 IST [Blackduck SCA Detect Execution] INFO: |  _  \   | |          | |
+2026-04-20T15:29:13.9385020Z 2026-04-20 20:59:13.9381 IST [Blackduck SCA Detect Execution] INFO: | | | |___| |_ ___  ___| |_
+2026-04-20T15:29:13.9385360Z 2026-04-20 20:59:13.9381 IST [Blackduck SCA Detect Execution] INFO: | | | / _ \ __/ _ \/ __| __|
+2026-04-20T15:29:13.9385730Z 2026-04-20 20:59:13.9381 IST [Blackduck SCA Detect Execution] INFO: | |/ /  __/ ||  __/ (__| |_
+2026-04-20T15:29:13.9386070Z 2026-04-20 20:59:13.9381 IST [Blackduck SCA Detect Execution] INFO: |___/ \___|\__\___|\___|\__|
+2026-04-20T15:29:13.9386370Z 2026-04-20 20:59:13.9381 IST [Blackduck SCA Detect Execution] INFO: 
+2026-04-20T15:29:14.0041440Z 2026-04-20 20:59:14.0039 IST [Blackduck SCA Detect Execution] INFO: 
+2026-04-20T15:29:14.0041830Z 2026-04-20 20:59:14.0039 IST [Blackduck SCA Detect Execution] INFO: Detect Version: 11.3.0
+2026-04-20T15:29:14.0042160Z 2026-04-20 20:59:14.0039 IST [Blackduck SCA Detect Execution] INFO: 
+2026-04-20T15:29:14.1565830Z 2026-04-20 20:59:14.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- 
+2026-04-20T15:29:14.1566220Z 2026-04-20 20:59:14.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Current property values:
+2026-04-20T15:29:14.1566570Z 2026-04-20 20:59:14.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- --property = value [notes]
+2026-04-20T15:29:14.1567440Z 2026-04-20 20:59:14.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- ------------------------------------------------------------
+2026-04-20T15:29:14.1570290Z 2026-04-20 20:59:14.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- blackduck.api.token = **************************************************************************************************** [cmd] 
+2026-04-20T15:29:14.1570920Z 2026-04-20 20:59:14.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- blackduck.offline.mode = false [cmd] 
+2026-04-20T15:29:14.1571500Z 2026-04-20 20:59:14.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- blackduck.url = *** [cmd] 
+2026-04-20T15:29:14.1571880Z 2026-04-20 20:59:14.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- detect.bdio.file.name = scan [cmd] 
+2026-04-20T15:29:14.1572560Z 2026-04-20 20:59:14.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- detect.bdio.output.path = /Users/madhusud/actions-runner/_work/build-scan/build-scan/.bridge/blackduck_sca_detect_execution/detect/bdio/blackduck_artifact [cmd] 
+2026-04-20T15:29:14.1573180Z 2026-04-20 20:59:14.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- detect.blackduck.scan.mode = INTELLIGENT [cmd] 
+2026-04-20T15:29:14.1573560Z 2026-04-20 20:59:14.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- detect.cleanup = false [cmd] 
+2026-04-20T15:29:14.1574060Z 2026-04-20 20:59:14.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- detect.excluded.directories = /Users/madhusud/actions-runner/_work/build-scan/build-scan/.bridge [env] 
+2026-04-20T15:29:14.1574990Z 2026-04-20 20:59:14.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- detect.output.path = /Users/madhusud/actions-runner/_work/build-scan/build-scan/.bridge/blackduck_sca_detect_execution/detect [cmd] 
+2026-04-20T15:29:14.1575520Z 2026-04-20 20:59:14.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- detect.project.name = build-scan [env] 
+2026-04-20T15:29:14.1576010Z 2026-04-20 20:59:14.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- detect.source.path = /Users/madhusud/actions-runner/_work/build-scan/build-scan [cmd] 
+2026-04-20T15:29:14.1576460Z 2026-04-20 20:59:14.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- detect.wait.for.results = true [cmd] 
+2026-04-20T15:29:14.1576860Z 2026-04-20 20:59:14.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- ------------------------------------------------------------
+2026-04-20T15:29:14.1577180Z 2026-04-20 20:59:14.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- 
+2026-04-20T15:29:14.1577480Z 2026-04-20 20:59:14.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Detect build date: 2026-03-12
+2026-04-20T15:29:14.1928530Z 2026-04-20 20:59:14.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Source directory: /Users/madhusud/actions-runner/_work/build-scan/build-scan
+2026-04-20T15:29:14.1929310Z 2026-04-20 20:59:14.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Output directory: /Users/madhusud/actions-runner/_work/build-scan/build-scan/.bridge/blackduck_sca_detect_execution/detect
+2026-04-20T15:29:14.1933780Z 2026-04-20 20:59:14.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Run directory: /Users/madhusud/actions-runner/_work/build-scan/build-scan/.bridge/blackduck_sca_detect_execution/detect/runs/2026-04-20-15-29-13-998
+2026-04-20T15:29:14.1946150Z 2026-04-20 20:59:14.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- 
+2026-04-20T15:29:21.7480870Z 2026-04-20 20:59:21.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Successfully connected to Black Duck SCA (version 2026.1.1)!
+2026-04-20T15:29:24.0440470Z 2026-04-20 20:59:24.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- ----------------------------------
+2026-04-20T15:29:24.0441230Z 2026-04-20 20:59:24.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Will include the Docker tool.
+2026-04-20T15:29:24.0485520Z 2026-04-20 20:59:24.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Docker actions finished.
+2026-04-20T15:29:24.0489000Z 2026-04-20 20:59:24.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- ----------------------------------
+2026-04-20T15:29:24.0489630Z 2026-04-20 20:59:24.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Will include the Bazel tool.
+2026-04-20T15:29:24.0496140Z 2026-04-20 20:59:24.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Initializing the Bazel tool.
+2026-04-20T15:29:24.0508460Z 2026-04-20 20:59:24.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- The Bazel tool not applicable.
+2026-04-20T15:29:24.0509510Z 2026-04-20 20:59:24.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Bazel actions finished.
+2026-04-20T15:29:24.0510210Z 2026-04-20 20:59:24.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- ----------------------------------
+2026-04-20T15:29:24.0510820Z 2026-04-20 20:59:24.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Will include the Detectors tool.
+2026-04-20T15:29:24.0673120Z 2026-04-20 20:59:24.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Searching for detectors.
+2026-04-20T15:29:24.0720440Z 2026-04-20 20:59:24.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Evaluating detectors. This may take a while.
+2026-04-20T15:29:24.1539550Z 2026-04-20 20:59:24.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Running executable >/opt/homebrew/bin/git config --get remote.origin.url
+2026-04-20T15:29:24.1656730Z 2026-04-20 20:59:24.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Process return code: 0
+2026-04-20T15:29:24.1659600Z 2026-04-20 20:59:24.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Running executable >/opt/homebrew/bin/git rev-parse --abbrev-ref HEAD
+2026-04-20T15:29:24.1747430Z 2026-04-20 20:59:24.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Process return code: 0
+2026-04-20T15:29:24.1748070Z 2026-04-20 20:59:24.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Running executable >/opt/homebrew/bin/git rev-parse HEAD
+2026-04-20T15:29:24.1828600Z 2026-04-20 20:59:24.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Process return code: 0
+2026-04-20T15:29:24.1906800Z 2026-04-20 20:59:24.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- ======================================================================================================
+2026-04-20T15:29:24.1908020Z 2026-04-20 20:59:24.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Detector Report
+2026-04-20T15:29:24.1909570Z 2026-04-20 20:59:24.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- ======================================================================================================
+2026-04-20T15:29:24.1910250Z 2026-04-20 20:59:24.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- 	/Users/madhusud/actions-runner/_work/build-scan/build-scan (depth 0)
+2026-04-20T15:29:24.1910780Z 2026-04-20 20:59:24.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- 		NPM Package Lock: SUCCESS
+2026-04-20T15:29:24.1911360Z 2026-04-20 20:59:24.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- 			Found file: /Users/madhusud/actions-runner/_work/build-scan/build-scan/package-lock.json
+2026-04-20T15:29:24.1912050Z 2026-04-20 20:59:24.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- 			Found file: /Users/madhusud/actions-runner/_work/build-scan/build-scan/package.json
+2026-04-20T15:29:24.1912540Z 2026-04-20 20:59:24.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- 		Git: SUCCESS
+2026-04-20T15:29:24.1913510Z 2026-04-20 20:59:24.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- 			Found file: /Users/madhusud/actions-runner/_work/build-scan/build-scan/.git
+2026-04-20T15:29:24.1914150Z 2026-04-20 20:59:24.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- 			Found executable: /opt/homebrew/bin/git
+2026-04-20T15:29:24.1914550Z 2026-04-20 20:59:24.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- ----------------------------------
+2026-04-20T15:29:24.1942240Z 2026-04-20 20:59:24.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- The following project names were found: 
+2026-04-20T15:29:24.1943090Z 2026-04-20 20:59:24.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- 	NPM: owasp-nodejs-goat, 1.3.0
+2026-04-20T15:29:24.1943680Z 2026-04-20 20:59:24.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Chose to use NPM at depth 0 for project name and version. Override with detect.project.detector.
+2026-04-20T15:29:24.1960750Z 2026-04-20 20:59:24.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Quack Patch cannot run because not all required properties are set. Please check your configuration.
+2026-04-20T15:29:24.1961380Z 2026-04-20 20:59:24.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Detectors actions finished.
+2026-04-20T15:29:24.1962430Z 2026-04-20 20:59:24.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- ----------------------------------
+2026-04-20T15:29:24.1967980Z 2026-04-20 20:59:24.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Project name: build-scan
+2026-04-20T15:29:24.1968550Z 2026-04-20 20:59:24.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Project version: 1.3.0
+2026-04-20T15:29:25.4196500Z 2026-04-20 20:59:25.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- The build-scan project was not found, so it will be created - if a version was included, it will also be created.
+2026-04-20T15:29:33.8249870Z 2026-04-20 20:59:33.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Successfully completed package manager scan of file: /Users/madhusud/actions-runner/_work/build-scan/build-scan/.bridge/blackduck_sca_detect_execution/detect/bdio/blackduck_artifact/scan.bdio
+2026-04-20T15:29:33.8259110Z 2026-04-20 20:59:33.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- ----------------------------------
+2026-04-20T15:29:33.8260410Z 2026-04-20 20:59:33.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Will include the Signature Scanner tool.
+2026-04-20T15:29:33.8392910Z 2026-04-20 20:59:33.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- No metadata file exists, assuming this is new installation and the signature scanner should be downloaded.
+2026-04-20T15:29:37.3061430Z 2026-04-20 20:59:37.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Downloading the Black Duck Signature Scanner.
+2026-04-20T15:29:37.3182950Z 2026-04-20 20:59:37.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- If the Signature Scanner on your Black Duck server has changed, the contents of /Users/madhusud/actions-runner/_work/build-scan/build-scan/.bridge/blackduck_sca_detect_execution/detect/tools/Black_Duck_Scan_Installation may change which could involve deleting files - please do not place items in the expansion directory as this directory is assumed to be under blackduck-common control.
+2026-04-20T15:29:50.7438400Z 2026-04-20 20:59:50.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Black Duck Signature Scanner downloaded successfully.
+2026-04-20T15:29:50.7440250Z 2026-04-20 20:59:50.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- The Black Duck Signature Scanner downloaded/found successfully: /Users/madhusud/actions-runner/_work/build-scan/build-scan/.bridge/blackduck_sca_detect_execution/detect/tools
+2026-04-20T15:29:50.7452320Z 2026-04-20 20:59:50.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- No scan targets provided - registering the source path /Users/madhusud/actions-runner/_work/build-scan/build-scan to scan
+2026-04-20T15:29:52.9861410Z 2026-04-20 20:59:52.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Starting the Black Duck Signature Scan commands.
+2026-04-20T15:29:52.9878570Z 2026-04-20 20:59:52.0000 IST [Blackduck SCA Detect Execution][pool-3-thread-1] INFO: --- Black Duck CLI command: /Users/madhusud/actions-runner/_work/build-scan/build-scan/.bridge/blackduck_sca_detect_execution/detect/tools/Black_Duck_Scan_Installation/scan.cli-1.0.9/jre/Contents/Home/bin/java -Done-jar.silent=true -Done-jar.jar.path=/Users/madhusud/actions-runner/_work/build-scan/build-scan/.bridge/blackduck_sca_detect_execution/detect/tools/Black_Duck_Scan_Installation/scan.cli-1.0.9/lib/cache/scan.cli.impl-standalone.jar -Xmx4096m -jar /Users/madhusud/actions-runner/_work/build-scan/build-scan/.bridge/blackduck_sca_detect_execution/detect/tools/Black_Duck_Scan_Installation/scan.cli-1.0.9/lib/scan.cli-1.0.9-standalone.jar --no-prompt --scheme https --host saastest.app.blackduck.com --port 443 -v --logDir /Users/madhusud/actions-runner/_work/build-scan/build-scan/.bridge/blackduck_sca_detect_execution/detect/runs/2026-04-20-15-29-13-998/scan/BlackDuckScanOutput/2026-04-20_15-29-52-984_1 --statusWriteDir /Users/madhusud/actions-runner/_work/build-scan/build-scan/.bridge/blackduck_sca_detect_execution/detect/runs/2026-04-20-15-29-13-998/scan/BlackDuckScanOutput/2026-04-20_15-29-52-984_1 --project build-scan --release 1.3.0 --name build-scan/build-scan/1.3.0 signature --exclude /.git/ --exclude /node_modules/ --exclude /.bridge/ --scass-scan /Users/madhusud/actions-runner/_work/build-scan/build-scan
+2026-04-20T15:30:03.8054960Z 2026-04-20 21:00:03.0000 IST [Blackduck SCA Detect Execution][pool-3-thread-1] INFO: --- 
+2026-04-20T15:30:03.8055710Z 2026-04-20 21:00:03.0000 IST [Blackduck SCA Detect Execution][pool-3-thread-1] INFO: --- Black Duck Signature Scanner return code: 0
+2026-04-20T15:30:03.8056850Z 2026-04-20 21:00:03.0000 IST [Blackduck SCA Detect Execution][pool-3-thread-1] INFO: --- Signature Scanner log output directory: '/Users/madhusud/actions-runner/_work/build-scan/build-scan/.bridge/blackduck_sca_detect_execution/detect/runs/2026-04-20-15-29-13-998/scan/BlackDuckScanOutput/2026-04-20_15-29-52-984_1'
+2026-04-20T15:30:03.8061280Z 2026-04-20 21:00:03.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Completed the Black Duck Signature Scan commands.
+2026-04-20T15:30:05.8515610Z 2026-04-20 21:00:05.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Signature Scanner actions finished.
+2026-04-20T15:30:05.8517970Z 2026-04-20 21:00:05.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- ----------------------------------
+2026-04-20T15:30:05.8518900Z 2026-04-20 21:00:05.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Will include the Binary Scanner tool.
+2026-04-20T15:30:05.8524520Z 2026-04-20 21:00:05.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Binary scanner found nothing to upload.
+2026-04-20T15:30:05.8525450Z 2026-04-20 21:00:05.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Binary Scanner actions finished.
+2026-04-20T15:30:05.8526290Z 2026-04-20 21:00:05.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- ----------------------------------
+2026-04-20T15:30:05.8530130Z 2026-04-20 21:00:05.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Will include the Container Scanner tool.
+2026-04-20T15:30:05.8535190Z 2026-04-20 21:00:05.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- No detect.container.scan.file.path property was provided. Skipping container scan.
+2026-04-20T15:30:05.8536110Z 2026-04-20 21:00:05.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Container Scanner actions finished.
+2026-04-20T15:30:05.8541060Z 2026-04-20 21:00:05.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- ----------------------------------
+2026-04-20T15:30:05.8541890Z 2026-04-20 21:00:05.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Vulnerability Impact Analysis tool will not be run.
+2026-04-20T15:30:05.8543280Z 2026-04-20 21:00:05.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- ----------------------------------
+2026-04-20T15:30:05.8544040Z 2026-04-20 21:00:05.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- IaC Scanner tool will not be run.
+2026-04-20T15:30:05.8554400Z 2026-04-20 21:00:05.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- ----------------------------------
+2026-04-20T15:30:06.8487540Z 2026-04-20 21:00:06.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Try #1 for task BOM Scan Wait Job ***/api/projects/707a5779-afc7-4a1c-b823-66234e0bb984/versions/07c8c92b-3407-494f-9fd7-9a3df32f3a9d/bom-status/b989603e-4ae1-48b8-b4c5-988c21153ae6 (elapsed: 00:00:00.000)...not done yet, waiting 1 seconds and trying again...
+2026-04-20T15:30:08.9381800Z 2026-04-20 21:00:08.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Try #2 for task BOM Scan Wait Job ***/api/projects/707a5779-afc7-4a1c-b823-66234e0bb984/versions/07c8c92b-3407-494f-9fd7-9a3df32f3a9d/bom-status/b989603e-4ae1-48b8-b4c5-988c21153ae6 (elapsed: 00:00:01.995)...not done yet, waiting 2 seconds and trying again...
+2026-04-20T15:30:12.0290810Z 2026-04-20 21:00:12.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Try #3 for task BOM Scan Wait Job ***/api/projects/707a5779-afc7-4a1c-b823-66234e0bb984/versions/07c8c92b-3407-494f-9fd7-9a3df32f3a9d/bom-status/b989603e-4ae1-48b8-b4c5-988c21153ae6 (elapsed: 00:00:05.080)...not done yet, waiting 3 seconds and trying again...
+2026-04-20T15:30:16.0356210Z 2026-04-20 21:00:16.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Try #4 for task BOM Scan Wait Job ***/api/projects/707a5779-afc7-4a1c-b823-66234e0bb984/versions/07c8c92b-3407-494f-9fd7-9a3df32f3a9d/bom-status/b989603e-4ae1-48b8-b4c5-988c21153ae6 (elapsed: 00:00:09.169)...not done yet, waiting 5 seconds and trying again...
+2026-04-20T15:30:22.0679250Z 2026-04-20 21:00:22.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Try #5 for task BOM Scan Wait Job ***/api/projects/707a5779-afc7-4a1c-b823-66234e0bb984/versions/07c8c92b-3407-494f-9fd7-9a3df32f3a9d/bom-status/b989603e-4ae1-48b8-b4c5-988c21153ae6 (elapsed: 00:00:15.172)...not done yet, waiting 5 seconds and trying again...
+2026-04-20T15:30:28.1688030Z 2026-04-20 21:00:28.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Try #6 for task BOM Scan Wait Job ***/api/projects/707a5779-afc7-4a1c-b823-66234e0bb984/versions/07c8c92b-3407-494f-9fd7-9a3df32f3a9d/bom-status/b989603e-4ae1-48b8-b4c5-988c21153ae6 (elapsed: 00:00:21.214)...not done yet, waiting 5 seconds and trying again...
+2026-04-20T15:30:34.1765090Z 2026-04-20 21:00:34.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Try #7 for task BOM Scan Wait Job ***/api/projects/707a5779-afc7-4a1c-b823-66234e0bb984/versions/07c8c92b-3407-494f-9fd7-9a3df32f3a9d/bom-status/b989603e-4ae1-48b8-b4c5-988c21153ae6 (elapsed: 00:00:27.311)...not done yet, waiting 5 seconds and trying again...
+2026-04-20T15:30:40.3207200Z 2026-04-20 21:00:40.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Try #8 for task BOM Scan Wait Job ***/api/projects/707a5779-afc7-4a1c-b823-66234e0bb984/versions/07c8c92b-3407-494f-9fd7-9a3df32f3a9d/bom-status/b989603e-4ae1-48b8-b4c5-988c21153ae6 (elapsed: 00:00:33.315)...complete!
+2026-04-20T15:30:41.3205050Z 2026-04-20 21:00:41.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Try #1 for task BOM Scan Wait Job ***/api/projects/707a5779-afc7-4a1c-b823-66234e0bb984/versions/07c8c92b-3407-494f-9fd7-9a3df32f3a9d/bom-status/4a6293d7-5250-4dc5-85e9-afcd21fc9a3c (elapsed: 00:00:00.000)...complete!
+2026-04-20T15:30:41.3301660Z 2026-04-20 21:00:41.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Checking to see if Detect should check policy for violations.
+2026-04-20T15:30:42.2716660Z 2026-04-20 21:00:42.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- 
+2026-04-20T15:30:42.2722780Z 2026-04-20 21:00:42.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- 
+2026-04-20T15:30:42.2727440Z 2026-04-20 21:00:42.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Creating status file: /Users/madhusud/actions-runner/_work/build-scan/build-scan/.bridge/blackduck_sca_detect_execution/detect/runs/2026-04-20-15-29-13-998/status/status.json
+2026-04-20T15:30:42.2881500Z 2026-04-20 21:00:42.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- 
+2026-04-20T15:30:42.2916270Z 2026-04-20 21:00:42.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Skipping cleanup, it is disabled.
+2026-04-20T15:30:42.4682200Z 2026-04-20 21:00:42.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- 
+2026-04-20T15:30:42.4682870Z 2026-04-20 21:00:42.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- 
+2026-04-20T15:30:42.4694680Z 2026-04-20 21:00:42.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- ======== Detect Result ========
+2026-04-20T15:30:42.4695370Z 2026-04-20 21:00:42.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- 
+2026-04-20T15:30:42.4696680Z 2026-04-20 21:00:42.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Black Duck SCA Project BOM: ***/api/projects/707a5779-afc7-4a1c-b823-66234e0bb984/versions/07c8c92b-3407-494f-9fd7-9a3df32f3a9d/components
+2026-04-20T15:30:42.4697570Z 2026-04-20 21:00:42.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- 
+2026-04-20T15:30:42.4698180Z 2026-04-20 21:00:42.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- ======== Detect Status ========
+2026-04-20T15:30:42.4698760Z 2026-04-20 21:00:42.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- 
+2026-04-20T15:30:42.4699300Z 2026-04-20 21:00:42.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- GIT: SUCCESS
+2026-04-20T15:30:42.4699870Z 2026-04-20 21:00:42.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- NPM: SUCCESS
+2026-04-20T15:30:42.4700400Z 2026-04-20 21:00:42.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- 
+2026-04-20T15:30:42.4701260Z 2026-04-20 21:00:42.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Signature scan / Snippet scan on /Users/madhusud/actions-runner/_work/build-scan/build-scan: SUCCESS
+2026-04-20T15:30:42.4702120Z 2026-04-20 21:00:42.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Overall Status: SUCCESS - Detect exited successfully.
+2026-04-20T15:30:42.4706670Z 2026-04-20 21:00:42.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- 
+2026-04-20T15:30:42.4707250Z 2026-04-20 21:00:42.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- ===============================
+2026-04-20T15:30:42.4707790Z 2026-04-20 21:00:42.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- 
+2026-04-20T15:30:42.4708340Z 2026-04-20 21:00:42.0000 IST [Blackduck SCA Detect Execution][main] INFO: --- Detect duration: 00h 01m 32s 070ms
+2026-04-20T15:30:42.4854280Z 2026-04-20 21:00:42.4851 IST [Blackduck SCA Detect Execution] INFO: Provided value for resource 'detect.completed'
+2026-04-20T15:30:42.4854980Z 2026-04-20 21:00:42.4852 IST [Blackduck SCA Detect Execution] INFO: Provided value for resource 'detect.results.path'
+2026-04-20T15:30:42.4857220Z 2026-04-20 21:00:42.4856 IST [Blackduck SCA Detect Execution] INFO: Adapter finished
+2026-04-20T15:30:42.4971870Z 2026-04-20 21:00:42.4968 IST [Blackduck SCA Results] INFO: Skipping Blackduck SCA issues retrieval as "blackducksca.fixpr.enabled" is configured to false
+2026-04-20T15:30:42.5014030Z 2026-04-20 21:00:42.5013 IST [Blackduck SCA Results] INFO: Adapter finished
+2026-04-20T15:30:42.5162440Z 2026-04-20 21:00:42.5160 IST [SCM Checker] INFO: Adapter finished
+2026-04-20T15:30:42.5235580Z 2026-04-20 21:00:42.5233 IST [Detect Component Locator] INFO: skipping fix pull requests creation as "blackducksca.fixpr.enabled" is configured to false
+2026-04-20T15:30:42.5268950Z 2026-04-20 21:00:42.5268 IST [Detect Component Locator] INFO: Provided value for resource 'blackducksca.fixpr.issueFrom'
+2026-04-20T15:30:42.5271650Z 2026-04-20 21:00:42.5271 IST [Detect Component Locator] INFO: Adapter finished
+2026-04-20T15:30:42.5285280Z Black Duck Security Action workflow execution completed successfully.
+2026-04-20T15:30:42.5290740Z Fetching GitHub client service instance...
