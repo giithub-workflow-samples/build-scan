@@ -33,49 +33,28 @@ jobs:
           unzip -o /tmp/logs.zip -d execution-logs/logs/
 
           if [ "$STATUS" = "success" ]; then
-            STATUS_COLOR="#2ea043"; STATUS_ICON="✅"
+            STATUS_ICON="✅"; STATUS_LABEL="success"
           else
-            STATUS_COLOR="#da3633"; STATUS_ICON="❌"
+            STATUS_ICON="❌"; STATUS_LABEL="$STATUS"
           fi
 
-          cat > execution-logs/index.html << HTMLEOF
-          <!DOCTYPE html>
-          <html lang="en">
-          <head>
-            <meta charset="UTF-8">
-            <title>Black Duck SCA Scan Results - Run #${RUN_NUMBER}</title>
-            <style>
-              body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 900px; margin: 40px auto; padding: 0 20px; color: #24292f; }
-              h1 { border-bottom: 1px solid #d0d7de; padding-bottom: 10px; }
-              .badge { display: inline-block; padding: 4px 12px; border-radius: 12px; color: white; background: ${STATUS_COLOR}; font-weight: bold; }
-              .meta { background: #f6f8fa; border: 1px solid #d0d7de; border-radius: 6px; padding: 16px; margin: 20px 0; }
-              .meta p { margin: 6px 0; }
-              a { color: #0969da; }
-              ul { line-height: 1.8; }
-            </style>
-          </head>
-          <body>
-            <h1>Black Duck SCA Scan Results</h1>
-            <div class="meta">
-              <p><strong>Run:</strong> <a href="${RUN_URL}">#${RUN_NUMBER}</a></p>
-              <p><strong>Status:</strong> <span class="badge">${STATUS_ICON} ${STATUS}</span></p>
-              <p><strong>Timestamp:</strong> ${TIMESTAMP}</p>
-            </div>
-            <h2>Log Files</h2>
-            <ul>
-          HTMLEOF
+          # Write Job Summary
+          cat >> $GITHUB_STEP_SUMMARY << SUMMARY
+          ## Black Duck SCA Scan Results
+
+          | | |
+          |---|---|
+          | **Run** | [#${RUN_NUMBER}](${RUN_URL}) |
+          | **Status** | ${STATUS_ICON} ${STATUS_LABEL} |
+          | **Timestamp** | ${TIMESTAMP} |
+
+          ### Log Files
+          SUMMARY
 
           find execution-logs/logs -type f | sort | while read f; do
-            rel="${f#execution-logs/}"
             name=$(basename "$f")
-            echo "      <li><a href=\"${rel}\">${name}</a></li>" >> execution-logs/index.html
+            echo "- \`${name}\`" >> $GITHUB_STEP_SUMMARY
           done
-
-          cat >> execution-logs/index.html << HTMLEOF
-            </ul>
-          </body>
-          </html>
-          HTMLEOF
 
       - name: Commit and push execution logs
         run: |
