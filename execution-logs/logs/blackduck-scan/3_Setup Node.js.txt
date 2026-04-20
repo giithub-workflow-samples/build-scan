@@ -1,18 +1,38 @@
-﻿2026-04-20T15:28:50.9955660Z ##[group]Run actions/setup-node@v4
-2026-04-20T15:28:50.9955830Z with:
-2026-04-20T15:28:50.9955940Z   node-version: 18
-2026-04-20T15:28:50.9956040Z   cache: npm
-2026-04-20T15:28:50.9956160Z   cache-dependency-path: package-lock.json
-2026-04-20T15:28:50.9956330Z   always-auth: false
-2026-04-20T15:28:50.9956440Z   check-latest: false
-2026-04-20T15:28:50.9956620Z   token: ***
-2026-04-20T15:28:50.9956720Z ##[endgroup]
-2026-04-20T15:28:51.0890260Z Found in cache @ /Users/madhusud/actions-runner/_work/_tool/node/18.20.8/arm64
-2026-04-20T15:28:51.0893750Z ##[group]Environment details
-2026-04-20T15:28:51.1651570Z node: v18.20.8
-2026-04-20T15:28:51.1651740Z npm: 10.8.2
-2026-04-20T15:28:51.1651850Z yarn: 
-2026-04-20T15:28:51.1652160Z ##[endgroup]
-2026-04-20T15:28:51.1658920Z [command]/Users/madhusud/actions-runner/_work/_tool/node/18.20.8/arm64/bin/npm config get cache
-2026-04-20T15:28:51.2449430Z /Users/madhusud/.npm
-2026-04-20T15:28:52.2640530Z npm cache is not found
+﻿2026-04-20T15:32:53.0062570Z ##[group]Run actions/setup-node@v4
+2026-04-20T15:32:53.0062750Z with:
+2026-04-20T15:32:53.0062860Z   node-version: 24
+2026-04-20T15:32:53.0062970Z   cache: npm
+2026-04-20T15:32:53.0063080Z   cache-dependency-path: package-lock.json
+2026-04-20T15:32:53.0063220Z   always-auth: false
+2026-04-20T15:32:53.0063340Z   check-latest: false
+2026-04-20T15:32:53.0063510Z   token: ***
+2026-04-20T15:32:53.0063630Z ##[endgroup]
+2026-04-20T15:32:53.0998260Z Attempting to download 24...
+2026-04-20T15:32:54.7963520Z Acquiring 24.15.0 - arm64 from https://github.com/actions/node-versions/releases/download/24.15.0-24511264946/node-24.15.0-darwin-arm64.tar.gz
+2026-04-20T15:32:59.4141310Z Extracting ...
+2026-04-20T15:32:59.4345500Z [command]/usr/bin/tar xz --strip 1 -C /Users/madhusud/actions-runner/_work/_temp/feb2e64e-f647-42f8-97cd-c14df85f7a3e -f /Users/madhusud/actions-runner/_work/_temp/971cffc8-8891-44ae-b78c-6bfc391f3ee1
+2026-04-20T15:33:00.2892940Z Adding to the cache ...
+2026-04-20T15:33:01.1364230Z ##[group]Environment details
+2026-04-20T15:33:02.1476670Z node: v24.15.0
+2026-04-20T15:33:02.1476840Z npm: 11.12.1
+2026-04-20T15:33:02.1476950Z yarn: 
+2026-04-20T15:33:02.1477220Z ##[endgroup]
+2026-04-20T15:33:02.1482420Z [command]/Users/madhusud/actions-runner/_work/_tool/node/24.15.0/arm64/bin/npm config get cache
+2026-04-20T15:33:02.2220710Z /Users/madhusud/.npm
+2026-04-20T15:33:03.1633110Z Cache hit for: node-cache-macOS-arm64-npm-18b38877e3f7a35364161ea1520408d71317919979076ede5bbb12b47441b3ea
+2026-04-20T15:33:05.2893980Z Received 0 of 127248640 (0.0%), 0.0 MBs/sec
+2026-04-20T15:33:06.2906130Z Received 0 of 127248640 (0.0%), 0.0 MBs/sec
+2026-04-20T15:33:07.2907710Z Received 0 of 127248640 (0.0%), 0.0 MBs/sec
+2026-04-20T15:33:08.2917210Z Received 0 of 127248640 (0.0%), 0.0 MBs/sec
+2026-04-20T15:33:09.2927110Z Received 0 of 127248640 (0.0%), 0.0 MBs/sec
+2026-04-20T15:33:10.2926040Z Received 29360128 of 127248640 (23.1%), 4.7 MBs/sec
+2026-04-20T15:33:11.2932000Z Received 37748736 of 127248640 (29.7%), 5.1 MBs/sec
+2026-04-20T15:33:12.2931580Z Received 54525952 of 127248640 (42.8%), 6.5 MBs/sec
+2026-04-20T15:33:13.2924230Z Received 71303168 of 127248640 (56.0%), 7.6 MBs/sec
+2026-04-20T15:33:14.2935590Z Received 83886080 of 127248640 (65.9%), 8.0 MBs/sec
+2026-04-20T15:33:15.2934000Z Received 109051904 of 127248640 (85.7%), 9.4 MBs/sec
+2026-04-20T15:33:15.9431010Z Received 127248640 of 127248640 (100.0%), 10.4 MBs/sec
+2026-04-20T15:33:15.9432430Z Cache Size: ~121 MB (127248640 B)
+2026-04-20T15:33:15.9474040Z [command]/usr/bin/tar -xf /Users/madhusud/actions-runner/_work/_temp/25bc9117-cf91-4272-b006-9ce616fe70f2/cache.tzst -P -C /Users/madhusud/actions-runner/_work/build-scan/build-scan --use-compress-program unzstd
+2026-04-20T15:33:16.8857360Z Cache restored successfully
+2026-04-20T15:33:16.8862740Z Cache restored from key: node-cache-macOS-arm64-npm-18b38877e3f7a35364161ea1520408d71317919979076ede5bbb12b47441b3ea
