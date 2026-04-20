@@ -1,0 +1,5 @@
+﻿2026-04-20T14:46:49.5054820Z ##[group]Run npm rebuild
+2026-04-20T14:46:49.5054970Z [36;1mnpm rebuild[0m
+2026-04-20T14:46:49.5064220Z shell: /bin/bash -e {0}
+2026-04-20T14:46:49.5064320Z ##[endgroup]
+2026-04-20T14:46:50.0054260Z rebuilt dependencies successfully

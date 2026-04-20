@@ -1,0 +1,266 @@
+﻿2026-04-20T14:46:24.1832770Z Current runner version: '2.333.1'
+2026-04-20T14:46:24.1835300Z Runner name: 'mac-arm-runner'
+2026-04-20T14:46:24.1835620Z Runner group name: 'default'
+2026-04-20T14:46:24.1836050Z Machine name: 'BD-MB65227'
+2026-04-20T14:46:24.1837220Z ##[group]GITHUB_TOKEN Permissions
+2026-04-20T14:46:24.1838000Z Contents: read
+2026-04-20T14:46:24.1838210Z Metadata: read
+2026-04-20T14:46:24.1838440Z Packages: read
+2026-04-20T14:46:24.1838660Z ##[endgroup]
+2026-04-20T14:46:24.1839430Z Secret source: Actions
+2026-04-20T14:46:24.1839720Z Prepare workflow directory
+2026-04-20T14:46:24.2560120Z Prepare all required actions
+2026-04-20T14:46:24.2579700Z Getting action download info
+2026-04-20T14:46:25.6484010Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
+2026-04-20T14:46:26.7383480Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+2026-04-20T14:46:28.1077530Z Download action repository 'blackduck-inc/black-duck-security-scan@v2' (SHA:659a0742e793a093377fab3117b0d90f23b04bfa)
+2026-04-20T14:46:29.5077820Z Complete job name: blackduck-scan
+2026-04-20T14:46:29.5308560Z ##[group]Run actions/checkout@v4
+2026-04-20T14:46:29.5308770Z with:
+2026-04-20T14:46:29.5308890Z   repository: giithub-workflow-samples/build-scan
+2026-04-20T14:46:29.5309110Z   token: ***
+2026-04-20T14:46:29.5309190Z   ssh-strict: true
+2026-04-20T14:46:29.5309280Z   ssh-user: git
+2026-04-20T14:46:29.5309380Z   persist-credentials: true
+2026-04-20T14:46:29.5309490Z   clean: true
+2026-04-20T14:46:29.5309580Z   sparse-checkout-cone-mode: true
+2026-04-20T14:46:29.5309700Z   fetch-depth: 1
+2026-04-20T14:46:29.5309790Z   fetch-tags: false
+2026-04-20T14:46:29.5309890Z   show-progress: true
+2026-04-20T14:46:29.5309990Z   lfs: false
+2026-04-20T14:46:29.5310080Z   submodules: false
+2026-04-20T14:46:29.5310180Z   set-safe-directory: true
+2026-04-20T14:46:29.5310350Z ##[endgroup]
+2026-04-20T14:46:29.6999940Z Syncing repository: giithub-workflow-samples/build-scan
+2026-04-20T14:46:29.7000590Z ##[group]Getting Git version info
+2026-04-20T14:46:29.7000850Z Working directory is '/Users/madhusud/actions-runner/_work/build-scan/build-scan'
+2026-04-20T14:46:29.7001140Z [command]/usr/bin/git version
+2026-04-20T14:46:29.7150770Z git version 2.39.5 (Apple Git-154)
+2026-04-20T14:46:29.7167520Z ##[endgroup]
+2026-04-20T14:46:29.7175230Z Temporarily overriding HOME='/Users/madhusud/actions-runner/_work/_temp/8575f8c6-69bd-4ba8-9a3f-5cda74c36818' before making global git config changes
+2026-04-20T14:46:29.7175700Z Adding repository directory to the temporary git global config as a safe directory
+2026-04-20T14:46:29.7180490Z [command]/usr/bin/git config --global --add safe.directory /Users/madhusud/actions-runner/_work/build-scan/build-scan
+2026-04-20T14:46:29.7328030Z [command]/usr/bin/git config --local --get remote.origin.url
+2026-04-20T14:46:29.7446280Z https://github.com/giithub-workflow-samples/build-scan
+2026-04-20T14:46:29.7457260Z ##[group]Removing previously created refs, to avoid conflicts
+2026-04-20T14:46:29.7458970Z [command]/usr/bin/git rev-parse --symbolic-full-name --verify --quiet HEAD
+2026-04-20T14:46:29.7579260Z refs/heads/main
+2026-04-20T14:46:29.7584270Z [command]/usr/bin/git checkout --detach
+2026-04-20T14:46:29.7796060Z HEAD is now at 63b8044 Create main.yml
+2026-04-20T14:46:29.7947480Z [command]/usr/bin/git branch --delete --force main
+2026-04-20T14:46:29.8098980Z Deleted branch main (was 63b8044).
+2026-04-20T14:46:29.8234230Z ##[endgroup]
+2026-04-20T14:46:29.8236630Z [command]/usr/bin/git submodule status
+2026-04-20T14:46:29.9471360Z ##[group]Cleaning the repository
+2026-04-20T14:46:29.9471600Z [command]/usr/bin/git clean -ffdx
+2026-04-20T14:46:32.9433980Z Removing .bridge/
+2026-04-20T14:46:32.9434250Z Removing node_modules/
+2026-04-20T14:46:32.9442370Z [command]/usr/bin/git reset --hard HEAD
+2026-04-20T14:46:32.9579620Z HEAD is now at 63b8044 Create main.yml
+2026-04-20T14:46:32.9583300Z ##[endgroup]
+2026-04-20T14:46:32.9585720Z ##[group]Disabling automatic garbage collection
+2026-04-20T14:46:32.9592430Z [command]/usr/bin/git config --local gc.auto 0
+2026-04-20T14:46:32.9691390Z ##[endgroup]
+2026-04-20T14:46:32.9691650Z ##[group]Setting up auth
+2026-04-20T14:46:32.9696430Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-04-20T14:46:32.9789530Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-04-20T14:46:33.0442700Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-04-20T14:46:33.0554770Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-04-20T14:46:33.1222970Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-04-20T14:46:33.1325850Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-04-20T14:46:33.2021630Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-04-20T14:46:33.2145760Z ##[endgroup]
+2026-04-20T14:46:33.2146120Z ##[group]Fetching the repository
+2026-04-20T14:46:33.2151860Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +edb3631074aa404c0ac49a7cc7cf21004ac2c6f0:refs/remotes/origin/main
+2026-04-20T14:46:34.0818260Z From https://github.com/giithub-workflow-samples/build-scan
+2026-04-20T14:46:34.0819950Z  + 63b8044...edb3631 edb3631074aa404c0ac49a7cc7cf21004ac2c6f0 -> origin/main  (forced update)
+2026-04-20T14:46:34.0926950Z ##[endgroup]
+2026-04-20T14:46:34.0927660Z ##[group]Determining the checkout info
+2026-04-20T14:46:34.0928730Z ##[endgroup]
+2026-04-20T14:46:34.0933030Z [command]/usr/bin/git sparse-checkout disable
+2026-04-20T14:46:34.1138260Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-04-20T14:46:34.1304890Z ##[group]Checking out the ref
+2026-04-20T14:46:34.1307380Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2026-04-20T14:46:34.1487340Z Warning: you are leaving 1 commit behind, not connected to
+2026-04-20T14:46:34.1487650Z any of your branches:
+2026-04-20T14:46:34.1487980Z 
+2026-04-20T14:46:34.1488190Z   63b8044 Create main.yml
+2026-04-20T14:46:34.1489510Z 
+2026-04-20T14:46:34.1489640Z If you want to keep it by creating a new branch, this may be a good time
+2026-04-20T14:46:34.1489930Z to do so with:
+2026-04-20T14:46:34.1490000Z 
+2026-04-20T14:46:34.1490110Z  git branch <new-branch-name> 63b8044
+2026-04-20T14:46:34.1490270Z 
+2026-04-20T14:46:34.1532040Z Switched to a new branch 'main'
+2026-04-20T14:46:34.1533990Z branch 'main' set up to track 'origin/main'.
+2026-04-20T14:46:34.1537290Z ##[endgroup]
+2026-04-20T14:46:34.1702760Z [command]/usr/bin/git log -1 --format=%H
+2026-04-20T14:46:34.1842970Z edb3631074aa404c0ac49a7cc7cf21004ac2c6f0
+2026-04-20T14:46:34.1997640Z ##[group]Run actions/setup-node@v4
+2026-04-20T14:46:34.1997790Z with:
+2026-04-20T14:46:34.1997880Z   node-version: 18
+2026-04-20T14:46:34.1997980Z   cache: npm
+2026-04-20T14:46:34.1998100Z   cache-dependency-path: package-lock.json
+2026-04-20T14:46:34.1998230Z   always-auth: false
+2026-04-20T14:46:34.1998330Z   check-latest: false
+2026-04-20T14:46:34.1998510Z   token: ***
+2026-04-20T14:46:34.1998600Z ##[endgroup]
+2026-04-20T14:46:34.2917680Z Found in cache @ /Users/madhusud/actions-runner/_work/_tool/node/18.20.8/arm64
+2026-04-20T14:46:34.2920910Z ##[group]Environment details
+2026-04-20T14:46:34.3771450Z node: v18.20.8
+2026-04-20T14:46:34.3771620Z npm: 10.8.2
+2026-04-20T14:46:34.3771720Z yarn: 
+2026-04-20T14:46:34.3772030Z ##[endgroup]
+2026-04-20T14:46:34.3780930Z [command]/Users/madhusud/actions-runner/_work/_tool/node/18.20.8/arm64/bin/npm config get cache
+2026-04-20T14:46:34.4589100Z /Users/madhusud/.npm
+2026-04-20T14:46:35.4021830Z npm cache is not found
+2026-04-20T14:46:35.4144380Z ##[group]Run npm install
+2026-04-20T14:46:35.4144680Z [36;1mnpm install[0m
+2026-04-20T14:46:35.4168210Z shell: /bin/bash -e {0}
+2026-04-20T14:46:35.4168430Z ##[endgroup]
+2026-04-20T14:46:36.0259950Z npm warn deprecated fsevents@1.2.9: fsevents 1 will break on node v14+ and could be using insecure binaries. Upgrade to fsevents 2.
+2026-04-20T14:46:37.3209090Z npm warn deprecated set-value@2.0.0: Critical bug fixed in v3.0.1, please upgrade to the latest version.
+2026-04-20T14:46:37.3237450Z npm warn deprecated mixin-deep@1.3.1: Critical bug fixed in v2.0.1, please upgrade to the latest version.
+2026-04-20T14:46:37.3255790Z npm warn deprecated ini@1.3.5: Please update to ini >=1.3.6 to avoid a prototype pollution issue
+2026-04-20T14:46:37.3314800Z npm warn deprecated set-value@0.4.3: Critical bug fixed in v3.0.1, please upgrade to the latest version.
+2026-04-20T14:46:37.3344670Z npm warn deprecated path-is-absolute@2.0.0: This package is no longer relevant as Node.js 0.12 is unmaintained.
+2026-04-20T14:46:37.3623020Z npm warn deprecated urix@0.1.0: Please see https://github.com/lydell/urix#deprecated
+2026-04-20T14:46:37.3712980Z npm warn deprecated har-validator@5.1.3: this library is no longer supported
+2026-04-20T14:46:37.3812940Z npm warn deprecated to-iso-string@0.0.2: to-iso-string has been deprecated, use @segment/to-iso-string instead.
+2026-04-20T14:46:37.3865830Z npm warn deprecated cryptiles@2.0.5: This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial).
+2026-04-20T14:46:37.3911530Z npm warn deprecated resolve-url@0.2.1: https://github.com/lydell/resolve-url#deprecated
+2026-04-20T14:46:37.3948030Z npm warn deprecated bcrypt-nodejs@0.0.3: bcrypt-nodejs is no longer actively maintained. Please use bcrypt or bcryptjs. See https://github.com/kelektiv/node.bcrypt.js/wiki/bcrypt-vs-brypt.js to learn more about these two options
+2026-04-20T14:46:37.4022710Z npm warn deprecated cryptiles@0.2.2: This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial).
+2026-04-20T14:46:37.4111180Z npm warn deprecated source-map-url@0.4.0: See https://github.com/lydell/source-map-url#deprecated
+2026-04-20T14:46:37.4506400Z npm warn deprecated boom@0.4.2: This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial).
+2026-04-20T14:46:37.4512200Z npm warn deprecated debug@3.2.6: Debug versions >=3.2.0 <3.2.7 || >=4 <4.3.1 have a low-severity ReDos regression when used in a Node.js environment. It is recommended you upgrade to 3.2.7 or 4.3.1. (https://github.com/visionmedia/debug/issues/797)
+2026-04-20T14:46:37.4513270Z npm warn deprecated debug@3.2.6: Debug versions >=3.2.0 <3.2.7 || >=4 <4.3.1 have a low-severity ReDos regression when used in a Node.js environment. It is recommended you upgrade to 3.2.7 or 4.3.1. (https://github.com/visionmedia/debug/issues/797)
+2026-04-20T14:46:37.4523390Z npm warn deprecated debug@3.2.6: Debug versions >=3.2.0 <3.2.7 || >=4 <4.3.1 have a low-severity ReDos regression when used in a Node.js environment. It is recommended you upgrade to 3.2.7 or 4.3.1. (https://github.com/visionmedia/debug/issues/797)
+2026-04-20T14:46:37.4524940Z npm warn deprecated debug@3.2.6: Debug versions >=3.2.0 <3.2.7 || >=4 <4.3.1 have a low-severity ReDos regression when used in a Node.js environment. It is recommended you upgrade to 3.2.7 or 4.3.1. (https://github.com/visionmedia/debug/issues/797)
+2026-04-20T14:46:37.4554830Z npm warn deprecated chokidar@2.1.6: Chokidar 2 does not receive security updates since 2019. Upgrade to chokidar 3 with 15x fewer dependencies
+2026-04-20T14:46:37.4559850Z npm warn deprecated boom@2.10.1: This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial).
+2026-04-20T14:46:37.4560930Z npm warn deprecated sntp@0.2.4: This module moved to @hapi/sntp. Please make sure to switch over as this distribution is no longer supported and may contain bugs and critical security issues.
+2026-04-20T14:46:37.4562780Z npm warn deprecated minimatch@0.3.0: Please update to minimatch 3.0.2 or higher to avoid a RegExp DoS issue
+2026-04-20T14:46:37.4573150Z npm warn deprecated chokidar@2.1.8: Chokidar 2 does not receive security updates since 2019. Upgrade to chokidar 3 with 15x fewer dependencies
+2026-04-20T14:46:37.4577670Z npm warn deprecated sntp@1.0.9: This module moved to @hapi/sntp. Please make sure to switch over as this distribution is no longer supported and may contain bugs and critical security issues.
+2026-04-20T14:46:37.4582760Z npm warn deprecated querystring@0.2.0: The querystring API is considered Legacy. new code should use the URLSearchParams API instead.
+2026-04-20T14:46:37.4967340Z npm warn deprecated request@2.36.0: request has been deprecated, see https://github.com/request/request/issues/3142
+2026-04-20T14:46:37.4968280Z npm warn deprecated mkdirp@0.3.0: Legacy versions of mkdirp are no longer supported. Please update to mkdirp 1.x. (Note that the API surface has changed to use Promises in 1.x.)
+2026-04-20T14:46:37.5027620Z npm warn deprecated tough-cookie@2.2.2: ReDoS vulnerability parsing Set-Cookie https://nodesecurity.io/advisories/130
+2026-04-20T14:46:37.5086710Z npm warn deprecated hoek@0.9.1: This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial).
+2026-04-20T14:46:37.5191230Z npm warn deprecated node-uuid@1.4.8: Use uuid module instead
+2026-04-20T14:46:37.5198020Z npm warn deprecated node-uuid@1.4.8: Use uuid module instead
+2026-04-20T14:46:37.5203740Z npm warn deprecated uuid@3.3.2: Please upgrade  to version 7 or higher.  Older versions may use Math.random() in certain circumstances, which is known to be problematic.  See https://v8.dev/blog/math-random for details.
+2026-04-20T14:46:37.5230740Z npm warn deprecated source-map-resolve@0.5.2: See https://github.com/lydell/source-map-resolve#deprecated
+2026-04-20T14:46:37.5269990Z npm warn deprecated har-validator@2.0.6: this library is no longer supported
+2026-04-20T14:46:37.5327750Z npm warn deprecated mkdirp@0.5.1: Legacy versions of mkdirp are no longer supported. Please update to mkdirp 1.x. (Note that the API surface has changed to use Promises in 1.x.)
+2026-04-20T14:46:37.5334110Z npm warn deprecated hoek@2.16.3: This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial).
+2026-04-20T14:46:37.5448190Z npm warn deprecated request@2.79.0: request has been deprecated, see https://github.com/request/request/issues/3142
+2026-04-20T14:46:37.5483760Z npm warn deprecated request@2.88.0: request has been deprecated, see https://github.com/request/request/issues/3142
+2026-04-20T14:46:37.5567750Z npm warn deprecated request@2.67.0: request has been deprecated, see https://github.com/request/request/issues/3142
+2026-04-20T14:46:37.5932340Z npm warn deprecated readdir-scoped-modules@1.0.2: This functionality has been moved to @npmcli/fs
+2026-04-20T14:46:37.5976300Z npm warn deprecated hawk@1.0.0: This module moved to @hapi/hawk. Please make sure to switch over as this distribution is no longer supported and may contain bugs and critical security issues.
+2026-04-20T14:46:37.6111650Z npm warn deprecated hawk@3.1.3: This module moved to @hapi/hawk. Please make sure to switch over as this distribution is no longer supported and may contain bugs and critical security issues.
+2026-04-20T14:46:37.6117970Z npm warn deprecated jade@0.26.3: Jade has been renamed to pug, please install the latest version of pug instead of jade
+2026-04-20T14:46:37.6318580Z npm warn deprecated swig@1.4.2: This package is no longer maintained
+2026-04-20T14:46:37.6601750Z npm warn deprecated bson@1.0.9: Fixed a critical issue with BSON serialization documented in CVE-2019-2391, see https://bit.ly/2KcpXdo for more details
+2026-04-20T14:46:37.7251830Z npm warn deprecated nodeunit@0.9.5: you are strongly encouraged to use other testing options
+2026-04-20T14:46:49.4295890Z 
+2026-04-20T14:46:49.4296360Z added 962 packages, and audited 1412 packages in 14s
+2026-04-20T14:46:49.4296550Z 
+2026-04-20T14:46:49.4297000Z 32 packages are looking for funding
+2026-04-20T14:46:49.4297520Z   run `npm fund` for details
+2026-04-20T14:46:49.4927980Z 
+2026-04-20T14:46:49.4928320Z 139 vulnerabilities (9 low, 33 moderate, 62 high, 35 critical)
+2026-04-20T14:46:49.4928550Z 
+2026-04-20T14:46:49.4928720Z To address issues that do not require attention, run:
+2026-04-20T14:46:49.4928930Z   npm audit fix
+2026-04-20T14:46:49.4929010Z 
+2026-04-20T14:46:49.4929170Z To address all issues possible (including breaking changes), run:
+2026-04-20T14:46:49.4929360Z   npm audit fix --force
+2026-04-20T14:46:49.4929460Z 
+2026-04-20T14:46:49.4929570Z Some issues need review, and may require choosing
+2026-04-20T14:46:49.4929740Z a different dependency.
+2026-04-20T14:46:49.4929830Z 
+2026-04-20T14:46:49.4931150Z Run `npm audit` for details.
+2026-04-20T14:46:49.5054830Z ##[group]Run npm rebuild
+2026-04-20T14:46:49.5054970Z [36;1mnpm rebuild[0m
+2026-04-20T14:46:49.5064220Z shell: /bin/bash -e {0}
+2026-04-20T14:46:49.5064320Z ##[endgroup]
+2026-04-20T14:46:50.0054330Z rebuilt dependencies successfully
+2026-04-20T14:46:50.0223710Z ##[group]Run blackduck-inc/black-duck-security-scan@v2
+2026-04-20T14:46:50.0223870Z with:
+2026-04-20T14:46:50.0224100Z   blackducksca_url: ***
+2026-04-20T14:46:50.0224380Z   blackducksca_token: ***
+2026-04-20T14:46:50.0224560Z   github_token: ***
+2026-04-20T14:46:50.0224760Z   detect_args: --detect.source.path=/Users/madhusud/actions-runner/_work/build-scan/build-scan
+2026-04-20T14:46:50.0224990Z   mark_build_status: failure
+2026-04-20T14:46:50.0225090Z env:
+2026-04-20T14:46:50.0225180Z   DETECT_PROJECT_NAME: build-scan
+2026-04-20T14:46:50.0225290Z ##[endgroup]
+2026-04-20T14:46:50.1504790Z Black Duck Security Action started...
+2026-04-20T14:46:50.1513850Z Checking for latest version of Bridge to download and configure
+2026-04-20T14:46:51.1693780Z Bridge CLI version is - 4.1.2
+2026-04-20T14:46:51.1724780Z Bridge CLI already exists, download has been skipped
+2026-04-20T14:46:51.1818370Z [command]/Users/madhusud/bridge-cli-bundle/bridge-cli-bundle-macos_arm/bridge-cli --stage blackducksca --input /var/folders/lp/36zm5r955w30nrqcfnkpyn6c0000gp/T/blackduck-security-actionv9Emur/bd_input.json
+2026-04-20T14:46:51.2677460Z 2026-04-20 20:16:51.2671 IST [Bridge CLI] INFO: Using cache directory: /Users/madhusud/bridge-cli-bundle/bridge-cli-bundle-macos_arm
+2026-04-20T14:46:51.2741480Z 2026-04-20 20:16:51.2739 IST [Bridge CLI] INFO: Found version "3.0.234" in registry for workflow "blackducksca", trying to load it from local cache
+2026-04-20T14:46:51.3437910Z 2026-04-20 20:16:51.3436 IST [Bridge CLI] INFO: Input Resources:
+2026-04-20T14:46:51.3438260Z 2026-04-20 20:16:51.3436 IST [Bridge CLI] INFO: resource = value [source]
+2026-04-20T14:46:51.3438700Z 2026-04-20 20:16:51.3436 IST [Bridge CLI] INFO: ------------------------------------------------------------
+2026-04-20T14:46:51.3439730Z 2026-04-20 20:16:51.3436 IST [Bridge CLI] INFO: blackducksca.reports.sarif.file.path = .blackduck/integrations/blackducksca/sarif/report.sarif.json [bd_input.json]
+2026-04-20T14:46:51.3440390Z 2026-04-20 20:16:51.3437 IST [Bridge CLI] INFO: blackducksca.token = ***************************************** [bd_input.json]
+2026-04-20T14:46:51.3441080Z 2026-04-20 20:16:51.3437 IST [Bridge CLI] INFO: blackducksca.url = *** [bd_input.json]
+2026-04-20T14:46:51.3441690Z 2026-04-20 20:16:51.3437 IST [Bridge CLI] INFO: detect.args = --detect.source.path=/Users/madhusud/actions-runner/_work/build-scan/build-scan [bd_input.json]
+2026-04-20T14:46:51.3442250Z 2026-04-20 20:16:51.3437 IST [Bridge CLI] INFO: ------------------------------------------------------------
+2026-04-20T14:46:51.3442640Z 2026-04-20 20:16:51.3437 IST [Bridge CLI] INFO: Starting adapters for stage blackducksca
+2026-04-20T14:46:51.3443040Z 2026-04-20 20:16:51.3437 IST [Bridge CLI] INFO: Starting Adapter: Blackduck SCA Controller
+2026-04-20T14:46:51.3465500Z 2026-04-20 20:16:51.3464 IST [Bridge CLI] INFO: Starting Adapter: Set Blackduck SCA Wait For Scan
+2026-04-20T14:46:51.3466560Z 2026-04-20 20:16:51.3465 IST [Set Blackduck SCA Wait For Scan] INFO: Provided value for resource 'blackducksca.waitForScan'
+2026-04-20T14:46:51.3467000Z 2026-04-20 20:16:51.3465 IST [Set Blackduck SCA Wait For Scan] INFO: Adapter finished
+2026-04-20T14:46:51.3467420Z 2026-04-20 20:16:51.3466 IST [Bridge CLI] INFO: Starting Adapter: Default Black Duck SCA Scan Mode
+2026-04-20T14:46:51.3493310Z 2026-04-20 20:16:51.3492 IST [Bridge CLI] INFO: Starting Adapter: Check pull request
+2026-04-20T14:46:51.3819700Z 2026-04-20 20:16:51.3818 IST [Check pull request] INFO: Provided value for resource 'environment.scan.pull'
+2026-04-20T14:46:51.3823500Z 2026-04-20 20:16:51.3822 IST [Check pull request] INFO: Adapter finished
+2026-04-20T14:46:51.4143210Z 2026-04-20 20:16:51.4142 IST [Default Black Duck SCA Scan Mode] INFO: Provided value for resource 'blackducksca.scan.full'
+2026-04-20T14:46:51.4146750Z 2026-04-20 20:16:51.4146 IST [Default Black Duck SCA Scan Mode] INFO: Adapter finished
+2026-04-20T14:46:52.5288420Z 2026-04-20 20:16:52.5277 IST [Blackduck SCA Controller] INFO: Found Black Duck SCA Detect jar file "detect-11.3.0.jar" in "/Users/madhusud/.blackduck/bridge/tools/blackduck-detect/11.3.0"
+2026-04-20T14:46:52.5358990Z 2026-04-20 20:16:52.5356 IST [Blackduck SCA Controller] INFO: Provided value for resource 'detect.execution.path'
+2026-04-20T14:46:52.5359840Z 2026-04-20 20:16:52.5356 IST [Bridge CLI] INFO: Starting adapters for stage blackducksca-detect
+2026-04-20T14:46:52.5360540Z 2026-04-20 20:16:52.5356 IST [Bridge CLI] INFO: Starting adapters for stage scm
+2026-04-20T14:46:52.5361260Z 2026-04-20 20:16:52.5356 IST [Bridge CLI] INFO: Starting adapters for stage blackducksca-post-processing
+2026-04-20T14:46:52.5362320Z 2026-04-20 20:16:52.5357 IST [Bridge CLI] INFO: Starting Adapter: Blackduck SCA Results
+2026-04-20T14:46:52.5394340Z 2026-04-20 20:16:52.5357 IST [Bridge CLI] INFO: Starting Adapter: Blackduck SCA Detect Execution
+2026-04-20T14:46:52.5395040Z 2026-04-20 20:16:52.5357 IST [Bridge CLI] INFO: Starting Adapter: SCM Checker
+2026-04-20T14:46:52.5395640Z 2026-04-20 20:16:52.5357 IST [Bridge CLI] INFO: Starting Adapter: Detect Component Locator
+2026-04-20T14:46:52.5396220Z 2026-04-20 20:16:52.5361 IST [Blackduck SCA Controller] INFO: Adapter finished
+2026-04-20T14:46:52.5811720Z 2026-04-20 20:16:52.5803 IST [Blackduck SCA Detect Execution] INFO: Running command java -jar /Users/madhusud/.blackduck/bridge/tools/blackduck-detect/11.3.0/detect-11.3.0.jar --detect.cleanup=false --detect.bdio.file.name=scan --detect.bdio.output.path=/Users/madhusud/actions-runner/_work/build-scan/build-scan/.bridge/blackduck_sca_detect_execution/detect/bdio/blackduck_artifact --detect.output.path=/Users/madhusud/actions-runner/_work/build-scan/build-scan/.bridge/blackduck_sca_detect_execution/detect --blackduck.offline.mode=false --blackduck.url=*** --blackduck.api.token= --detect.wait.for.results=true --detect.blackduck.scan.mode=INTELLIGENT --detect.source.path=/Users/madhusud/actions-runner/_work/build-scan/build-scan
+2026-04-20T14:46:52.5930620Z 2026-04-20 20:16:52.5927 IST [Blackduck SCA Detect Execution] INFO: The operation couldn’t be completed. Unable to locate a Java Runtime.
+2026-04-20T14:46:52.5931400Z 2026-04-20 20:16:52.5927 IST [Blackduck SCA Detect Execution] INFO: Please visit http://www.java.com for information on installing Java.
+2026-04-20T14:46:52.5931870Z 2026-04-20 20:16:52.5928 IST [Blackduck SCA Detect Execution] INFO: 
+2026-04-20T14:46:52.5932220Z 2026-04-20 20:16:52.5928 IST [Blackduck SCA Detect Execution] ERROR: exit status 1
+2026-04-20T14:46:52.5969390Z 2026-04-20 20:16:52.5968 IST [Blackduck SCA Detect Execution] INFO: Provided value for resource 'detect.results.path'
+2026-04-20T14:46:52.5971790Z 2026-04-20 20:16:52.5971 IST [Blackduck SCA Detect Execution] ERROR: Adapter failed: exit status 1
+2026-04-20T14:46:52.6321720Z 2026-04-20 20:16:52.6318 IST [Blackduck SCA Results] INFO: Skipping Blackduck SCA issues retrieval as "blackducksca.fixpr.enabled" is configured to false
+2026-04-20T14:46:52.6350950Z 2026-04-20 20:16:52.6350 IST [Blackduck SCA Results] INFO: Adapter finished
+2026-04-20T14:46:52.6734700Z 2026-04-20 20:16:52.6733 IST [SCM Checker] INFO: Adapter finished
+2026-04-20T14:46:52.7034850Z 2026-04-20 20:16:52.7032 IST [Detect Component Locator] INFO: skipping fix pull requests creation as "blackducksca.fixpr.enabled" is configured to false
+2026-04-20T14:46:52.7063580Z 2026-04-20 20:16:52.7062 IST [Detect Component Locator] INFO: Provided value for resource 'blackducksca.fixpr.issueFrom'
+2026-04-20T14:46:52.7070780Z 2026-04-20 20:16:52.7067 IST [Detect Component Locator] INFO: Adapter finished
+2026-04-20T14:46:52.7111220Z ##[error]Workflow failed! Exit Code: 2 Error from adapter end
+2026-04-20T14:46:52.7181370Z Post job cleanup.
+2026-04-20T14:46:52.7812660Z [command]/usr/bin/git version
+2026-04-20T14:46:52.7980210Z git version 2.39.5 (Apple Git-154)
+2026-04-20T14:46:52.7997690Z Temporarily overriding HOME='/Users/madhusud/actions-runner/_work/_temp/b95084fc-e1d4-41ef-89a9-8a3efb88033a' before making global git config changes
+2026-04-20T14:46:52.7998200Z Adding repository directory to the temporary git global config as a safe directory
+2026-04-20T14:46:52.8000130Z [command]/usr/bin/git config --global --add safe.directory /Users/madhusud/actions-runner/_work/build-scan/build-scan
+2026-04-20T14:46:52.8145980Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-04-20T14:46:52.8288160Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-04-20T14:46:52.9183060Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-04-20T14:46:52.9305800Z http.https://github.com/.extraheader
+2026-04-20T14:46:52.9313490Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-04-20T14:46:52.9444370Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-04-20T14:46:53.0290250Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-04-20T14:46:53.0418400Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-04-20T14:46:53.1381390Z Cleaning up orphan processes
+2026-04-20T14:46:53.7376180Z ##[warning]Node.js 20 actions are deprecated. The following actions are running on Node.js 20 and may not work as expected: actions/checkout@v4, actions/setup-node@v4, blackduck-inc/black-duck-security-scan@v2. Actions will be forced to run with Node.js 24 by default starting June 2nd, 2026. Node.js 20 will be removed from the runner on September 16th, 2026. Please check if updated versions of these actions are available that support Node.js 24. To opt into Node.js 24 now, set the FORCE_JAVASCRIPT_ACTIONS_TO_NODE24=true environment variable on the runner or in your workflow file. Once Node.js 24 becomes the default, you can temporarily opt out by setting ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

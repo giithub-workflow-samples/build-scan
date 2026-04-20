@@ -1,0 +1,18 @@
+﻿2026-04-20T14:46:34.1997640Z ##[group]Run actions/setup-node@v4
+2026-04-20T14:46:34.1997790Z with:
+2026-04-20T14:46:34.1997880Z   node-version: 18
+2026-04-20T14:46:34.1997980Z   cache: npm
+2026-04-20T14:46:34.1998090Z   cache-dependency-path: package-lock.json
+2026-04-20T14:46:34.1998230Z   always-auth: false
+2026-04-20T14:46:34.1998330Z   check-latest: false
+2026-04-20T14:46:34.1998500Z   token: ***
+2026-04-20T14:46:34.1998590Z ##[endgroup]
+2026-04-20T14:46:34.2917650Z Found in cache @ /Users/madhusud/actions-runner/_work/_tool/node/18.20.8/arm64
+2026-04-20T14:46:34.2920910Z ##[group]Environment details
+2026-04-20T14:46:34.3771430Z node: v18.20.8
+2026-04-20T14:46:34.3771620Z npm: 10.8.2
+2026-04-20T14:46:34.3771720Z yarn: 
+2026-04-20T14:46:34.3772020Z ##[endgroup]
+2026-04-20T14:46:34.3780920Z [command]/Users/madhusud/actions-runner/_work/_tool/node/18.20.8/arm64/bin/npm config get cache
+2026-04-20T14:46:34.4589070Z /Users/madhusud/.npm
+2026-04-20T14:46:35.4021740Z npm cache is not found
